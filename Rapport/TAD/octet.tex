@@ -1,1 +1,16 @@
-yo
+\begin{tad}
+  \tadNom{octet}
+  \tadDependances{Bit, Booleen, Naturel,codeBinaire}
+  \begin{tadOperations}{octet}
+    \tadOperation{octet}{}{\tadUnParam{octet}}
+    \tadOperationAvecPreconditions{obtenirIemeCodebinaire}{\tadDeuxParams{octet}{Naturel}}{\tadUnParam{octet}}
+    \tadOperationAvecPreconditions{obetnirIemeBit}{\tadUnParam{octet}}{\tadUnParam{Bit}}
+    \tadOperation{concatenerBitCodeBinaire}{\tadDeuxParams{codeBinaire}{Bit}}{\tadUnParam{octet}}
+    \tadOperation{completerOctet}{\tadDeuxParams{octet}{Bit}}{\tadUnParam{octet}}
+    \tadOperation{estCompletOctet}{\tadUnParam{octet}}{\tadUnParam{Booleen}}
+  \end{tadOperations}
+  \begin{tadPreconditions}{codeBinaire}
+    \tadPrecondition{obtenirIemeBit(octet)}{i>0 \& i<longueurCodeBinaire(octet)}
+    \tadPrecondition{obtenirIemeCodeBinaire(octet)}{i>0 \& i<longueurCodeBinaire(octet)}
+  \end{tadPreconditions}
+\end{tad}
