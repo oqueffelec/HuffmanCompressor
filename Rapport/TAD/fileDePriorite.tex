@@ -1,12 +1,12 @@
 \begin{tad}
-  \tadNom{fileDePriorité}
-  \tadDependances{Booleen, Elément}
-  \begin{tadOperations}{fileDePriorité}
-    \tadOperation{file}{}{\tadUnParam{fileDePriorité}}
-    \tadOperation{estVide}{\tadUnParam{fileDePriorité}}{\tadUnParam{Booleen}}
-    \tadOperation{défiler}{\tadUnParam{fileDePriorité}}{\tadUnParam{fileDePriorité}}
-    \tadOperation{obtenirElement}{\tadUnParam{fileDePriorité}}{\tadUnParam{Elément}}
-    \tadOperation{insérer}{\tadDeuxParam{fileDePriorité}{Elément}}{\tadUnParam{fileDePriorité}}
+  \tadNom{FileDePriorité}
+  \tadDependances{Booleen, ArbreDeHuffman}
+  \begin{tadOperations}{FileDePriorité}
+    \tadOperation{file}{}{\tadUnParam{FileDePriorité}}
+    \tadOperation{estVide}{\tadUnParam{FileDePriorité}}{\tadUnParam{Booleen}}
+    \tadOperation{défiler}{\tadUnParam{FileDePriorité}}{\tadUnParam{FileDePriorité}}
+    \tadOperation{obtenirElement}{\tadUnParam{FileDePriorité}}{\tadUnParam{ArbreDeHuffman}}
+    \tadOperation{insérer}{\tadDeuxParam{FileDePriorité}{ArbreDeHuffman}}{\tadUnParam{fileDePriorité}}
   \end{tadOperations}
   \begin{tadAxiomes}
     \tadAxiome{estVide(file())}
@@ -15,9 +15,9 @@
     \tadAxiome{obtenirElément(insérer(file(),e))=e}
     \tadAxiome{non(estVide(file())) et obtenirElément(insérer(file(),e)=obtenirElément(file())}
   \end{tadAxiomes}
-  \begin{tadPreconditions}
-    \tadPrecondition{défiler : non(estVide(f))}
+  \begin{tadPreconditions}{FileDePriorité}
+    \tadPrecondition{défiler(f)}{non(estVide(f))}
     \end{tadPrecondition}
-    \tadPrecondition{obtenirElément : non(estVide(f)}
+    \tadPrecondition{obtenirElément(f)}{non(estVide(f)}
   \end{tadPreconditions}
 \end{tad}
