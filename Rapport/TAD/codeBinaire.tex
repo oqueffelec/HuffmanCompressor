@@ -3,5 +3,12 @@
   \tadDependances{Bit, Booleen, Naturel}
   \begin{tadOperations}{codeBinaire}
     \tadOperation{codeBinaire}{}{\tadUnParam{codeBinaire}}
+    \tadOperation{ajouterBit}{\tadDeuxParams{codeBinaire}{Bit}}{\tadUnParam{codeBinaire}}
+    \tadOperation{supprimerBit}{\tadUnParam{codeBinaire}}{\tadUnParam{codeBinaire}}
+    \tadOperation{longueurCodeBinaire}{\tadUnParam{codeBinaire}}{\tadUnParam{Naturel}}
+    \tadOperationAvecPreconditions{obtenirIemeBit}{\tadDeuxParams{codeBinaire}{Naturel}}{\tadUnParam{Bit}}
   \end{tadOperations}
+  \begin{tadPreconditions}{codeBinaire}
+    \tadPrecondition{obtenirIemeBit(codeBinaire)}{i>0 \& i<longueurCodeBinaire(codeBinaire)}
+  \end{tadPreconditions}
 \end{tad}
