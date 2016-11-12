@@ -4,8 +4,8 @@
   \begin{tadOperations}{FileDePriorité}
     \tadOperation{file}{}{\tadUnParam{FileDePriorité}}
     \tadOperation{estVide}{\tadUnParam{FileDePriorité}}{\tadUnParam{Booleen}}
-    \tadOperation{défiler}{\tadUnParam{FileDePriorité}}{\tadUnParam{FileDePriorité}}
-    \tadOperation{obtenirElement}{\tadUnParam{FileDePriorité}}{\tadUnParam{ArbreDeHuffman}}
+    \tadOperationAvecPreconditions{défiler}{\tadUnParam{FileDePriorité}}{\tadUnParam{FileDePriorité}}
+    \tadOperationAvecPreconditions{obtenirElement}{\tadUnParam{FileDePriorité}}{\tadUnParam{ArbreDeHuffman}}
     \tadOperation{insérer}{\tadDeuxParam{FileDePriorité}{ArbreDeHuffman}}{\tadUnParam{fileDePriorité}}
   \end{tadOperations}
   \begin{tadAxiomes}
@@ -17,7 +17,6 @@
   \end{tadAxiomes}
   \begin{tadPreconditions}{FileDePriorité}
     \tadPrecondition{défiler(f)}{non(estVide(f))}
-    \end{tadPrecondition}
-    \tadPrecondition{obtenirElément(f)}{non(estVide(f)}
+    \tadPrecondition{obtenirElément(f)}{non(estVide(f))}
   \end{tadPreconditions}
 \end{tad}
