@@ -1,12 +1,12 @@
 \begin{tad}
   \tadNom{FileDePriorité}
-  \tadDependances{Booleen, ArbreDeHuffman}
+  \tadDependances{Booleen, Eléments Comparables}
   \begin{tadOperations}{FileDePriorité}
     \tadOperation{file}{}{\tadUnParam{FileDePriorité}}
     \tadOperation{estVide}{\tadUnParam{FileDePriorité}}{\tadUnParam{Booleen}}
     \tadOperationAvecPreconditions{défiler}{\tadUnParam{FileDePriorité}}{\tadUnParam{FileDePriorité}}
-    \tadOperationAvecPreconditions{obtenirElement}{\tadUnParam{FileDePriorité}}{\tadUnParam{ArbreDeHuffman}}
-    \tadOperation{insérer}{\tadDeuxParams{FileDePriorité}{ArbreDeHuffman}}{\tadUnParam{fileDePriorité}}
+    \tadOperationAvecPreconditions{obtenirElement}{\tadUnParam{FileDePriorité}}{\tadUnParam{Elément}}
+    \tadOperation{insérer}{\tadDeuxParams{FileDePriorité}{Elément}}{\tadUnParam{fileDePriorité}}
   \end{tadOperations}
   \begin{tadAxiomes}
     \tadAxiome{estVide(file())}
