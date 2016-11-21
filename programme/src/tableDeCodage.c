@@ -10,12 +10,13 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <errno.h>
 #include "tableDeCodage.h"
 
 #define TRUE 1
 #define FALSE 0
 
-TDC_tableDeCodage TDC_tableDeCodage(){
+TDC_tableDeCodage TDC_tableDeCodageVide(){
   errno=0;
   return NULL;
 }

@@ -21,7 +21,7 @@ typedef struct TDC_Noeud {
 	octet octet;
   codeBinaire codeBinaire;
 	TDC_tableDeCodage listeSuivante;
-}  TDC_tableDeCodage;
+}  TDC_Noeud;
 
 /**
 * \fn TDC_tableDeCodage TDC_tableDeCodage()
@@ -29,7 +29,7 @@ typedef struct TDC_Noeud {
 * \return TDC_tableDeCodage
 */
 
-TDC_tableDeCodage TDC_tableDeCodage();
+TDC_tableDeCodage TDC_TableDeCodageVide();
 
 /**
 * \fn void ajouter(TDC_tableDeCodage, octet, codeBinaire)
