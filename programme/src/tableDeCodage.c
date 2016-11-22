@@ -1,6 +1,6 @@
 /**
-  * \file tableDeCodage.c
-  * \brief Conception du TAD tableDeCodage
+  * \file TableDeCodage.c
+  * \brief Conception du TAD TableDeCodage
   * \author Octave Queffelec
   * \version 1.0
   * \date 20/11/2016
@@ -11,18 +11,18 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <errno.h>
-#include "tableDeCodage.h"
+#include "TableDeCodage.h"
 
 #define TRUE 1
 #define FALSE 0
 
-TDC_tableDeCodage TDC_tableDeCodageVide(){
+TDC_TableDeCodage TDC_TableDeCodageVide(){
   errno=0;
   return NULL;
 }
 
-void TDC_ajouter(TDC_tableDeCodage* tdc, octet o, codeBinaire cb){
-  TDC_tableDeCodage pNoeud=(TDC_tableDeCodage)malloc(sizeof(TDC_Noeud));
+void TDC_ajouter(TDC_TableDeCodage* tdc, Octet o, CodeBinaire cb){
+  TDC_TableDeCodage pNoeud=(TDC_TableDeCodage)malloc(sizeof(TDC_Noeud));
   if (pNoeud!=NULL) {
       errno=0;
       pNoeud->octet=o;
@@ -34,26 +34,26 @@ void TDC_ajouter(TDC_tableDeCodage* tdc, octet o, codeBinaire cb){
   }
 }
 
-int TDC_estPresentOctet(TDC_tableDeCodage tdc, octet o){
-  if(tdc.listeSuivante!=NULL){
-    if(tdc.octet==o){
+int TDC_estPresentOctet(TDC_TableDeCodage tdc, Octet o){
+  if(tdc->listeSuivante!=NULL){
+    if(tdc->octet==o){
       return TRUE;
     }
     else{
-      TDC_estPresentOctet(tdc.listeSuivante,o);
+      return TDC_estPresentOctet(tdc->listeSuivante,o);
     }
   }
   else
     return FALSE;
 }
 
-int TDC_estPresentCodeBinaire(TDC_tableDeCodage tdc, codeBinaire cb){
-  if(tdc.listeSuivante!=NULL){
-    if(tdc.codeBinaire==cb){
+int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CodeBinaire cb){
+  if(tdc->listeSuivante!=NULL){
+    if(tdc->codeBinaire==cb){
       return TRUE;
     }
     else{
-      TDC_estPresentOctet(tdc.listeSuivante,cb);
+      return TDC_estPresentOctet(tdc->listeSuivante,cb);
     }
   }
   else
@@ -62,34 +62,30 @@ int TDC_estPresentCodeBinaire(TDC_tableDeCodage tdc, codeBinaire cb){
 
 
 
-octet TDC_obtenirOctet(TDC_tableDeCodage tdc, codeBinaire cb){
+Octet TDC_obtenirOctet(TDC_TableDeCodage tdc, CodeBinaire cb){
   assert(TDC_estPresentCodeBinaire(tdc,cb));
-  if(tdc.listeSuivante!=NULL){
-    if(tdc.codeBinaire==cd)
-      return tdc.octet;
+    if(tdc->codeBinaire==cb)
+      return tdc->octet;
     else
-      TDC_obtenirOctet(tdc.listeSuivante,cb);
-  }
+      return TDC_obtenirOctet(tdc->listeSuivante,cb);
 }
 
-codeBinaire TDC_obtenirCodeBinaire(TDC_tableDeCodage tdc, octet o){
+CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, Octet o){
   assert(TDC_estPresentOctet(tdc,o));
-  if(tdc.listeSuivante!=NULL){
-    if(tdc.octet==o)
-      return tdc.codeBinaire;
+    if(tdc->octet==o)
+      return tdc->codeBinaire;
     else
-      TDC_obtenirCodeBinaire(tdc.listeSuivante,cb);
-  }
+      return TDC_obtenirCodeBinaire(tdc->listeSuivante,o);
 }
 
-void TDC_retirerOctet(TDC_tableDeCodage* tdc, octet o){
-  assert(TDC_estPresentOctet(tdc,o));
-  codeBinaire cb=TDC_obtenirCodeBinaire(tdc,o);
-  TDC_tableDeCodage temp;
+void TDC_retirerOctet(TDC_TableDeCodage* tdc, Octet o){
+  assert(TDC_estPresentOctet(*tdc,o));
+  CodeBinaire cb=TDC_obtenirCodeBinaire(*tdc,o);
+  TDC_TableDeCodage temp;
   assert(tdc!=NULL);
   errno=0;
   temp=*tdc;
-  *tdc=tdc->listeSuivante;
+  *tdc=(*tdc)->listeSuivante;
   free(temp);
 
 }

@@ -7,10 +7,12 @@
 #ifndef __MODE__
 #define __MODE__
 
-typedef enum mode
+
+enum Mode
         {
           lecture,
           ecriture
         };
+typedef enum Mode Mode;
 
 #endif

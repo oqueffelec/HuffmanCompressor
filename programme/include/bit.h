@@ -7,10 +7,11 @@
 #ifndef __BIT__
 #define __BIT__
 
-typedef enum bit
+
+enum Bit
         {
           bitA0,
           bitA1
         };
-
+typedef enum Bit Bit;
 #endif
