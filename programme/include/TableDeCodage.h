@@ -7,8 +7,8 @@
 #ifndef __TABLE__DE__CODAGE__
 #define __TABLE__DE__CODAGE__
 
-#include "CodeBinaire.h"
-#include "Octet.h"
+//#include "CodeBinaire.h"
+//#include "Octet.h"
 #define TDC_ERREUR_MEMOIRE 1
 
 /**

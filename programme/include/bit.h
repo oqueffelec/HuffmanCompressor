@@ -10,8 +10,8 @@
 
 enum Bit
         {
-          0,
-          1
+          bitA0,
+          bitA1
         };
 typedef enum Bit Bit;
 #endif
