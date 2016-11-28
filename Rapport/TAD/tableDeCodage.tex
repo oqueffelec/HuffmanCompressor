@@ -1,1 +1,16 @@
-yo
+begin{tad}
+  \tadNom{TableDeCodage}
+  \tadDependances{Octet, Code Binaire, Liste}
+  \begin{tadOperations}{TableDeCodage}
+    \tadOperation{ajouter}{}{\tadUnParam{TableDeCogae}}
+    \tadOperation{obtenirOctet}{\tadUnParam{FTableDeCodage}}{\tadUnParam{codeBinaire}}{\tadUnParam{Octet}}
+    \tadOperation{ObtenirClef}{\tadUnParam{TableDeCodage}}{\tadUnParam{Liste<clef>}}
+    \tadOperationAvecPreconditions{estPrensent}{\tadUnParam{TableDeCodage}}{\tadUnParam{Booléen}}
+    \tadOperation{retirer}{\tadDeuxParams{TableDeCodage}{clef}}{\tadUnParam{TableDeCodage}}
+  \end{tadOperations}
+  \tadAxiome{estPresent(ajouter(o))}
+  \end{tadAxiomes}
+  \begin{tadPreconditions}{TableDeCodage}
+    \tadPrecondition{obtenirOctet(o)}{estPresent(o))}
+  \end{tadPreconditions}
+\end{tad}
