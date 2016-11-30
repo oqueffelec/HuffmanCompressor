@@ -1,0 +1,24 @@
+Pour mettre a jour son dossier Git :
+$ git pull
+
+
+Pour ajouter un fichier:
+$ git add [nom_du_fichier]
+
+Pour faire un commit:
+$ git commit -a -m "commentaire"
+
+Pour faire un push :
+$ git push
+
+
+
+
+
+
+Pour le chef de projet
+
+Pour faire un merge:
+$ git pull
+$ git merge
+$ git push
