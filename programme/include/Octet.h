@@ -9,6 +9,7 @@
 #define __OCTET__
 
 #include "bit.h"
+#include "codeBinaire.h"
 
 /**
 * \struct O_octet Octet.h
@@ -23,7 +24,7 @@ typedef Bit O_Octet[8];
  *\return O_octet
  */
 
-O_Octet O_octet(CB_CodeBinaire cb);
+O_Octet* O_octet(CB_CodeBinaire cb);
 
 /**
 * \fn int O_obtenirbit(O_octet, int)
@@ -31,7 +32,7 @@ O_Octet O_octet(CB_CodeBinaire cb);
 * \return int
 */
 
-Bit O_obtenirbit(O_Octet o, int pos);
+Bit O_obtenirbit(O_Octet* o, int pos);
 
 /**
 * \fn void O_ajouter(O_octet, int)
