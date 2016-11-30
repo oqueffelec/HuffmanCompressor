@@ -19,11 +19,11 @@ typedef Bit O_Octet[8];
 
 /**
  *\fn O_Octet O_octet()
- *\brief renvoie 
+ *\brief renvoie un octet de 8 bit
  *\return O_octet
  */
 
-O_Octet O_octet();
+O_Octet O_octet(CB_CodeBinaire cb);
 
 /**
 * \fn int O_obtenirbit(O_octet, int)
@@ -41,13 +41,6 @@ Bit O_obtenirbit(O_Octet o, int pos);
 
 void O_ajouter(O_Octet* o,Bit bit,int pos);
 
-/**
-* \fn int O_estcomplet(O_octet)
-* \brief renvoie 0 ou 1 pour savoir si l'octet est complet
-* \return int 
-*/
-
-int O_estcomplet(O_octet o);
 
 #endif
 
