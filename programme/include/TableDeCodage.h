@@ -7,8 +7,8 @@
 #ifndef __TABLE__DE__CODAGE__
 #define __TABLE__DE__CODAGE__
 
-//#include "CodeBinaire.h"
-//#include "Octet.h"
+#include "codeBinaire.h"
+#include "Octet.h"
 #define TDC_ERREUR_MEMOIRE 1
 
 /**
@@ -18,8 +18,8 @@
 
 typedef struct TDC_Noeud* TDC_TableDeCodage;
 typedef struct TDC_Noeud {
-	int* octet;
-  int* codeBinaire;
+	O_Octet* octet;
+  CB_CodeBinaire* codeBinaire;
 	TDC_TableDeCodage listeSuivante;
 }  TDC_Noeud;
 
@@ -37,7 +37,7 @@ TDC_TableDeCodage TDC_tableDeCodage();
 * \return void
 */
 
-void TDC_ajouter(TDC_TableDeCodage* tdc, int*o, int*cb);
+void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet* o, CB_CodeBinaire* cb);
 
 /**
 * \fn TDC_estPresentOctet(TDC_tableDeCodage, octet)
@@ -45,7 +45,7 @@ void TDC_ajouter(TDC_TableDeCodage* tdc, int*o, int*cb);
 * \return int
 */
 
-int TDC_estPresentOctet(TDC_TableDeCodage tdc, int*o);
+int TDC_estPresentOctet(TDC_TableDeCodage tdc, O_Octet* o);
 
 /**
 * \fn int TDC_estPresentCodeBinaire(TDC_tableDeCodage tdc, codeBinaire cb)
@@ -53,7 +53,7 @@ int TDC_estPresentOctet(TDC_TableDeCodage tdc, int*o);
 * \return int
 */
 
-int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, int*cb);
+int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire* cb);
 
 /**
 * \fn octet TDC_obtenirOctet(TDC_tableDeCodage tdc, codeBinaire cb)
@@ -61,7 +61,7 @@ int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, int*cb);
 * \return octet
 */
 
-int* TDC_obtenirOctet(TDC_TableDeCodage tdc, int*cb);
+O_Octet* TDC_obtenirOctet(TDC_TableDeCodage tdc, CB_CodeBinaire* cb);
 
 /**
 * \fn codeBinaire TDC_obtenirCodeBinaire(TDC_tableDeCodage tdc, octet o)
@@ -69,7 +69,7 @@ int* TDC_obtenirOctet(TDC_TableDeCodage tdc, int*cb);
 * \return codebinaire
 */
 
-int* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, int*o);
+CB_CodeBinaire* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet*o);
 
 /**
 * \fn void TDC_retirerOctet(TDC_tableDeCodage tdc, octet o)
@@ -77,6 +77,8 @@ int* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, int*o);
 * \return void
 */
 
-void TDC_retirerOctet(TDC_TableDeCodage* tdc, int*o);
+void TDC_retirerOctet(TDC_TableDeCodage* tdc, O_Octet* o);
+
+CB_CodeBinaire* TDC_obtenirCodeBinaires(TDC_TableDeCodage tdc);
 
 #endif

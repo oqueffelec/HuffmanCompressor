@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include "TableDeCodage.h"
 #include <errno.h>
+#include "codeBinaire.h"
+#include "Octet.h"
 
 
 #define TRUE 1
@@ -22,7 +24,8 @@ TDC_TableDeCodage TDC_tableDeCodage(){
   return NULL;
 }
 
-void TDC_ajouter(TDC_TableDeCodage* tdc, int* o, int*cb){
+void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet* o, CB_CodeBinaire* cb){
+  //assert(!TDC_estPresentOctet(tdc,cb));
   TDC_TableDeCodage pNoeud=(TDC_TableDeCodage)malloc(sizeof(TDC_Noeud));
   if (pNoeud!=NULL) {
       errno=0;
@@ -35,7 +38,7 @@ void TDC_ajouter(TDC_TableDeCodage* tdc, int* o, int*cb){
   }
 }
 
-int TDC_estPresentOctet(TDC_TableDeCodage tdc, int* o){
+int TDC_estPresentOctet(TDC_TableDeCodage tdc, O_Octet* o){
   assert(tdc!=NULL);
     if(tdc->octet==o){
       return TRUE;
@@ -46,7 +49,7 @@ int TDC_estPresentOctet(TDC_TableDeCodage tdc, int* o){
     return FALSE;
 }
 
-int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, int*cb){
+int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire* cb){
     assert(tdc!=NULL);
     if(tdc->codeBinaire==cb){
       return TRUE;
@@ -59,7 +62,7 @@ int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, int*cb){
 
 
 
-int* TDC_obtenirOctet(TDC_TableDeCodage tdc, int*cb){
+O_Octet* TDC_obtenirOctet(TDC_TableDeCodage tdc, CB_CodeBinaire* cb){
   assert(TDC_estPresentCodeBinaire(tdc,cb));
   assert(tdc!=NULL);
     if(tdc->codeBinaire==cb)
@@ -68,7 +71,7 @@ int* TDC_obtenirOctet(TDC_TableDeCodage tdc, int*cb){
       return TDC_obtenirOctet(tdc->listeSuivante,cb);
 }
 
-int* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, int* o){
+CB_CodeBinaire* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet*o){
   assert(TDC_estPresentOctet(tdc,o));
   assert(tdc!=NULL);
     if(tdc->octet==o)
@@ -77,14 +80,17 @@ int* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, int* o){
       return TDC_obtenirCodeBinaire(tdc->listeSuivante,o);
 }
 
-void TDC_retirerOctet(TDC_TableDeCodage* tdc, int* o){
+void TDC_retirerOctet(TDC_TableDeCodage* tdc, O_Octet* o){
   assert(TDC_estPresentOctet(*tdc,o));
-  int* cb=TDC_obtenirCodeBinaire(*tdc,o);
+  CB_CodeBinaire* cb=TDC_obtenirCodeBinaire(*tdc,o);
   TDC_TableDeCodage temp;
   assert(tdc!=NULL);
   errno=0;
   temp=*tdc;
   *tdc=(*tdc)->listeSuivante;
   free(temp);
+
+
+
 
 }
