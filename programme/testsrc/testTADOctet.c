@@ -30,7 +30,7 @@ void test_OCTET_constructeur(){
   CB_ajouter(&cb,bitA1);
   CB_ajouter(&cb,bitA0);
   O_Octet* o=O_octet(cb);
-  CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA0 && O_obtenirbit(o,2)==bitA1 && O_obtenirbit(o,3)==bitA0);
+  CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA1 && O_obtenirbit(o,2)==bitA0 && O_obtenirbit(o,3)==bitA0);
 }
 
 void test_OCTET_comparer(){
@@ -53,7 +53,7 @@ void test_OCTET_comparer(){
   CB_ajouter(&cb2,bitA0);
   CB_ajouter(&cb2,bitA1);
   CB_ajouter(&cb2,bitA0);
-  O_Octet* o2=O_octet(cb);
+  O_Octet* o2=O_octet(cb2);
   CB_CodeBinaire cb3=CB_codeBinaire();
   CB_ajouter(&cb3,bitA0);
   CB_ajouter(&cb3,bitA1);
@@ -63,7 +63,7 @@ void test_OCTET_comparer(){
   CB_ajouter(&cb3,bitA1);
   CB_ajouter(&cb3,bitA1);
   CB_ajouter(&cb3,bitA0);
-  O_Octet* o3=O_octet(cb);
+  O_Octet* o3=O_octet(cb3);
   CU_ASSERT_TRUE(O_comparerOctet(o,o2) && !O_comparerOctet(o,o3) && !O_comparerOctet(o3,o2));
 }
 
