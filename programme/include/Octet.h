@@ -42,6 +42,22 @@ Bit O_obtenirbit(O_Octet* o, int pos);
 
 void O_ajouter(O_Octet* o,Bit bit,int pos);
 
+/**
+* \fn int O_octetendecimal(O_octet)
+* \brief convertis l'octet en décimal
+* \return int
+*/
+
+int O_octetendecimal(O_Octet* o);
+
+/**
+* \fn int O_comparerOctet(O_octet,O_octet)
+* \brief compare deux octet
+* \return int
+*/
+
+int O_comparerOctet(O_Octet* o1,O_Octet* o2);
+
 
 #endif
 
