@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "bit.h"
+#include "codeBinaire.h"
 #include <errno.h>
 
 
@@ -22,20 +23,21 @@ CB_CodeBinaire CB_codeBinaire(){
   return NULL;
 }
 
-void CB_ajouter(CB_CodeBinaire* cb, Bit* b){
+void CB_ajouter(CB_CodeBinaire* cb, Bit b){
   CB_CodeBinaire pNoeud=(CB_CodeBinaire)malloc(sizeof(CB_Noeud));
   if (pNoeud!=NULL) {
       errno=0;
       pNoeud->bit=b;
-      pNoeud->listeSuivante=*tdc;
-      *tdc=pNoeud;
+      pNoeud->listeSuivante=*cb;
+      *cb=pNoeud;
   } else {
     errno=TDC_ERREUR_MEMOIRE;
   }
 }
 
-Bit* CB_obtenirbit(CB_CodeBinaire cb, int pos){
-  assert(tdc!=NULL);
+Bit CB_obtenirbit(CB_CodeBinaire cb, unsigned int pos){
+  assert(pos>0);
+  assert(cb!=NULL);
   if(pos==1){
     return cb->bit;
   }
@@ -44,44 +46,45 @@ Bit* CB_obtenirbit(CB_CodeBinaire cb, int pos){
   }
 }
 
-void CB_suprimerTete(CB_CodeBinaire* cb){
+void CB_supprimerTete(CB_CodeBinaire* cb){
   CB_CodeBinaire temp;
-  assert(tdc!=NULL);
+  assert(cb!=NULL);
   errno=0;
   temp=*cb;
-  *tdc=(*tdc)->listeSuivante;
+  *cb=(*cb)->listeSuivante;
   free(temp);
 }
 
-void CB_suprimer(CB_CodeBinaire* cb){
-  erno=0;
+void CB_supprimer(CB_CodeBinaire* cb){
+  errno=0;
   if(cb!=NULL){
-    CB_suprimerTete(cb);
-    CB_suprimer(cb);
+    CB_supprimerTete(cb);
+    CB_supprimer(cb);
   }
 }
 
 int CB_longueur(CB_CodeBinaire cb){
-  if(cb!=NULL){
-    return 0
+  if(cb==NULL){
+    return 0;
   }
   else{
-    return 1+CB_longueur(cb->listeSuivante)
+    return 1+CB_longueur(cb->listeSuivante);
   }
-  
+
 }
 
 int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2){
-  if((cb1==NULL && cb2!=NULL) || (cb1!=NULL && cb2==NULL))){
-    return FALSE;
-  }
- else if((CB_obtenirbit(cb1,1)!=CB_obtenirbit(cb2,1)){
-	return FALSE;
-   }
-   else if (cb1==NULL && cb2==NULL){
-     return TRUE;
-   }
-   else{
-     return CB_compareCodeBinaire(cb1->listeSuivante,cb2->listeSuivante);
-   }
-}
+  if (cb1==NULL && cb2==NULL)
+    return TRUE;
+  else{
+    if((cb1==NULL && cb2!=NULL) || (cb1!=NULL && cb2==NULL))
+      return FALSE;
+    else{
+      if((CB_obtenirbit(cb1,1)!=CB_obtenirbit(cb2,1)))
+     	  return FALSE;
+        else{
+           return CB_compareCodeBinaire(cb1->listeSuivante,cb2->listeSuivante);
+          }
+        }
+      }
+    }

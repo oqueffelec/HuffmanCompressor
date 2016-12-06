@@ -11,41 +11,58 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <errno.h>
+#include "Octet.h"
 
 #define TRUE 1
 #define FALSE 0
 
+// Partie Privée
+
+int puissance2(int n){
+  if(n==0)
+    return 1;
+  else{
+    int res=1;
+    for(int i=1;i<=n;i++){
+      res=res*2;
+    }
+    return res;
+  }
+
+}
+
 void O_ajouter(O_Octet* o,Bit bit,int pos){
-  o[pos]=bit;
+  (*o)[7-pos]=bit;
 }
 
 O_Octet* O_octet(CB_CodeBinaire cb){
-  O_Octet res;
+  assert(CB_longueur(cb)==8);
+  O_Octet* res=(O_Octet*)malloc(sizeof(O_Octet));
   int i;
-  for (i=0;i<8;i++)
+  for (i=1;i<9;i++)
     {
-      res[i]=obtenirbit(cb,i);
+      O_ajouter(res,CB_obtenirbit(cb,i),i);
+      //(*res)[i]=CB_obtenirbit(cb,i);
     }
   return res;
 
 }
 
 Bit O_obtenirbit(O_Octet* o, int pos){
-  return o[pos];
+  return (*o)[pos];
 }
 
+
+
 int O_octetendecimal(O_Octet* o){
-  int res;
-  int i;
-  int puissance;
-  puissance=1;
-  for (i=0;1<8;i++)
-    {
-      if (O_obtenirbit(o,i)==1){
-	res=res+puissance;
-	  }
-      puissance=puissance*2;
+  int res=0;
+  int puissance=1;
+  for (int i=0;i<8;i++){
+      if (O_obtenirbit(o,i)==bitA1){
+	       res=res+puissance2(i);
+	      }
     }
+  return res;
 }
 
 int O_comparerOctet(O_Octet* o1,O_Octet* o2){
@@ -59,8 +76,7 @@ int O_comparerOctet(O_Octet* o1,O_Octet* o2){
 	{
 	  res=FALSE;
 	}
-      i++
+      i++;
 	}
   return res;
 }
-

@@ -10,18 +10,17 @@
 #include "codeBinaire.h"
 #include "Octet.h"
 #define TDC_ERREUR_MEMOIRE 1
+#define TDC_SIZE 256
 
 /**
 * \struct TDC_tableDeCodage tableDeCodage.h
 * \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
 */
 
-typedef struct TDC_Noeud* TDC_TableDeCodage;
-typedef struct TDC_Noeud {
-	O_Octet* octet;
-  CB_CodeBinaire* codeBinaire;
-	TDC_TableDeCodage listeSuivante;
-}  TDC_Noeud;
+
+typedef struct TDC_TableDeCodage {
+CB_CodeBinaire codeBinaire[TDC_SIZE];
+}  TDC_TableDeCodage;
 
 /**
 * \fn TDC_tableDeCodage TDC_tableDeCodage()
@@ -37,15 +36,7 @@ TDC_TableDeCodage TDC_tableDeCodage();
 * \return void
 */
 
-void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet* o, CB_CodeBinaire* cb);
-
-/**
-* \fn TDC_estPresentOctet(TDC_tableDeCodage, octet)
-* \brief verifie la presence d'un octet dans la TDC
-* \return int
-*/
-
-int TDC_estPresentOctet(TDC_TableDeCodage tdc, O_Octet* o);
+void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet* o, CB_CodeBinaire cb);
 
 /**
 * \fn int TDC_estPresentCodeBinaire(TDC_tableDeCodage tdc, codeBinaire cb)
@@ -53,15 +44,8 @@ int TDC_estPresentOctet(TDC_TableDeCodage tdc, O_Octet* o);
 * \return int
 */
 
-int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire* cb);
+int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb);
 
-/**
-* \fn octet TDC_obtenirOctet(TDC_tableDeCodage tdc, codeBinaire cb)
-* \brief renvoie l'octet correspondant
-* \return octet
-*/
-
-O_Octet* TDC_obtenirOctet(TDC_TableDeCodage tdc, CB_CodeBinaire* cb);
 
 /**
 * \fn codeBinaire TDC_obtenirCodeBinaire(TDC_tableDeCodage tdc, octet o)
@@ -69,7 +53,7 @@ O_Octet* TDC_obtenirOctet(TDC_TableDeCodage tdc, CB_CodeBinaire* cb);
 * \return codebinaire
 */
 
-CB_CodeBinaire* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet*o);
+CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet* o);
 
 /**
 * \fn void TDC_retirerOctet(TDC_tableDeCodage tdc, octet o)
@@ -77,8 +61,6 @@ CB_CodeBinaire* TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet*o);
 * \return void
 */
 
-void TDC_retirerOctet(TDC_TableDeCodage* tdc, O_Octet* o);
-
-CB_CodeBinaire* TDC_obtenirCodeBinaires(TDC_TableDeCodage tdc);
+CB_CodeBinaire TDC_obtenirCodeBinaires(TDC_TableDeCodage tdc);
 
 #endif

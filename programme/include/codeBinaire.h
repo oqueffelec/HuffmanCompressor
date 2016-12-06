@@ -1,6 +1,6 @@
 /**
  * \CodeBinaire.h
- * \brief Implantation du TAD codeBinaire : codeBinaire est une liste chainé 
+ * \brief Implantation du TAD codeBinaire : codeBinaire est une liste chainé
  * \author Jean-Gabriel Wacyk
  * \version 1.0
  */
@@ -9,6 +9,7 @@
 #define __CODE__BINAIRE__
 
 #include "bit.h"
+#define TDC_ERREUR_MEMOIRE 1
 
 /**
 * \struct CB_codeBinaire CodeBinaire.h
@@ -23,7 +24,7 @@ typedef struct CB_Noeud {
 
 /**
  *\fn CB_codeBinaire CB_codeBinaire()
- *\brief renvoie 
+ *\brief renvoie
  *\return CB_codeBinaire
  */
 
@@ -43,7 +44,7 @@ void CB_ajouter(CB_CodeBinaire* cb,Bit bit);
 * \return void
 */
 
-void CB_suprimer(CB_CodeBinaire* cb);
+void CB_supprimer(CB_CodeBinaire* cb);
 
 /**
 * \fn int CB_longueur(CB_codeBinaire)
@@ -59,7 +60,7 @@ int CB_longueur(CB_CodeBinaire cb);
 * \return int
 */
 
-Bit* CB_obtenirbit(CB_CodeBinaire cb, int pos);
+Bit CB_obtenirbit(CB_CodeBinaire cb, unsigned int pos);
 
 /**
 * \fn int CB_compareCodeBinaire(CB_codeBinaire, CB_codeBinaire)
@@ -68,5 +69,7 @@ Bit* CB_obtenirbit(CB_CodeBinaire cb, int pos);
 */
 
 int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2);
+
+void CB_supprimerTete(CB_CodeBinaire* cb);
 
 #endif
