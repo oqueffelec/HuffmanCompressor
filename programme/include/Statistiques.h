@@ -1,82 +1,65 @@
 /**
- * \file Statistiques.h
- * \brief Implantation du TAD Statistiques : Statistiques est un dictionnaire qui a pour clé un octet et pour valeur un Naturel
- * \author Mathieu Vandecasteele
+ * \file tableDeCodage.h
+ * \brief Implantation du TAD tableDeCodage : tableDeCodage est un dictionnaire qui a pour clé un octet et pour valeur un code binaire
+ * \author Octave Queffelec
  * \version 1.0
  */
 #ifndef __STATISTIQUES__
 #define __STATISTIQUES__
 
-//#include "Octet.h"
+#include "Octet.h"
 #define STAT_ERREUR_MEMOIRE 1
+#define STAT_SIZE 256
 
 /**
-* \struct STAT_Statistiques Statistiques.h
+* \struct STAT_Statistiques tableDeCodage.h
 * \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
 */
 
-typedef struct STAT_Noeud* STAT_Statistiques;
-typedef struct STAT_Noeud {
-	int* octet;
-  unsigned long int* naturel;
-	STAT_Statistiques listeSuivante;
-}  STAT_Noeud;
+
+typedef struct STAT_Statistiques {
+unsigned long int valeur[STAT_SIZE];
+}  STAT_Statistiques;
 
 /**
-* \fn STAT_Statistiques STAT_statistiques()
-* \brief crée une variale de type STAT_Statistiques
+* \fn STAT_Statistiques STAT_Statistiques()
+* \brief renvoie la position d'un coup
 * \return STAT_Statistiques
 */
 
 STAT_Statistiques STAT_statistiques();
 
 /**
-* \fn void STAT_ajouterElement(STAT_Statistiques* stat, int*o, unsigned long int*naturel)
+* \fn void ajouter(STAT_Statistiques, octet, codeBinaire)
 * \brief ajoute un couple cle valeur à la stat
 * \return void
 */
 
-void STAT_ajouterElement(STAT_Statistiques* stat, int*o, unsigned long int*naturel);
+void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o, unsigned long int nat);
 
 /**
-* \fn int STAT_estPresentOctet(STAT_Statistiques stat, int*o);
-* \brief verifie la presence d'un octet dans la stat
+* \fn int stat_estPresentCodeBinaire(STAT_Statistiques stat, codeBinaire cb)
+* \brief verifie la presence d'un codebinaire dans la stat
 * \return int
 */
 
-int STAT_estPresentOctet(STAT_Statistiques stat, int*o);
+int STAT_estPresent(STAT_Statistiques stat, unsigned long int nat);
+
 
 /**
-* \fn int STAT_estPresentNaturel(STAT_Statistiques stat, unsigned long int*nat)
-* \brief verifie la presence d'un naturel dans la stat
-* \return int
+* \fn codeBinaire stat_obtenirCodeBinaire(STAT_Statistiques stat, octet o)
+* \brief renvoie le codebinaire correspondant
+* \return codebinaire
 */
 
-int STAT_estPresentNaturel(STAT_Statistiques stat, unsigned long int*nat);
+unsigned long int STAT_obtenirCodeBinaire(STAT_Statistiques stat, O_Octet* o);
 
 /**
-* \fn int* STAT_obtenirOctet(STAT_Statistiques stat, unsigned long int*nat)
-* \brief renvoie l'octet correspondant à un naturel
-* \return int*
-*/
-
-
-int* STAT_obtenirOctet(STAT_Statistiques stat, unsigned long int*nat);
-
-/**
-* \fn unsigned long int* STAT_obtenirValeur(STAT_Statistiques stat, int*o)
-* \brief renvoie le naturel correspondant
-* \return unsigned long int*
-*/
-
-unsigned long int* STAT_obtenirValeur(STAT_Statistiques stat, int*o);
-
-/**
-* \fn void STAT_obtenirValeurs(STAT_Statistiques* stat)
-* \brief renvoie la liste des octets présents
+* \fn void stat_retirerOctet(STAT_Statistiques stat, octet o)
+* \brief retire le couple octet codebinaire
 * \return void
 */
 
-void STAT_obtenirValeurs(STAT_Statistiques* stat);
+unsigned long int STAT_obtenirCodeBinaires(STAT_Statistiques stat);
 
 #endif
