@@ -19,12 +19,20 @@
 typedef Bit O_Octet[8];
 
 /**
- *\fn O_Octet O_octet()
- *\brief renvoie un octet de 8 bit
+ *\fn O_Octet O_octet(CB_CodeBinaire)
+ *\brief renvoie un octet de 8 bit à partir d'un CodeBinaire
  *\return O_octet
  */
 
 O_Octet* O_octet(CB_CodeBinaire cb);
+
+/**
+ *\fn O_Octet O_octetparbit(Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
+ *\brief renvoie un octet de 8 bit à partir de 8 bit
+ *\return O_octet
+ */
+
+O_Octet* O_octetparbit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7);
 
 /**
 * \fn int O_obtenirbit(O_octet, int)

@@ -50,6 +50,19 @@ O_Octet* O_octet(CB_CodeBinaire cb){
 
 }
 
+O_Octet* O_octetparbit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7){
+  O_Octet* res=(O_Octet*)malloc(sizeof(O_Octet));
+  (*res)[0]=bit0;
+  (*res)[1]=bit1;
+  (*res)[2]=bit2;
+  (*res)[3]=bit3;
+  (*res)[4]=bit4;
+  (*res)[5]=bit5;
+  (*res)[6]=bit6;
+  (*res)[7]=bit7;
+  return res;
+}
+
 Bit O_obtenirbit(O_Octet* o, int pos){
   return (*o)[pos];
 }
