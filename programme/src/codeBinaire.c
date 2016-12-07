@@ -57,7 +57,7 @@ void CB_supprimerTete(CB_CodeBinaire* cb){
 
 void CB_supprimer(CB_CodeBinaire* cb){
   errno=0;
-  if(cb!=NULL){
+  if(*cb!=NULL){
     CB_supprimerTete(cb);
     CB_supprimer(cb);
   }
