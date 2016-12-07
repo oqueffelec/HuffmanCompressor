@@ -8,7 +8,8 @@
  #ifndef __ARBRE_DE_HUFFMAN__
  #define __ARBRE_DE_HUFFMAN__
 
-
+#define ADH_ERREUR_MEMOIRE 1
+#include "Octet.h"
 /**
 * \struct TDC_tableDeCodage tableDeCodage.h
 * \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
@@ -16,7 +17,7 @@
 typedef ADH_Noeud *ArbreDeHuffman;
 typedef struct ADH_Noeud{
   unsigned int ponderation;
-  char caractere;
+  O_octet caractere;
   struct ADH_Noeud filsG;
   struct ADH_Noeud filsD;
 }ADH_Noeud;
@@ -27,7 +28,7 @@ typedef struct ADH_Noeud{
 * \return ArbreDeHuffman
 */
 
-ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, char caractere);
+ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, O_octet caractere);
 
 /**
 * \fn int estUneFeuille(ArbreDeHuffman arbre)

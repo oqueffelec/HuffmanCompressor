@@ -4,13 +4,13 @@
 #include <stdio.h>
 #include <errno.h>
 #include "arbreDeHuffman.h"
+#include "Octet.h"
 
 #define TRUE 1
 #define FALSE 0
-#define ADH_ERREUR_MEMOIRE 1
 
 
-ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, char caractere){
+ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, O_octet caractere){
   ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(sizeof(ADH_Noeud));
   if (arbre!=NULL){
     errno = 0;
@@ -49,7 +49,7 @@ unsigned int obtenirPonderation(ArbreDeHuffman arbre){
   return(arbre->ponderation);
 }
 
-char obtenirCaractere(ArbreDeHuffman feuille){
+O_octet obtenirCaractere(ArbreDeHuffman feuille){
   assert(estUneFeuille(feuille));
   return(arbre->caractere);
 }
