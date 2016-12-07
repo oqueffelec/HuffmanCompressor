@@ -17,8 +17,8 @@ typedef ADH_Noeud *ArbreDeHuffman;
 typedef struct ADH_Noeud{
   unsigned int ponderation;
   char caractere;
-  struct ADH_Noeud *P_filsG;
-  struct ADH_Noeud *P_filsD;
+  struct ADH_Noeud filsG;
+  struct ADH_Noeud filsD;
 }ADH_Noeud;
 
 /**
