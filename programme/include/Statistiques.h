@@ -1,65 +1,98 @@
 /**
- * \file tableDeCodage.h
- * \brief Implantation du TAD tableDeCodage : tableDeCodage est un dictionnaire qui a pour clé un octet et pour valeur un code binaire
- * \author Octave Queffelec
+ * \file Statistiques.h
+ * \brief Implantation du TAD Statistiques : Statistiques est un dictionnaire qui a pour clé un octet et pour valeur un naturel = une pondération
+ * \author Mathieu Vandecasteele
  * \version 1.0
+ * \date 20/11/2016
  */
 #ifndef __STATISTIQUES__
 #define __STATISTIQUES__
 
 #include "Octet.h"
+
 #define STAT_ERREUR_MEMOIRE 1
 #define STAT_SIZE 256
 
 /**
-* \struct STAT_Statistiques tableDeCodage.h
-* \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
+* \struct STAT_Statistiques Statistiques.h
+* \brief la structure est un tableau de 256 élements soit 256 octets de type Octet maximum.
 */
-
 
 typedef struct STAT_Statistiques {
 unsigned long int valeur[STAT_SIZE];
 }  STAT_Statistiques;
 
+
 /**
-* \fn STAT_Statistiques STAT_Statistiques()
-* \brief renvoie la position d'un coup
+* \struct STAT_ListeOctets Statistiques.h
+* \brief la structure est une liste chainée (1 élément + 1 pointeur vers listesuivante).
+*/
+
+typedef struct noeud Noeud;
+struct noeud
+{
+    O_Octets o;
+    struct noeud *listeSuivante;
+};
+ 
+typedef Noeud* STAT_ListeOctets;
+
+/**
+* \fn STAT_Statistiques STAT_statistiques()
+* \brief initialise une variable STAT_Statistiques
 * \return STAT_Statistiques
 */
 
 STAT_Statistiques STAT_statistiques();
 
+
+
 /**
-* \fn void ajouter(STAT_Statistiques, octet, codeBinaire)
-* \brief ajoute un couple cle valeur à la stat
+* \fn void STAT_ajouter(STAT_Statistiques* stat, O_Octet* octet, unsigned long int pond)
+* \brief met à jour la pondération associée à un octet.
 * \return void
 */
 
-void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o, unsigned long int nat);
+void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o, unsigned long int pond);
+
+
 
 /**
-* \fn int stat_estPresentCodeBinaire(STAT_Statistiques stat, codeBinaire cb)
-* \brief verifie la presence d'un codebinaire dans la stat
+* \fn int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet o)
+* \brief verifie la presence d'un octet dans la stat
 * \return int
 */
 
-int STAT_estPresent(STAT_Statistiques stat, unsigned long int nat);
+int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet o);
+
+
+
+/**
+* \fn int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond)
+* \brief verifie la presence d'une pondération dans la stat
+* \return int
+*/
+
+int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond);
+
 
 
 /**
-* \fn codeBinaire stat_obtenirCodeBinaire(STAT_Statistiques stat, octet o)
-* \brief renvoie le codebinaire correspondant
-* \return codebinaire
+* \fn unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet* o)
+* \brief renvoie la pondération correspondante
+* \return unsigned long int
 */
 
-unsigned long int STAT_obtenirCodeBinaire(STAT_Statistiques stat, O_Octet* o);
+unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet* o);
+
+
 
 /**
-* \fn void stat_retirerOctet(STAT_Statistiques stat, octet o)
-* \brief retire le couple octet codebinaire
-* \return void
+* \fn STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat)
+* \brief obtient une liste d'Octets
+* \return STAT_ListeOctets
 */
 
-unsigned long int STAT_obtenirCodeBinaires(STAT_Statistiques stat);
+STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat);
 
 #endif
