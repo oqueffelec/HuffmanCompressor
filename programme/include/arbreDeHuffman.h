@@ -68,7 +68,7 @@ unsigned int obtenirPonderation(ArbreDeHuffman feuille);
 * \return char
 */
 
-char obtenirCaractere(ArbreDeHuffman feuille);
+O_octet *obtenirCaractere(ArbreDeHuffman feuille);
 
 /**
 * \fn ArbreDeHuffman ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2)

@@ -49,7 +49,7 @@ unsigned int obtenirPonderation(ArbreDeHuffman arbre){
   return(arbre->ponderation);
 }
 
-O_octet obtenirCaractere(ArbreDeHuffman feuille){
+O_octet *obtenirCaractere(ArbreDeHuffman feuille){
   assert(estUneFeuille(feuille));
   return(arbre->caractere);
 }
