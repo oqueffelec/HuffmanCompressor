@@ -58,7 +58,6 @@ Bit O_obtenirbit(O_Octet* o, int pos){
 
 int O_octetendecimal(O_Octet* o){
   int res=0;
-  int puissance=1;
   for (int i=0;i<8;i++){
       if (O_obtenirbit(o,i)==bitA1){
 	       res=res+puissance2(i);
