@@ -11,7 +11,7 @@
 
 
 ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, char caractere){
-  ArbreDeHuffman *arbre=(ArbreDeHuffman)malloc(sizeof(ADH_Noeud));
+  ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(sizeof(ADH_Noeud));
   if (arbre!=NULL){
     errno = 0;
     arbre->ponderation = ponderation;
@@ -55,7 +55,7 @@ char obtenirCaractere(ArbreDeHuffman feuille){
 }
 
 ArbreDeHuffman ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2){
-  ArbreDeHuffman *arbre=(ArbreDeHuffman)malloc(siezof(ADH_Noeud));
+  ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(siezof(ADH_Noeud));
   if (arbre!=NULL){
     errno=0;
     arbre->ponderation = (arbre1->pondaration)+(arbre2->ponderation);
