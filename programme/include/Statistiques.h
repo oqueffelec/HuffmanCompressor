@@ -28,14 +28,14 @@ unsigned long int valeur[STAT_SIZE];
 * \brief la structure est une liste chainée (1 élément + 1 pointeur vers listesuivante).
 */
 
-typedef struct noeud Noeud;
+/*typedef struct noeud Noeud;
 struct noeud
 {
-    O_Octets o;
+    O_Octets* o;
     struct noeud *listeSuivante;
 };
- 
-typedef Noeud* STAT_ListeOctets;
+
+typedef Noeud* STAT_ListeOctets;*/
 
 /**
 * \fn STAT_Statistiques STAT_statistiques()
@@ -54,17 +54,6 @@ STAT_Statistiques STAT_statistiques();
 */
 
 void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o, unsigned long int pond);
-
-
-
-/**
-* \fn int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet o)
-* \brief verifie la presence d'un octet dans la stat
-* \return int
-*/
-
-int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet o);
-
 
 
 /**
@@ -93,6 +82,6 @@ unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet* o);
 * \return STAT_ListeOctets
 */
 
-STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat);
+/*STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat);*/
 
 #endif

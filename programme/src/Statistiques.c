@@ -3,77 +3,55 @@
   * \brief Conception du TAD Statistiques
   * \author Mathieu Vandecasteele
   * \version 1.0
-  * \date 26/11/2016
+  * \date 20/11/2016
   */
-
+#include <string.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include "Statistiques.h"
 #include <errno.h>
+#include "Octet.h"
 
 
 #define TRUE 1
 #define FALSE 0
 
 STAT_Statistiques STAT_statistiques(){
-  errno=0;
-  return NULL;
-}
-
-void STAT_ajouterElement(STAT_Statistiques* stat, int*o, unsigned long int*naturel){
-  STAT_Statistiques pNoeud=(STAT_Statistiques)malloc(sizeof(STAT_Noeud));
-  if (pNoeud!=NULL) {
-      errno=0;
-      pNoeud->octet=o;
-      pNoeud->naturel=cb;
-      pNoeud->listeSuivante=*stat;
-      *stat=pNoeud;
-  } else {
-    errno=STAT_ERREUR_MEMOIRE;
+  STAT_Statistiques stat;
+  for(int i=0; i<STAT_SIZE;i++){
+    stat.valeur[i]=0;
   }
+  return stat;
 }
 
-int STAT_estPresentOctet(STAT_Statistiques stat, int*o){
-  assert(stat!=NULL);
-    if(stat->octet==o){
-      return TRUE;
-    }
+void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o, unsigned long int pond){
+stat->valeur[O_octetendecimal(o)]=pond;
+}
+
+int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond){
+  int i=0;
+  int estPresent=FALSE;
+  while ((!estPresent) && (i<STAT_SIZE)){
+    if (stat.valeur[i] == pond){
+      estPresent=TRUE;}
     else{
-      STAT_estPresentOctet(stat->listeSuivante,o);
-    }
-    return FALSE;
+      i++;}
+  }
+  return estPresent;
 }
 
-int STAT_estPresentNaturel(STAT_Statistiques stat, unsigned long int*nat){
-    assert(stat!=NULL);
-    if(stat->naturel==nat){
-      return TRUE;
-    }
-    else{
-      STAT_estPresentNaturel(stat->listeSuivante,nat);
-    }
-    return FALSE;
+unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet* o){
+  return stat.valeur[O_octetendecimal(o)];
 }
 
-int* STAT_obtenirOctet(STAT_Statistiques stat, unsigned long int*nat){
-  assert(STAT_estPresentNaturel(stat,nat));
-  assert(stat!=NULL);
-    if(stat->naturel==nat)
-      return stat->octet;
-    else
-      return STAT_obtenirOctet(stat->listeSuivante,nat);
-}
+/*STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat)
+STAT_ListesOctets Liste;
+Liste.o = O_Octet(0,0,0,0,0,0,0,0)
+if (Liste.listeSuivante = NULL){
+return Liste;}
+else {
+return STAT_obtenirOctets()
 
-unsigned long int* STAT_obtenirValeur(STAT_Statistiques stat, int*o);{
-  assert(STAT_estPresentOctet(stat,o));
-  assert(stat!=NULL);
-    if(stat->octet==o)
-      return stat->naturel;
-    else
-      return STAT_obtenirValeur(stat->listeSuivante,o);
-}
-
-void STAT_obtenirValeurs(STAT_Statistiques* stat){
-}
+}*/
