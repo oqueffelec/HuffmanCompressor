@@ -1,6 +1,6 @@
 /**
  * \Octet.h
- * \brief Implantation du TAD octet : codeBinaire est un tableau de 8 bit 
+ * \brief Implantation du TAD octet : codeBinaire est un tableau de 8 bit
  * \author Jean-Gabriel Wacyk
  * \version 1.0
  */
@@ -66,9 +66,7 @@ int O_octetendecimal(O_Octet* o);
 
 int O_comparerOctet(O_Octet* o1,O_Octet* o2);
 
+O_Octet* O_octetZero();
+
 
 #endif
-
-
-
-

@@ -33,6 +33,15 @@ int puissance2(int n){
 
 // Partie publique
 
+O_Octet* O_octetZero(){
+  O_Octet* o;
+  for(int i=0;i<8;i++)
+    O_ajouter(o,bitA0,i);
+  return o;
+  }
+
+
+
 void O_ajouter(O_Octet* o,Bit bit,int pos){
   (*o)[7-pos]=bit;
 }
