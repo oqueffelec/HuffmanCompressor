@@ -14,13 +14,14 @@
 * \struct TDC_tableDeCodage tableDeCodage.h
 * \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
 */
-typedef ADH_Noeud *ArbreDeHuffman;
+
 typedef struct ADH_Noeud{
   unsigned int ponderation;
-  O_octet caractere;
-  struct ADH_Noeud filsG;
-  struct ADH_Noeud filsD;
+  O_Octet caractere;
+  struct ADH_Noeud *filsG;
+  struct ADH_Noeud *filsD;
 }ADH_Noeud;
+typedef ADH_Noeud *ArbreDeHuffman;
 
 /**
 * \fn ArbreDeHuffman arbreDeHuffman(unsigned int ponderation, char caractere)
@@ -28,7 +29,7 @@ typedef struct ADH_Noeud{
 * \return ArbreDeHuffman
 */
 
-ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, O_octet caractere);
+ArbreDeHuffman ADH_creerArbreDeHuffman(unsigned int ponderation, O_Octet caractere);
 
 /**
 * \fn int estUneFeuille(ArbreDeHuffman arbre)
@@ -36,7 +37,7 @@ ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, O_octet caractere);
 * \return {1 0}
 */
 
-int estUneFeuille(ArbreDeHuffman arbre);
+int ADH_estUneFeuille(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman obtenirFilsGauche(ArbreDeHuffman arbre)
@@ -44,7 +45,7 @@ int estUneFeuille(ArbreDeHuffman arbre);
 * \return ArbreDeHuffman
 */
 
-ArbreDeHuffman obtenirFilsGauche(ArbreDeHuffman arbre);
+ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman obtenirFilsDroit(ArbreDeHuffman arbre)
@@ -52,7 +53,7 @@ ArbreDeHuffman obtenirFilsGauche(ArbreDeHuffman arbre);
 * \return ArbreDeHuffman
 */
 
-ArbreDeHuffman obtenirFilsDroit(ArbreDeHuffman arbre);
+ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre);
 
 /**
 * \fn unsigned int obtenirPonderation(ArbreDeHuffman arbre)
@@ -60,7 +61,7 @@ ArbreDeHuffman obtenirFilsDroit(ArbreDeHuffman arbre);
 * \return unsigned int
 */
 
-unsigned int obtenirPonderation(ArbreDeHuffman feuille);
+unsigned int ADH_obtenirPonderation(ArbreDeHuffman feuille);
 
 /**
 * \fn char obtenirCaractere(ArbreDeHuffman feuille)
@@ -68,7 +69,7 @@ unsigned int obtenirPonderation(ArbreDeHuffman feuille);
 * \return char
 */
 
-O_octet *obtenirCaractere(ArbreDeHuffman feuille);
+O_Octet *ADH_obtenirCaractere(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2)
@@ -76,4 +77,7 @@ O_octet *obtenirCaractere(ArbreDeHuffman feuille);
 * \return ArbreDeHuffman
 */
 
-ArbreDeHuffman ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2);
+ArbreDeHuffman ADH_ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2);
+
+
+#endif

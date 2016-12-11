@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <errno.h>
+#include <string.h>
 #include "arbreDeHuffman.h"
 #include "Octet.h"
 
@@ -10,12 +11,12 @@
 #define FALSE 0
 
 
-ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, O_octet caractere){
+ArbreDeHuffman ADH_creerArbreDeHuffman(unsigned int ponderation, O_Octet caractere){
   ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(sizeof(ADH_Noeud));
   if (arbre!=NULL){
     errno = 0;
     arbre->ponderation = ponderation;
-    arbre->caractere = caractere;
+    memcpy(arbre->caractere,caractere,sizeof(O_Octet));
     arbre->filsG = NULL;
     arbre->filsD = NULL;
     return(arbre);
@@ -26,7 +27,7 @@ ArbreDeHuffman creerArbreDeHuffman(unsigned int ponderation, O_octet caractere){
 }
 
 
-int estUneFeuille(ArbreDeHuffman arbre){
+int ADH_estUneFeuille(ArbreDeHuffman arbre){
   if(((arbre->filsG)==NULL)&&((arbre->filsD)==NULL)){
     return (TRUE);
   }
@@ -36,30 +37,32 @@ int estUneFeuille(ArbreDeHuffman arbre){
 }
 
 
-ArbreDeHuffman obtenirFilsGauche(ArbreDeHuffman arbre){
+ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre){
   return(arbre->filsG);
 }
 
 
-ArbreDeHuffman obtenirFilsDroit(ArbreDeHuffman arbre){
+ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre){
   return(arbre->filsD);
 }
 
-unsigned int obtenirPonderation(ArbreDeHuffman arbre){
+unsigned int ADH_obtenirPonderation(ArbreDeHuffman arbre){
   return(arbre->ponderation);
 }
 
-O_octet *obtenirCaractere(ArbreDeHuffman feuille){
-  assert(estUneFeuille(feuille));
-  return(arbre->caractere);
+O_Octet *ADH_obtenirCaractere(ArbreDeHuffman feuille){
+  assert(ADH_estUneFeuille(feuille));
+  O_Octet *octet=(O_Octet*)malloc(sizeof(O_Octet));
+  memcpy(octet,feuille->caractere,sizeof(&feuille->caractere));
+  return (octet);
 }
 
-ArbreDeHuffman ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2){
-  ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(siezof(ADH_Noeud));
+ArbreDeHuffman ADH_ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2){
+  ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(sizeof(ADH_Noeud));
   if (arbre!=NULL){
     errno=0;
-    arbre->ponderation = (arbre1->pondaration)+(arbre2->ponderation);
-    arbre->caractere = NULL;
+    arbre->ponderation = (arbre1->ponderation)+(arbre2->ponderation);
+    memcpy(arbre->caractere,O_octetZero(),sizeof(arbre->caractere));
     if ((arbre1->ponderation)<(arbre2->ponderation)){
       arbre->filsG = arbre2;
       arbre->filsD = arbre1;
