@@ -1,6 +1,6 @@
 /**
- * \file Statistiques.h
- * \brief Implantation du TAD Statistiques : Statistiques est un dictionnaire qui a pour clé un octet et pour valeur un naturel = une pondération
+ * \file statistiques.h
+ * \brief Implantation du TAD Statistiques : Statistiques est un tableau de 256 Octets.
  * \author Mathieu Vandecasteele
  * \version 1.0
  * \date 20/11/2016
@@ -8,10 +8,10 @@
 #ifndef __STATISTIQUES__
 #define __STATISTIQUES__
 
-#include "Octet.h"
+#include "octet.h"
 
 #define STAT_ERREUR_MEMOIRE 1
-#define STAT_SIZE 256
+#define STAT_SIZE 255
 
 /**
 * \struct STAT_Statistiques Statistiques.h

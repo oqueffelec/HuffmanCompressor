@@ -1,5 +1,5 @@
 /**
-  * \file Statistiques.c
+  * \file statistiques.c
   * \brief Conception du TAD Statistiques
   * \author Mathieu Vandecasteele
   * \version 1.0
@@ -10,9 +10,9 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "Statistiques.h"
+#include "statistiques.h"
 #include <errno.h>
-#include "Octet.h"
+#include "octet.h"
 
 
 #define TRUE 1
