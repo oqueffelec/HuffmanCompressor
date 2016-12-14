@@ -34,7 +34,7 @@ int puissance2(int n){
 // Partie publique
 
 O_Octet* O_octetZero(){
-  O_Octet* o;
+  O_Octet* o=(O_Octet*)malloc(sizeof(O_Octet));
   for(int i=0;i<8;i++)
     O_ajouter(o,bitA0,i);
   return o;
