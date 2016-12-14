@@ -23,6 +23,7 @@ ArbreDeHuffman ADH_creerArbreDeHuffman(unsigned int ponderation, O_Octet caracte
   }
   else{
     errno = ADH_ERREUR_MEMOIRE;
+    return NULL;
   }
 }
 
@@ -53,7 +54,7 @@ unsigned int ADH_obtenirPonderation(ArbreDeHuffman arbre){
 O_Octet *ADH_obtenirCaractere(ArbreDeHuffman feuille){
   assert(ADH_estUneFeuille(feuille));
   O_Octet *octet=(O_Octet*)malloc(sizeof(O_Octet));
-  memcpy(octet,feuille->caractere,sizeof(&feuille->caractere));
+  memcpy(octet,feuille->caractere,sizeof(feuille->caractere));
   return (octet);
 }
 
@@ -75,5 +76,6 @@ ArbreDeHuffman ADH_ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2){
   }
   else{
     errno=ADH_ERREUR_MEMOIRE;
+    return NULL;
   }
 }
