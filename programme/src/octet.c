@@ -11,7 +11,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <errno.h>
-#include "Octet.h"
+#include "octet.h"
 
 #define TRUE 1
 #define FALSE 0
