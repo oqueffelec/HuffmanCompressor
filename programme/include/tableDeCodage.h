@@ -8,7 +8,7 @@
 #define __TABLE__DE__CODAGE__
 
 #include "codeBinaire.h"
-#include "Octet.h"
+#include "octet.h"
 #define TDC_ERREUR_MEMOIRE 1
 #define TDC_SIZE 256
 

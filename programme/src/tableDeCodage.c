@@ -10,10 +10,10 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "TableDeCodage.h"
+#include "tableDeCodage.h"
 #include <errno.h>
 #include "codeBinaire.h"
-#include "Octet.h"
+#include "octet.h"
 
 
 #define TRUE 1
