@@ -9,7 +9,7 @@
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
 #include "codeBinaire.h"
-#include "Octet.h"
+#include "octet.h"
 
 int init_suite_success() {
   return 0;
@@ -30,6 +30,11 @@ void test_OCTET_constructeur(){
   CB_ajouter(&cb,bitA1);
   CB_ajouter(&cb,bitA0);
   O_Octet* o=O_octet(cb);
+  CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA1 && O_obtenirbit(o,2)==bitA0 && O_obtenirbit(o,3)==bitA0);
+}
+
+void test_OCTET_constructeur2(){
+  O_Octet* o=O_octetparbit(bitA0,bitA1,bitA0,bitA0,bitA0,bitA1,bitA0,bitA0);
   CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA1 && O_obtenirbit(o,2)==bitA0 && O_obtenirbit(o,3)==bitA0);
 }
 
@@ -99,6 +104,7 @@ int main(int argc, char** argv){
 
   /* Ajout des tests a la suite de tests boite noire */
   if ((NULL == CU_add_test(pSuite, "OCTET_constructeur", test_OCTET_constructeur))
+      || (NULL == CU_add_test(pSuite, "OCTET_constructeur2", test_OCTET_constructeur2))
       || (NULL == CU_add_test(pSuite, "OCTET_comparer", test_OCTET_comparer))
       || (NULL == CU_add_test(pSuite, "OCTET_octetendecimal", test_OCTET_octetendecimal))
       )
