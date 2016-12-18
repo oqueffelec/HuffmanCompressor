@@ -10,6 +10,7 @@
 #include <math.h>
 #include "bit.h"
 #include "codeBinaire.h"
+#include "caractereEnCodeBinaire.h"
 
 CB_CodeBinaire caractereEnCodeBinaire(char c){
 
