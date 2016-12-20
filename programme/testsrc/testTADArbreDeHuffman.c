@@ -1,6 +1,6 @@
 /*
  * \file testTADArbreDeHuffman.c
- * \brief Tests des fonctions utilisees dans codeBinaire.c
+ * \brief Tests des fonctions utilisees dans arbreDeHuffman.c
  * \author Octave Queffelec
  */
 

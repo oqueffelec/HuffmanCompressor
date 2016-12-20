@@ -53,7 +53,7 @@ STAT_Statistiques STAT_statistiques();
 * \return void
 */
 
-void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o, unsigned long int pond);
+void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o);
 
 
 /**

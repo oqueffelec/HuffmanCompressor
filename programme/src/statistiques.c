@@ -26,8 +26,8 @@ STAT_Statistiques STAT_statistiques(){
   return stat;
 }
 
-void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o, unsigned long int pond){
-stat->valeur[O_octetendecimal(o)]=pond;
+void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o){
+stat->valeur[O_octetendecimal(o)]=STAT_obtenirPonderation(*stat,o)+1;
 }
 
 int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond){
@@ -35,9 +35,11 @@ int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond){
   int estPresent=FALSE;
   while ((!estPresent) && (i<STAT_SIZE)){
     if (stat.valeur[i] == pond){
-      estPresent=TRUE;}
+      estPresent=TRUE;
+    }
     else{
-      i++;}
+      i++;
+    }
   }
   return estPresent;
 }
