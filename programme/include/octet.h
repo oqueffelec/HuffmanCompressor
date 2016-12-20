@@ -32,7 +32,7 @@ O_Octet* O_octet(CB_CodeBinaire cb);
  *\return O_octet
  */
 
-O_Octet* O_octetparbit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7);
+O_Octet* O_octetParBit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7);
 
 /**
 * \fn int O_obtenirbit(O_octet, int)

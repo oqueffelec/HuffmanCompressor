@@ -11,7 +11,7 @@
 #define FALSE 0
 
 
-ArbreDeHuffman ADH_creerArbreDeHuffman(unsigned int ponderation, O_Octet caractere){
+ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet* caractere){
   ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(sizeof(ADH_Noeud));
   if (arbre!=NULL){
     errno = 0;

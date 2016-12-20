@@ -59,7 +59,7 @@ O_Octet* O_octet(CB_CodeBinaire cb){
 
 }
 
-O_Octet* O_octetparbit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7){
+O_Octet* O_octetParBit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7){
   O_Octet* res=(O_Octet*)malloc(sizeof(O_Octet));
   (*res)[0]=bit0;
   (*res)[1]=bit1;
