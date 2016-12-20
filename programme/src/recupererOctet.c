@@ -15,29 +15,16 @@
 #include "octet.h"
 
 O_Octet* recupererOctet(FILE* fichier,const char* nomfichier){
+
 char caracterelu;
 CB_CodeBinaire codeissu;
 O_Octet* octet;
-fichier= fopen(nomfichier,"r");
 
-  if (fichier != NULL)
-  {
       caracterelu = fgetc(fichier);
 	codeissu = caractereEnCodeBinaire(caracterelu);
 		
 		octet = O_octet(codeissu);
 
-
-
-
-
-      fclose(fichier);
-    }
-
-
-  else{
-      printf ("Impossible d'ouvrir le fichier, pointeur = NULL");
-}
 
 return octet;
 }
