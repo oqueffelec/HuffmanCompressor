@@ -1,6 +1,8 @@
 #ifndef __FILE__DE__PRIORITE__
 #define __FILE__DE__PRIORITE__
 
+#include "arbreDeHuffman.h"
+
 #define FDP_ERREUR_MEMOIRE 1
 
 /**
@@ -8,21 +10,27 @@
 * \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
 */
 
-typedef struct FDP_Noeud* FDP_FileDEPriorite;
+typedef struct FDP_Noeud* FDP_FileDePriorite;
 typedef struct FDP_Noeud {
-	int* octet;
- 
-	FDP_FileDEPriorite listeSuivante;
+	ArbreDeHuffman arbre;
+	FDP_FileDePriorite fileSuivante;
 }  FDP_Noeud;
 
 
-FDP_FileDEPriorite FDP_fileDepriorite();
+FDP_FileDePriorite FDP_fileDePriorite();
 
+int FDP_estVide(FDP_FileDePriorite fdp);
 
-int FDP_estVide(fileDePriorite* fdp);
+void FDP_enfilerADH(FDP_FileDePriorite* fdp, ArbreDeHuffman a);
 
-int FDP_defiler(fileDePriorite* fdp, int*listeSuivante)
+ArbreDeHuffman FDP_obtenirADH(FDP_FileDePriorite fdp);
 
-int FDP_obtenirElement(fileDePriorite* fdp, int*o)
-int FDP_insérer(fileDePriorite* fdp, int*, int*o, int*cb)
+FDP_FileDePriorite FDP_obtenirFileSuivante(FDP_FileDePriorite fdp);
+
+void FDP_fixerFileSuivante(FDP_FileDePriorite* fdp1, FDP_FileDePriorite fdp2);
+
+int FDP_longueur(FDP_FileDePriorite fdp);
+
+void FDP_defilerADH(FDP_FileDePriorite* fdp);
+
 #endif
