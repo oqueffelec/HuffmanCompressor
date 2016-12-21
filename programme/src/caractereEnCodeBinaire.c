@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "bit.h"
+#include "puissance.h"
 #include "codeBinaire.h"
 #include "caractereEnCodeBinaire.h"
 
@@ -20,9 +21,9 @@ int nombre = c; //conversion caractère vers décimal
 
 for (int i = 8;i>-1;i--) { //conversion en CodeBinaire
 
-if (pow(2,i) > nombre){
+if (puissance(2,i) > nombre){
       CB_ajouter(&code,bitA1);
-        nombre = nombre-pow(2,i);
+        nombre = nombre-puissance(2,i);
 }
 else{
       CB_ajouter(&code,bitA0) ;
