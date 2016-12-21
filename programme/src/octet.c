@@ -93,12 +93,10 @@ int O_comparerOctet(O_Octet* o1,O_Octet* o2){
   int i;
   i=0;
   res=TRUE;
-  while(res && i<8)
-    {
-      if (O_obtenirbit(o1,i)!=O_obtenirbit(o2,i))
-	{
-	  res=FALSE;
-	}
+  while(res && i<8){
+      if (O_obtenirbit(o1,i)!=O_obtenirbit(o2,i)){
+	       res=FALSE;
+	      }
       i++;
 	}
   return res;
