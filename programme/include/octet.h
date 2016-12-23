@@ -13,10 +13,10 @@
 
 /**
 * \struct O_octet Octet.h
-* \brief la structure est un tableau de 8 bit
+* \brief la structure est un unsigned char
 */
 
-typedef Bit O_Octet[8];
+typedef unsigned char O_Octet;
 
 /**
  *\fn O_Octet O_octet(CB_CodeBinaire)
@@ -24,7 +24,7 @@ typedef Bit O_Octet[8];
  *\return O_octet
  */
 
-O_Octet* O_octet(CB_CodeBinaire cb);
+O_Octet O_octet(CB_CodeBinaire cb);
 
 /**
  *\fn O_Octet O_octetparbit(Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit)
@@ -32,7 +32,7 @@ O_Octet* O_octet(CB_CodeBinaire cb);
  *\return O_octet
  */
 
-O_Octet* O_octetParBit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7);
+O_Octet O_octetParBit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5, Bit bit6, Bit bit7);
 
 /**
 * \fn int O_obtenirbit(O_octet, int)
@@ -66,7 +66,13 @@ int O_octetendecimal(O_Octet* o);
 
 int O_comparerOctet(O_Octet* o1,O_Octet* o2);
 
-O_Octet* O_octetZero();
+/**
+* \fn int O_octetZero()
+* \brief renvoie un octet avec tous les bit à 0
+* \return unsigned char
+*/
+
+O_Octet O_octetZero();
 
 
 #endif
