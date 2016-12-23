@@ -40,7 +40,7 @@ O_Octet O_octetParBit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5,
 * \return int
 */
 
-Bit O_obtenirbit(O_Octet* o, int pos);
+Bit O_obtenirbit(O_Octet o, int pos);
 
 /**
 * \fn void O_ajouter(O_octet, int)
@@ -56,7 +56,7 @@ void O_ajouter(O_Octet* o,Bit bit,int pos);
 * \return int
 */
 
-int O_octetendecimal(O_Octet* o);
+int O_octetendecimal(O_Octet o);
 
 /**
 * \fn int O_comparerOctet(O_octet,O_octet)
@@ -64,7 +64,7 @@ int O_octetendecimal(O_Octet* o);
 * \return int
 */
 
-int O_comparerOctet(O_Octet* o1,O_Octet* o2);
+int O_comparerOctet(O_Octet o1,O_Octet o2);
 
 /**
 * \fn int O_octetZero()
