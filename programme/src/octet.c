@@ -58,11 +58,11 @@ Bit O_obtenirbit(O_Octet o, int pos){
 
 
 void O_ajouter(O_Octet* o,Bit bit,int pos){
-  if ((bit == bitA1) && (O_obtenirbit(*o,pos)==bitA0)) {
-      *o = *o + puissance2(pos);
+  if ((bit == bitA1) && (O_obtenirbit(*o,pos)==bitA0)){
+    *o = *o + puissance2(pos);
     }
   if ((bit == bitA0) && (O_obtenirbit(*o,pos)==bitA1)) {
-      *o = *o - puissance2(pos);
+    *o = *o - puissance2(pos);
     }
 }
 
@@ -73,7 +73,7 @@ O_Octet O_octet(CB_CodeBinaire cb){
   int i;
   for (i=0;i<8;i++)
     {
-      O_ajouter(&res,CB_obtenirbit(cb,i),i);
+      O_ajouter(&res,CB_obtenirbit(cb,i+1),i);
     }
   return res;
 
@@ -98,11 +98,13 @@ O_Octet O_octetParBit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5,
 
 int O_octetendecimal(O_Octet o){
   int res=0;
-  for (int i=0;i<8;i++){
-      if (O_obtenirbit(o,i)==bitA1){
-	       res=res+puissance2(i);
-	      }
-    }
+  res = (int)o;
+  // Autre méthode indépendante de la représentation d'un Octet mais plus lourde
+  //for (int i=0;i<8;i++){
+      //if (O_obtenirbit(o,i)==bitA1){
+	       //res=res+puissance2(i);
+	      //}
+    //}
   return res;
 }
 
