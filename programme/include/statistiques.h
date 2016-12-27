@@ -53,7 +53,7 @@ STAT_Statistiques STAT_statistiques();
 * \return void
 */
 
-void STAT_ajouter(STAT_Statistiques* stat, O_Octet* o);
+void STAT_ajouter(STAT_Statistiques* stat, O_Octet o);
 
 
 /**
@@ -72,7 +72,7 @@ int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond);
 * \return unsigned long int
 */
 
-unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet* o);
+unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet o);
 
 
 

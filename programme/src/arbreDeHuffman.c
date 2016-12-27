@@ -11,12 +11,12 @@
 #define FALSE 0
 
 
-ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet* caractere){
+ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere){
   ArbreDeHuffman arbre=(ArbreDeHuffman)malloc(sizeof(ADH_Noeud));
   if (arbre!=NULL){
     errno = 0;
     arbre->ponderation = ponderation;
-    memcpy(arbre->caractere,caractere,sizeof(O_Octet));
+    arbre->caractere = caractere;
     arbre->filsG = NULL;
     arbre->filsD = NULL;
     return(arbre);
@@ -51,11 +51,9 @@ unsigned int ADH_obtenirPonderation(ArbreDeHuffman arbre){
   return(arbre->ponderation);
 }
 
-O_Octet *ADH_obtenirCaractere(ArbreDeHuffman feuille){
+O_Octet ADH_obtenirCaractere(ArbreDeHuffman feuille){
   assert(ADH_estUneFeuille(feuille));
-  O_Octet *octet=(O_Octet*)malloc(sizeof(O_Octet));
-  memcpy(octet,feuille->caractere,sizeof(feuille->caractere));
-  return (octet);
+  return feuille->caractere;
 }
 
 ArbreDeHuffman ADH_ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2){
@@ -63,7 +61,7 @@ ArbreDeHuffman ADH_ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2){
   if (arbre!=NULL){
     errno=0;
     arbre->ponderation = (arbre1->ponderation)+(arbre2->ponderation);
-    memcpy(arbre->caractere,O_octetZero(),sizeof(arbre->caractere));
+    arbre->caractere = O_octetZero();
     if ((arbre1->ponderation)<(arbre2->ponderation)){
       arbre->filsG = arbre2;
       arbre->filsD = arbre1;

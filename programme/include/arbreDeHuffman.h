@@ -29,7 +29,7 @@ typedef ADH_Noeud *ArbreDeHuffman;
 * \return ArbreDeHuffman
 */
 
-ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet* caractere);
+ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere);
 
 /**
 * \fn int estUneFeuille(ArbreDeHuffman arbre)
@@ -69,7 +69,7 @@ unsigned int ADH_obtenirPonderation(ArbreDeHuffman feuille);
 * \return char
 */
 
-O_Octet *ADH_obtenirCaractere(ArbreDeHuffman arbre);
+O_Octet ADH_obtenirCaractere(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2)

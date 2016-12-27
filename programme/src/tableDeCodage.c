@@ -27,7 +27,7 @@ TDC_TableDeCodage TDC_tableDeCodage(){
   return tdc;
 }
 
-void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet* o, CB_CodeBinaire cb){
+void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet o, CB_CodeBinaire cb){
 tdc->codeBinaire[O_octetendecimal(o)]=cb;
 }
 
@@ -43,7 +43,7 @@ int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb){
   return estPresent;
 }
 
-CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet* o){
+CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet o){
   assert(tdc.codeBinaire[O_octetendecimal(o)]!=NULL);
   return tdc.codeBinaire[O_octetendecimal(o)];
 }

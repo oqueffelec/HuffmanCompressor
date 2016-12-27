@@ -20,7 +20,7 @@ int clean_suite_success() {
 }
 
 void test_STAT_ajouter(){
-  O_Octet* o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   STAT_Statistiques s= STAT_statistiques();
   STAT_ajouter(&s,o);
   STAT_ajouter(&s,o);
@@ -30,7 +30,7 @@ void test_STAT_ajouter(){
 }
 
 void test_STAT_estPresentPonderation(){
-  O_Octet* o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   STAT_Statistiques s= STAT_statistiques();
   STAT_ajouter(&s,o);
   STAT_ajouter(&s,o);

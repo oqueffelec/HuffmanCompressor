@@ -21,7 +21,7 @@ int clean_suite_success() {
 }
 
 void test_TDC_ajouter(){
-  O_Octet* o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   CB_CodeBinaire cb2=CB_codeBinaire();
   CB_ajouter(&cb2,bitA0);
   CB_ajouter(&cb2,bitA0);
@@ -32,7 +32,7 @@ TDC_ajouter(&tdc,o,cb2);
 }
 
 void test_TDC_obtenirCB(){
-  O_Octet* o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   CB_CodeBinaire cb2=CB_codeBinaire();
   CB_ajouter(&cb2,bitA0);
   CB_ajouter(&cb2,bitA0);

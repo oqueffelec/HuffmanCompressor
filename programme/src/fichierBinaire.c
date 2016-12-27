@@ -4,19 +4,13 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <sys/stat.h>
 #include "fichierBinaire.h"
 #include "octet.h"
 
 #define TRUE 1
 #define FALSE 0
 
-// Partie Privée
-
-FILE* FB_file(FB_FichierBinaire fb){
-  return fb.file;
-}
-
-// Partie publique
 FB_FichierBinaire FB_ouvrir(char nom[], Mode mode) {
   FB_FichierBinaire fb;
   fb.file = NULL;
@@ -47,15 +41,23 @@ int FB_finFichier(FB_FichierBinaire fb) {
   return feof(fb.file);
 }
 
-void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet* o) {
+void FB_ecrireOctets(FB_FichierBinaire* fb, O_Octet* o,int tailleTab) {
+  fwrite(o, sizeof(O_Octet), tailleTab, (fb->file));
+}
+
+int FB_lireOctets(FB_FichierBinaire fb, O_Octet* o, int tailleTab) {
+  int res=0;
+    res =fread(o, sizeof(O_Octet), tailleTab, fb.file);
+return res;
+}
+
+void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o) {
   fwrite(&o, sizeof(O_Octet), 1, (fb->file));
 }
 
 int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o) {
   int res=0;
-  for(int i=0; i<8;i++){
-    int res =fread(&(o[i]), sizeof(O_Octet), 1, fb.file);
-  }
+    res =fread(o, sizeof(O_Octet), 1, fb.file);
 return res;
 }
 
@@ -75,13 +77,13 @@ int FB_lireCaractere(FB_FichierBinaire fb, char* caractere) {
   return fread(caractere, sizeof(char), 1, fb.file);
 }
 
-/*
+
 int FB_longueurFichier(FB_FichierBinaire fb) {
   struct stat fileStat;
   fstat(fileno(fb.file), &fileStat);
   return fileStat.st_size;
 }
-*/
+
 
 void FB_ecrireChaine(FB_FichierBinaire* fb, char* chaine) {
   for (int i=0; i <= strlen(chaine)-1; i++){
@@ -98,9 +100,3 @@ char* FB_lireChaine(FB_FichierBinaire fb, int n) {
   res[i+1] = '\0';
   return res;
 }
-
-/*
-void FB_deplacerCurseur(FB_FichierBinaire* fb, int position) {
-  fseek(*fb, position, SEEK_SET);
-}
-*/

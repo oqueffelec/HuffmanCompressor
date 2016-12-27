@@ -22,9 +22,9 @@ int clean_suite_success() {
 }
 
 void test_FDP_estVide(){
-  O_Octet* o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a1= ADH_arbreDeHuffman(6,o1);
-  O_Octet* o2=O_octetParBit(bitA1,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o2=O_octetParBit(bitA1,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a2= ADH_arbreDeHuffman(5,o2);
   FDP_FileDePriorite fdp= FDP_fileDePriorite();
   FDP_enfilerADH(&fdp,a1);
@@ -34,11 +34,11 @@ void test_FDP_estVide(){
 }
 
 void test_FDP_enfiler(){
-  O_Octet* o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a1= ADH_arbreDeHuffman(6,o1);
-  O_Octet* o2=O_octetParBit(bitA1,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o2=O_octetParBit(bitA1,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a2= ADH_arbreDeHuffman(5,o2);
-  O_Octet* o3=O_octetParBit(bitA1,bitA1,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o3=O_octetParBit(bitA1,bitA1,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a3= ADH_arbreDeHuffman(7,o3);
   FDP_FileDePriorite fdp= FDP_fileDePriorite();
   FDP_enfilerADH(&fdp,a1);
@@ -53,11 +53,11 @@ void test_FDP_enfiler(){
 }
 
 void test_FDP_longueur(){
-  O_Octet* o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a1= ADH_arbreDeHuffman(6,o1);
-  O_Octet* o2=O_octetParBit(bitA1,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o2=O_octetParBit(bitA1,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a2= ADH_arbreDeHuffman(5,o2);
-  O_Octet* o3=O_octetParBit(bitA1,bitA1,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o3=O_octetParBit(bitA1,bitA1,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
   ArbreDeHuffman a3= ADH_arbreDeHuffman(7,o3);
   FDP_FileDePriorite fdp= FDP_fileDePriorite();
   FDP_enfilerADH(&fdp,a1);

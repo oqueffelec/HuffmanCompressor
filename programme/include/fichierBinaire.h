@@ -21,8 +21,9 @@
 
 typedef struct FB_FichierBinaire {
 FILE* file;
-O_Octet buffer[BUFFER_SIZE];
 } FB_FichierBinaire;
+
+
 
 /**
 * \fn TDC_tableDeCodage TDC_tableDeCodage()
@@ -64,10 +65,8 @@ int FB_estOuvert(FB_FichierBinaire fb);
 
 int FB_finFichier(FB_FichierBinaire fb);
 
-void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet* o);
-
+void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o);
 int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o);
-
 void FB_ecrireNaturel(FB_FichierBinaire* fb, int n);
 
 int FB_lireNaturel(FB_FichierBinaire fb, int* i);
@@ -79,6 +78,9 @@ int FB_lireCaractere(FB_FichierBinaire fb, char* c);
 void FB_ecrireChaine(FB_FichierBinaire* fb, char* chaine);
 
 char* FB_lireChaine(FB_FichierBinaire fb, int n);
+
+int FB_longueurFichier(FB_FichierBinaire fb) ;
+
 
 
 

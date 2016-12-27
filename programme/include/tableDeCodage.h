@@ -36,7 +36,7 @@ TDC_TableDeCodage TDC_tableDeCodage();
 * \return void
 */
 
-void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet* o, CB_CodeBinaire cb);
+void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet o, CB_CodeBinaire cb);
 
 /**
 * \fn int TDC_estPresentCodeBinaire(TDC_tableDeCodage tdc, codeBinaire cb)
@@ -53,7 +53,7 @@ int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb);
 * \return codebinaire
 */
 
-CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet* o);
+CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet o);
 
 /**
 * \fn void TDC_retirerOctet(TDC_tableDeCodage tdc, octet o)
