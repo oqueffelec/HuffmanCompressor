@@ -65,8 +65,14 @@ int FB_estOuvert(FB_FichierBinaire fb);
 
 int FB_finFichier(FB_FichierBinaire fb);
 
+void FB_ecrireOctets(FB_FichierBinaire* fb, O_Octet* o,int tailleTab);
+
+int FB_lireOctets(FB_FichierBinaire fb, O_Octet* o, int tailleTab);
+
 void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o);
+
 int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o);
+
 void FB_ecrireNaturel(FB_FichierBinaire* fb, int n);
 
 int FB_lireNaturel(FB_FichierBinaire fb, int* i);
