@@ -16,8 +16,10 @@
 * \brief la structure est un unsigned char
 */
 
-typedef unsigned char O_Octet;
-
+typedef struct O_Octet {
+  unsigned char octet;
+  int nb;
+} O_Octet;
 /**
  *\fn O_Octet O_octet(CB_CodeBinaire)
  *\brief renvoie un octet de 8 bit à partir d'un CodeBinaire
@@ -48,7 +50,7 @@ Bit O_obtenirbit(O_Octet o, int pos);
 * \return void
 */
 
-void O_ajouter(O_Octet* o,Bit bit,int pos);
+void O_ajouter(O_Octet* o,Bit bit);
 
 /**
 * \fn int O_octetendecimal(O_octet)
@@ -56,7 +58,7 @@ void O_ajouter(O_Octet* o,Bit bit,int pos);
 * \return int
 */
 
-int O_octetendecimal(O_Octet o);
+int O_octetEnDecimal(O_Octet o);
 
 /**
 * \fn int O_comparerOctet(O_octet,O_octet)
@@ -73,6 +75,12 @@ int O_comparerOctet(O_Octet o1,O_Octet o2);
 */
 
 O_Octet O_octetZero();
+
+int O_nombreBit(O_Octet o);
+
+unsigned char O_getOctet(O_Octet o);
+
+int O_estRempli(O_Octet o);
 
 
 #endif

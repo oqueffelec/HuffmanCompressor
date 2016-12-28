@@ -19,86 +19,76 @@ int clean_suite_success() {
   return 0;
 }
 
-void test_OCTET_constructeur(){
-  CB_CodeBinaire cb=CB_codeBinaire();
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA1);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA1);
-  CB_ajouter(&cb,bitA0);
-  O_Octet o=O_octet(cb);
+void test_OCTET_zero(){
+  O_Octet o = O_octetZero();
+  CU_ASSERT_TRUE(O_nombreBit(o)==0 && O_getOctet(o)==0);
+}
+
+
+void test_OCTET_ajouter(){
+  O_Octet o = O_octetZero();
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+
   CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA1 && O_obtenirbit(o,2)==bitA0 && O_obtenirbit(o,3)==bitA0);
 }
 
-void test_OCTET_constructeur2(){
-  O_Octet o=O_octetParBit(bitA0,bitA1,bitA0,bitA0,bitA0,bitA1,bitA0,bitA0);
-  CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA1 && O_obtenirbit(o,2)==bitA0 && O_obtenirbit(o,3)==bitA0);
+void test_OCTET_estRempli(){
+  O_Octet o = O_octetZero();
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+
+  CU_ASSERT_TRUE(!O_estRempli(o));
 }
 
-void test_OCTET_constructeur3(){
-  O_Octet o;
-  o=O_octetZero();
-  O_ajouter(&o,bitA0,0);
-  O_ajouter(&o,bitA0,1);
-  O_ajouter(&o,bitA0,2);
-  O_ajouter(&o,bitA1,3);
-  O_ajouter(&o,bitA1,4);
-  O_ajouter(&o,bitA1,5);
-  O_ajouter(&o,bitA1,6);
-  O_ajouter(&o,bitA1,7);
-  O_ajouter(&o,bitA0,3);
-  CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA0 && O_obtenirbit(o,2)==bitA0 && O_obtenirbit(o,3)==bitA0 && O_obtenirbit(o,4)==bitA1);
+void test_OCTET_octetEnDecimal(){
+  O_Octet o = O_octetZero();
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  CU_ASSERT_TRUE(O_octetEnDecimal(o)==34); 
 }
 
-void test_OCTET_comparer(){
-  CB_CodeBinaire cb=CB_codeBinaire();
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA1);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA1);
-  CB_ajouter(&cb,bitA0);
-  O_Octet o=O_octet(cb);
-  CB_CodeBinaire cb2=CB_codeBinaire();
-  CB_ajouter(&cb2,bitA0);
-  CB_ajouter(&cb2,bitA0);
-  CB_ajouter(&cb2,bitA1);
-  CB_ajouter(&cb2,bitA0);
-  CB_ajouter(&cb2,bitA0);
-  CB_ajouter(&cb2,bitA0);
-  CB_ajouter(&cb2,bitA1);
-  CB_ajouter(&cb2,bitA0);
-  O_Octet o2=O_octet(cb2);
-  CB_CodeBinaire cb3=CB_codeBinaire();
-  CB_ajouter(&cb3,bitA0);
-  CB_ajouter(&cb3,bitA1);
-  CB_ajouter(&cb3,bitA1);
-  CB_ajouter(&cb3,bitA0);
-  CB_ajouter(&cb3,bitA0);
-  CB_ajouter(&cb3,bitA1);
-  CB_ajouter(&cb3,bitA1);
-  CB_ajouter(&cb3,bitA0);
-  O_Octet o3=O_octet(cb3);
+void test_OCTET_comparerOctet(){
+  O_Octet o = O_octetZero();
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+
+  O_Octet o2 = O_octetZero();
+  O_ajouter(&o2,bitA0);
+  O_ajouter(&o2,bitA1);
+  O_ajouter(&o2,bitA0);
+  O_ajouter(&o2,bitA0);
+  O_ajouter(&o2,bitA0);
+  O_ajouter(&o2,bitA1);
+  O_ajouter(&o2,bitA0);
+  O_ajouter(&o2,bitA0);
+
+  O_Octet o3 = O_octetZero();
+  O_ajouter(&o3,bitA0);
+  O_ajouter(&o3,bitA1);
+  O_ajouter(&o3,bitA0);
+  O_ajouter(&o3,bitA1);
+  O_ajouter(&o3,bitA0);
+  O_ajouter(&o3,bitA1);
+  O_ajouter(&o3,bitA0);
+  O_ajouter(&o3,bitA0);
   CU_ASSERT_TRUE(O_comparerOctet(o,o2) && !O_comparerOctet(o,o3) && !O_comparerOctet(o3,o2));
-}
-
-void test_OCTET_octetendecimal(){
-  CB_CodeBinaire cb=CB_codeBinaire();
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA1);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA1);
-  CB_ajouter(&cb,bitA0);
-  O_Octet o=O_octet(cb);
-  CU_ASSERT_TRUE(O_octetendecimal(o)==34);
 }
 
 
@@ -118,11 +108,11 @@ int main(int argc, char** argv){
   }
 
   /* Ajout des tests a la suite de tests boite noire */
-  if ((NULL == CU_add_test(pSuite, "OCTET_constructeur", test_OCTET_constructeur))
-      || (NULL == CU_add_test(pSuite, "OCTET_constructeur2", test_OCTET_constructeur2))
-      || (NULL == CU_add_test(pSuite, "OCTET_constructeur3", test_OCTET_constructeur3))
-      || (NULL == CU_add_test(pSuite, "OCTET_comparer", test_OCTET_comparer))
-      || (NULL == CU_add_test(pSuite, "OCTET_octetendecimal", test_OCTET_octetendecimal))
+  if ((NULL == CU_add_test(pSuite, "OCTET_zero", test_OCTET_zero))
+      || (NULL == CU_add_test(pSuite, "OCTET_ajouter", test_OCTET_ajouter))
+      || (NULL == CU_add_test(pSuite, "OCTET_estRempli", test_OCTET_estRempli))
+      || (NULL == CU_add_test(pSuite, "OCTET_octetEnDecimal", test_OCTET_octetEnDecimal))
+      || (NULL == CU_add_test(pSuite, "OCTET_comparerOctet", test_OCTET_comparerOctet))
       )
     {
       CU_cleanup_registry();
