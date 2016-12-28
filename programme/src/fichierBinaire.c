@@ -6,6 +6,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include "fichierBinaire.h"
+#include "mode.h"
 #include "octet.h"
 
 #define TRUE 1

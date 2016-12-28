@@ -11,6 +11,7 @@
 #include <math.h>
 #include "fichierBinaire.h"
 #include "octet.h"
+#include "mode.h"
 #include "statistiques.h"
 #include "creerStatistiques.h"
 
