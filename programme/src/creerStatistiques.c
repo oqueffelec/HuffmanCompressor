@@ -25,7 +25,7 @@ stat = STAT_statistiques();
 
 
 		while (!FB_finFichier(fichier)){
-		octet = FB_lireOctet(fichier,&octet);	
+		FB_lireOctet(fichier,&octet);	
 		STAT_ajouter(&stat,octet);
 		}
 
