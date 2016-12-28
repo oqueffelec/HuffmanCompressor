@@ -82,5 +82,7 @@ unsigned char O_getOctet(O_Octet o);
 
 int O_estRempli(O_Octet o);
 
+O_Octet O_decimalEnOctet(int i);
+
 
 #endif

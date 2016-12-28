@@ -1,6 +1,4 @@
-/* file  : puissance.h puissance d'entiers.
-/*author : Mathieu Vandecasteele
-*/
+
 
 #ifndef __PUISSANCE__
 #define __PUISSANCE__

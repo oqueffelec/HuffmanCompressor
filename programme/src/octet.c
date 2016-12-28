@@ -78,6 +78,13 @@ int O_octetEnDecimal(O_Octet o){
   return res;
 }
 
+O_Octet O_decimalEnOctet(int i){
+  O_Octet res = O_octetZero();
+  res.octet=i;
+  res.nb=8;
+  return res;
+}
+
 int O_comparerOctet(O_Octet o1,O_Octet o2){
   return O_nombreBit(o1)==O_nombreBit(o2) && O_getOctet(o1)==O_getOctet(o2) ;
 }
