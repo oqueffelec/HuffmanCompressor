@@ -60,7 +60,7 @@ int CB_longueur(CB_CodeBinaire cb);
 * \return int
 */
 
-Bit CB_obtenirbit(CB_CodeBinaire cb, unsigned int pos);
+Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos); 
 
 /**
 * \fn int CB_compareCodeBinaire(CB_codeBinaire, CB_codeBinaire)

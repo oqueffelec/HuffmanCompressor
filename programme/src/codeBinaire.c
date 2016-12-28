@@ -35,7 +35,7 @@ void CB_ajouter(CB_CodeBinaire* cb, Bit b){
   }
 }
 
-Bit CB_obtenirbit(CB_CodeBinaire cb, unsigned int pos){
+Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos){
   assert(pos>0);
   assert(cb!=NULL);
   if(pos==1){
