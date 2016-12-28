@@ -13,6 +13,7 @@
 #include <errno.h>
 #include <math.h>
 #include "octet.h"
+#include "puissance.h"
 
 #define TRUE 1
 #define FALSE 0
@@ -41,11 +42,11 @@ Bit O_obtenirbit(O_Octet o, int pos){
   unsigned char temp;
   temp = O_getOctet(o);
   for (int i=0;i<(8-pos-1);i++){
-    if (temp >= pow(2,7-i)){
-      temp=temp - pow(2,7-i);
+    if (temp >= puissance(2,7-i)){
+      temp=temp - puissance(2,7-i);
     }
   }
-  if (temp >= pow(2,pos)){
+  if (temp >= puissance(2,pos)){
     return bitA1;
   }
   else{
@@ -58,7 +59,7 @@ Bit O_obtenirbit(O_Octet o, int pos){
 void O_ajouter(O_Octet* o,Bit bit){
   assert(!O_estRempli(*o));
   if(bit==bitA1){
-    o->octet= O_getOctet(*o) + pow(2,O_nombreBit(*o));
+    o->octet= O_getOctet(*o) + puissance(2,O_nombreBit(*o));
   }
   o->nb++;
 }
