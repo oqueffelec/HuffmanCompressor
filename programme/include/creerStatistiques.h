@@ -18,7 +18,7 @@
 * \return STAT_Statistiques
 */
 
-STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier,char* nomfichier);
+STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier);
 
 
 #endif

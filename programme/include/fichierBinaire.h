@@ -87,7 +87,7 @@ char* FB_lireChaine(FB_FichierBinaire fb, int n);
 
 int FB_longueurFichier(FB_FichierBinaire fb) ;
 
-
+void FB_deplacerCurseur(FB_FichierBinaire* f, long position);
 
 
 #endif

@@ -101,3 +101,7 @@ char* FB_lireChaine(FB_FichierBinaire fb, int n) {
   res[i+1] = '\0';
   return res;
 }
+
+void FB_deplacerCurseur(FB_FichierBinaire* f, long position) {
+  fseek(f->file, position, SEEK_SET);
+}
