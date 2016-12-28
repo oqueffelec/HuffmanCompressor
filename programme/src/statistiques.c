@@ -27,7 +27,7 @@ STAT_Statistiques STAT_statistiques(){
 }
 
 void STAT_ajouter(STAT_Statistiques* stat, O_Octet o){
-stat->valeur[O_octetendecimal(o)]=STAT_obtenirPonderation(*stat,o)+1;
+stat->valeur[O_octetEnDecimal(o)]=STAT_obtenirPonderation(*stat,o)+1;
 }
 
 int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond){
@@ -45,6 +45,5 @@ int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond){
 }
 
 unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet o){
-  return stat.valeur[O_octetendecimal(o)];
+  return stat.valeur[O_octetEnDecimal(o)];
 }
-
