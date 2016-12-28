@@ -43,22 +43,22 @@ int FB_finFichier(FB_FichierBinaire fb) {
 }
 
 void FB_ecrireOctets(FB_FichierBinaire* fb, O_Octet* o,int tailleTab) {
-  fwrite(o, sizeof(O_Octet), tailleTab, (fb->file));
+  fwrite(&(o->octet), sizeof(O_Octet), tailleTab, (fb->file));
 }
 
 int FB_lireOctets(FB_FichierBinaire fb, O_Octet* o, int tailleTab) {
   int res=0;
-    res =fread(o, sizeof(O_Octet), tailleTab, fb.file);
+    res =fread(&(o->octet), sizeof(O_Octet), tailleTab, fb.file);
 return res;
 }
 
 void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o) {
-  fwrite(&o, sizeof(O_Octet), 1, (fb->file));
+  fwrite(&(o.octet), sizeof(O_Octet), 1, (fb->file));
 }
 
 int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o) {
   int res=0;
-    res =fread(o, sizeof(O_Octet), 1, fb.file);
+    res =fread(&(o->octet), sizeof(O_Octet), 1, fb.file);
 return res;
 }
 
@@ -87,7 +87,7 @@ int FB_longueurFichier(FB_FichierBinaire fb) {
 
 
 void FB_ecrireChaine(FB_FichierBinaire* fb, char* chaine) {
-  for (int i=0; i <= strlen(chaine)-1; i++){
+  for (int i=0; i < strlen(chaine); i++){
     FB_ecrireCaractere(fb, chaine[i]);
   }
 }
