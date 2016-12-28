@@ -24,20 +24,6 @@ unsigned long int valeur[STAT_SIZE];
 
 
 /**
-* \struct STAT_ListeOctets Statistiques.h
-* \brief la structure est une liste chainée (1 élément + 1 pointeur vers listesuivante).
-*/
-
-/*typedef struct noeud Noeud;
-struct noeud
-{
-    O_Octets* o;
-    struct noeud *listeSuivante;
-};
-
-typedef Noeud* STAT_ListeOctets;*/
-
-/**
 * \fn STAT_Statistiques STAT_statistiques()
 * \brief initialise une variable STAT_Statistiques
 * \return STAT_Statistiques

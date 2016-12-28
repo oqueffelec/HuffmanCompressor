@@ -9,15 +9,16 @@
 #define __CREERSTAT__
 
 #include "statistiques.h"
+#include "fichierBinaire.h"
 
 
 /**
-* \fn STAT_Statistiques creerStatistiques(FILE* fichier,const char* nomfichier)
+* \fn STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier,char* nomfichier)
 * \brief renvoie un STAT_Statistiques
 * \return STAT_Statistiques
 */
 
-STAT_Statistiques creerStatistiques(FILE* fichier,const char* nomfichier);
+STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier,char* nomfichier);
 
 
 #endif

@@ -9,31 +9,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include "fichierBinaire.h"
 #include "octet.h"
 #include "statistiques.h"
-#include "recupererOctet.h"
 #include "creerStatistiques.h"
 
-STAT_Statistiques creerStatistiques(FILE* fichier,const char* nomfichier){
+STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier,char* nomfichier){
 
-fichier= fopen(nomfichier,"r");
+fichier= FB_ouvrir(nomfichier,lecture);
+
 STAT_Statistiques stat;
-O_Octet* octet;
+O_Octet octet;
 stat = STAT_statistiques();
 
- if (fichier != NULL)
-    {
 
-		while (!feof(fichier)){
-		octet = recupererOctet(fichier,nomfichier);	
+		while (!FB_finFichier(fichier)){
+		octet = FB_lireOctet(fichier,&octet);	
 		STAT_ajouter(&stat,octet);
 		}
 
-        fclose(fichier);
-    }
- else{
-	printf("erreur, impossible d'ouvrir le fichier");
-     }
+        FB_fermer(fichier);
 
 return stat;
 }

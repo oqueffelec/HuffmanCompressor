@@ -48,12 +48,3 @@ unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet o){
   return stat.valeur[O_octetendecimal(o)];
 }
 
-/*STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat)
-STAT_ListesOctets Liste;
-Liste.o = O_Octet(0,0,0,0,0,0,0,0)
-if (Liste.listeSuivante = NULL){
-return Liste;}
-else {
-return STAT_obtenirOctets()
-
-}*/
