@@ -21,7 +21,7 @@
 #define TRUE 1
 #define FALSE 0
 
-FB_FichierBinaire coder(FB_FichierBinaire source, TDC_TableDeCodage tdc){
+FB_FichierBinaire codage(FB_FichierBinaire source, TDC_TableDeCodage tdc){
   O_Octet octetSource;
   O_Octet octetDest=O_octetZero();
   FB_FichierBinaire fichierDest;
