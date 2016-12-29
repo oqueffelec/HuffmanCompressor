@@ -21,10 +21,9 @@
 #define TRUE 1
 #define FALSE 0
 
-FB_FichierBinaire codage(FB_FichierBinaire source, TDC_TableDeCodage tdc){
+void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage tdc){
   O_Octet octetSource;
   O_Octet octetDest=O_octetZero();
-  FB_FichierBinaire fichierDest;
 
   while(!FB_finFichier(source) &&  FB_lireOctet(source,&octetSource)){
     CB_CodeBinaire code= TDC_obtenirCodeBinaire(tdc,octetSource);
@@ -32,15 +31,14 @@ FB_FichierBinaire codage(FB_FichierBinaire source, TDC_TableDeCodage tdc){
       O_ajouter(&octetDest,CB_obtenirBit(code,i));
     }
     if(O_estRempli(octetDest)){
-      FB_ecrireOctet(&fichierDest,octetDest);
+      FB_ecrireOctet(dest,octetDest);
       octetDest=O_octetZero();
     }
     else{
       while(!O_estRempli(octetDest)){
         O_ajouter(&octetDest,bitA0);
-        FB_ecrireOctet(&fichierDest,octetDest);
+        FB_ecrireOctet(dest,octetDest);
       }
     }
   }
-  return fichierDest;
 }
