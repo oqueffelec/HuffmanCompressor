@@ -42,7 +42,7 @@ Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos){
     return cb->bit;
   }
   else{
-    return CB_obtenirbit(cb->listeSuivante,pos-1);
+    return CB_obtenirBit(cb->listeSuivante,pos-1);
   }
 }
 
@@ -80,7 +80,7 @@ int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2){
     if((cb1==NULL && cb2!=NULL) || (cb1!=NULL && cb2==NULL))
       return FALSE;
     else{
-      if((CB_obtenirbit(cb1,1)!=CB_obtenirbit(cb2,1)))
+      if((CB_obtenirBit(cb1,1)!=CB_obtenirBit(cb2,1)))
      	  return FALSE;
         else{
            return CB_compareCodeBinaire(cb1->listeSuivante,cb2->listeSuivante);
