@@ -47,8 +47,7 @@ void STAT_ajouter(STAT_Statistiques* stat, O_Octet o);
 * \return int
 */
 
-int STAT_estPresentOctet(STAT_Statistiques stat, unsigned long int octet);
-
+int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet octet);
 /**
 * \fn int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond)
 * \brief verifie la presence d'une pondération dans la stat
