@@ -30,6 +30,15 @@ void STAT_ajouter(STAT_Statistiques* stat, O_Octet o){
 stat->valeur[O_octetEnDecimal(o)]=STAT_obtenirPonderation(*stat,o)+1;
 }
 
+int STAT_estPresentOctet(STAT_Statistiques stat, unsigned long int octet){
+  assert(octet<=255 && octet>=0);
+  int estPresent=FALSE;
+  if (stat[octet] != 0){
+    estPresent=TRUE;
+  }
+  return (estPresent);
+}
+
 int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond){
   int i=0;
   int estPresent=FALSE;

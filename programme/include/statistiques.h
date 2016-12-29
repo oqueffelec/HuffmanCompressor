@@ -41,6 +41,13 @@ STAT_Statistiques STAT_statistiques();
 
 void STAT_ajouter(STAT_Statistiques* stat, O_Octet o);
 
+/**
+* \fn int STAT_estPresentOctet(STAT_Statistiques stat, int octet)
+* \brief verifie la presence d'une octet dans le tableau d'octet i.e la ponderation est différente de 0.
+* \return int
+*/
+
+int STAT_estPresentOctet(STAT_Statistiques stat, unsigned long int octet);
 
 /**
 * \fn int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond)
