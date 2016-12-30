@@ -32,6 +32,10 @@ int estFichierHuffman(FB_FichierBinaire fichierSource){
   }
 }
 
+void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur){
+  FB_lireNaturel(fichierSource,&longueur);
+}
+
 void recupererStatistiques(FB_FichierBinaire fichierSource, STAT_Statistiques* stat){
   int iStat=0;
   for(int i=0;i<STAT_SIZE;i++){
@@ -52,6 +56,7 @@ void recupererCodeBinaire(FB_FichierBinaire fichierSource, CB_CodeBinaire* cb){
 
 void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur, CB_CodeBinaire* cb){
   assert(estFichierHuffman(fichierSource));
+  recupererLongueur(fichierSource, longueur);
   recupererStatistiques(fichierSource,stat);
   recupererCodeBinaire(fichierSource,cb);
 }

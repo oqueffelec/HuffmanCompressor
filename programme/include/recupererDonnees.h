@@ -49,5 +49,6 @@ void recupererCodeBinaire(FB_FichierBinaire fichierSource, CB_CodeBinaire* cb);
 
 void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur, CB_CodeBinaire* cb);
 
+void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur);
 
 #endif
