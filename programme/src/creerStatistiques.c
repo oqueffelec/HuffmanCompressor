@@ -16,12 +16,12 @@
 #include "creerStatistiques.h"
 
 STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier){
-	STAT_Statistiques stat;
-	O_Octet octet;
-	stat = STAT_statistiques();
-	FB_deplacerCurseur(&fichier,0);
-	while (!FB_finFichier(fichier) && FB_lireOctet(fichier,&octet)){
-			STAT_ajouter(&stat,octet);
-	 }
+	STAT_Statistiques stat = STAT_statistiques();
+	O_Octet octet[FB_longueurFichier(fichier)];
+	for(int i=0; i<FB_longueurFichier(fichier);i++)
+		octet[i]=O_octetZero();
+	FB_lireOctets(fichier,octet,FB_longueurFichier(fichier));
+	for(int i=0; i<FB_longueurFichier(fichier);i++)
+		STAT_ajouter(&stat,octet[i]);
 	return stat;
 }

@@ -11,7 +11,7 @@
 #include "octet.h"
 
 #define STAT_ERREUR_MEMOIRE 1
-#define STAT_SIZE 255
+#define STAT_SIZE 256
 
 /**
 * \struct STAT_Statistiques Statistiques.h

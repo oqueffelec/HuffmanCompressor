@@ -24,16 +24,13 @@
 void enTete(FB_FichierBinaire fichierSource, FB_FichierBinaire* fichierDest, STAT_Statistiques stat){
   int longueur = FB_longueurFichier(fichierSource);
   char* identifiant= "Huffman";
-  char* breakk= "BREAK";
   O_Octet o=O_octetZero();
 
   FB_ecrireChaine(fichierDest, identifiant);
   FB_ecrireNaturel(fichierDest, longueur);
-  FB_ecrireChaine(fichierDest, breakk);
 
 
   for(int i=0;i<STAT_SIZE;i++){
     FB_ecrireNaturel(fichierDest, STAT_obtenirPonderation(stat,O_decimalEnOctet(i)));
-    FB_ecrireChaine(fichierDest, breakk);
   }
 }

@@ -47,15 +47,15 @@ void test_OCTET_estRempli(){
 
 void test_OCTET_octetEnDecimal(){
   O_Octet o = O_octetZero();
-  O_ajouter(&o,bitA0);
   O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA0);
-  O_ajouter(&o,bitA0);
-  O_ajouter(&o,bitA0);
   O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA0);
-  O_ajouter(&o,bitA0);
-  CU_ASSERT_TRUE(O_octetEnDecimal(o)==34); 
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
+  CU_ASSERT_TRUE(O_octetEnDecimal(o)==255);
 }
 
 void test_OCTET_comparerOctet(){

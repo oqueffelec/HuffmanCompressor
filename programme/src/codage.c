@@ -42,3 +42,31 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
     }
   }
 }
+
+
+/*
+
+void codageBis(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage tdc){
+  CB_CodeBinaire codeCumule= CB_codeBinaire();
+  O_Octet octetAecrire= O_octetZero();
+  O_Octet octetSource= O_octetZero();
+  while(!FB_finFichier(source) &&  FB_lireOctet(source,&octetSource)){
+    FB_lireOctet(source,&octetSource);
+    CB_CodeBinaire code= TDC_obtenirCodeBinaire(tdc,octetSource);
+    for(int i=1; i<= CB_longueur(code);i++){
+      CB_ajouter(&codeCumule,CB_obtenirBit(code,i));
+      }
+    }
+    int i;
+    for( i=0; i< CB_longueur(codeCumule)/8;i++){
+      for(int j=1; j<=8;j++)
+        O_ajouter(&octetAecrire,CB_obtenirBit(codeCumule,8*i+j));
+      FB_ecrireOctet(dest,octetAecrire);
+      octetAecrire= O_octetZero();
+    }
+    int bitrestant= CB_longueur(codeCumule)-i*8;
+    for(int k=0; k<bitrestant;k++)
+      O_ajouter(&octetAecrire,CB_obtenirBit(codeCumule,i*8+k));
+    FB_ecrireOctet(dest,octetAecrire);
+  }
+*/

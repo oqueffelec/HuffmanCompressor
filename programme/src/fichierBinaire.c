@@ -58,7 +58,7 @@ void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o) {
 
 int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o) {
   int res=0;
-    res =fread(&(o->octet), sizeof(O_Octet), 1, fb.file);
+    res =fread(&(o->octet), sizeof(unsigned char), 1, fb.file);
 return res;
 }
 
