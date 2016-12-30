@@ -60,7 +60,7 @@ int CB_longueur(CB_CodeBinaire cb);
 * \return int
 */
 
-Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos); 
+Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos);
 
 /**
 * \fn int CB_compareCodeBinaire(CB_codeBinaire, CB_codeBinaire)
@@ -71,5 +71,8 @@ Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos);
 int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2);
 
 void CB_supprimerTete(CB_CodeBinaire* cb);
+
+CB_CodeBinaire CB_copie(CB_CodeBinaire cb);
+
 
 #endif

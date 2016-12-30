@@ -11,7 +11,6 @@
 #include <math.h>
 #include "octet.h"
 #include "statistiques.h"
-#include "tableDeCodage.h"
 #include "creerTableDeCodage.h"
 #include "codeBinaire.h"
 #include "FileDePriorite.h"
@@ -20,7 +19,7 @@
 ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file){
   ArbreDeHuffman temp;
   ArbreDeHuffman arbre1;
-  ArbreDeHuffman arbre2;
+  ArbreDeHuffman ardbre2;
   while (!(FDP_longueur(file)==1)) {
     arbre1 = FDP_obtenirADH(file);
     FDP_defilerADH(&file);
@@ -34,7 +33,8 @@ ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file){
 
 void remplirTableDeCodage(TDC_TableDeCodage* tdc, ArbreDeHuffman arbre, CB_CodeBinaire* code){
   if (ADH_estUneFeuille(arbre)==1){
-    TDC_ajouter(tdc,ADH_obtenirCaractere(arbre),*code);
+    CB_CodeBinaire temp = CB_copie(*code);
+    TDC_ajouter(tdc,ADH_obtenirCaractere(arbre),temp);
     CB_supprimerTete(code);
   }
   else{
@@ -42,7 +42,9 @@ void remplirTableDeCodage(TDC_TableDeCodage* tdc, ArbreDeHuffman arbre, CB_CodeB
     remplirTableDeCodage(tdc,ADH_obtenirFilsGauche(arbre),code);
     CB_ajouter(code,bitA1);
     remplirTableDeCodage(tdc,ADH_obtenirFilsDroit(arbre),code);
-    CB_supprimerTete(code);
+    if (!(CB_longueur(*code)==0)){
+      CB_supprimerTete(code);
+    }
   }
 }
 
