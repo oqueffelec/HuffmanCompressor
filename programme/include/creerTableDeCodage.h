@@ -19,6 +19,8 @@
 #include "codeBinaire.h"
 #include "FileDePriorite.h"
 #include "creerFileDePriorite.h"
+#include "tableDeCodage.h"
+
 
 /**
 * \fn ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file)

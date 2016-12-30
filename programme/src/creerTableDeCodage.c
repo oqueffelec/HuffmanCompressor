@@ -15,11 +15,13 @@
 #include "codeBinaire.h"
 #include "FileDePriorite.h"
 #include "creerFileDePriorite.h"
+#include "tableDeCodage.h"
+
 
 ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file){
   ArbreDeHuffman temp;
   ArbreDeHuffman arbre1;
-  ArbreDeHuffman ardbre2;
+  ArbreDeHuffman arbre2;
   while (!(FDP_longueur(file)==1)) {
     arbre1 = FDP_obtenirADH(file);
     FDP_defilerADH(&file);

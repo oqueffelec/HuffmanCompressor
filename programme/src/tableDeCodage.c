@@ -44,7 +44,7 @@ int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb){
 }
 
 CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet o){
-  assert(tdc.codeBinaire[O_octetEnDecimal(o)]!=NULL);
+  //assert(tdc.codeBinaire[O_octetEnDecimal(o)]!=NULL);
   return tdc.codeBinaire[O_octetEnDecimal(o)];
 }
 

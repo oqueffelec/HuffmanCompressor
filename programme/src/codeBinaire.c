@@ -76,7 +76,7 @@ int CB_longueur(CB_CodeBinaire cb){
 CB_CodeBinaire CB_copie(CB_CodeBinaire cb){
   CB_CodeBinaire res = CB_codeBinaire();
   for (int i=1;i<CB_longueur(cb)+1;i++){
-    if (CB_obtenirbit(cb,i)==bitA0){
+    if (CB_obtenirBit(cb,i)==bitA0){
       CB_ajouter(&res,bitA0);
     }
     else{
