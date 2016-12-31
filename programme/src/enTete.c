@@ -24,7 +24,6 @@
 void enTete(FB_FichierBinaire fichierSource, FB_FichierBinaire* fichierDest, STAT_Statistiques stat){
   int longueur = FB_longueurFichier(fichierSource);
   char* identifiant= "huffman";
-  O_Octet o=O_octetZero();
 
   FB_ecrireChaine(fichierDest, identifiant);
   FB_ecrireNaturel(fichierDest, longueur);
