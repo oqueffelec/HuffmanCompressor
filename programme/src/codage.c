@@ -72,7 +72,7 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
     }
 
     // On concatene les cb en un cb, en partant de la fin du tab de cb et en remontant
-    for(int j=FB_longueurFichier(source); j>=0;j--){
+    for(int j=FB_longueurFichier(source)-1; j>=0;j--){
         codeCumule = CB_concatener(codeCumule,code[j]);
       }
 
@@ -95,4 +95,5 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
       O_ajouter(&octetAecrire,bitA0);
       }
     FB_ecrireOctet(dest,octetAecrire);
+    
     }

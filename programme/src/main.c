@@ -36,55 +36,17 @@ int main(int argc, char *argv[]){
 
 
 
-FB_FichierBinaire fb= FB_ouvrir("nouvelan1",ecriture);
 
-O_Octet o1 = O_decimalEnOctet(156);
-O_Octet o2 = O_decimalEnOctet(16);
-O_Octet o3 = O_decimalEnOctet(16);
-
-O_Octet tab[3];
-tab[0]=o1;
-tab[1]=o2;
-tab[2]=o3;
-
-
-FB_ecrireOctets(&fb,tab,3);
-
-FB_fermer(fb);
-
-
- fb= FB_ouvrir("nouvelan1",lecture);
-FB_FichierBinaire fb2= FB_ouvrir("destt1",ecriture);
+FB_FichierBinaire fb= FB_ouvrir("rattrapageASI4-S2_2014-2015.pdf",lecture);
+FB_FichierBinaire fb2= FB_ouvrir("destt",ecriture);
 STAT_Statistiques stat= creerStatistiques(fb);
 TDC_TableDeCodage tdc= creerTableDeCodage(stat);
-
 codage(fb, &fb2, tdc);
 
 FB_fermer(fb);
 FB_fermer(fb2);
 
 
- fb= FB_ouvrir("destt1",lecture);
-
-O_Octet o4 = O_octetZero();
-O_Octet o5 = O_octetZero();
-O_Octet o6 = O_octetZero();
-
-O_Octet tab2[3];
-tab2[0]=o4;
-tab2[1]=o5;
-tab2[2]=o6;
-
-
-FB_lireOctets(fb,tab2,3);
-printf(" octet : %d\n", tab[0].octet);
-printf(" octet : %d\n", tab[1].octet);
-printf(" octet : %d\n", tab[2].octet);
-
-printf(" octet : %d\n", tab2[0].octet);
-printf(" octet : %d\n", tab2[1].octet);
-printf(" octet : %d\n", tab2[2].octet);
-FB_fermer(fb);
 
 
 

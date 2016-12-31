@@ -80,7 +80,7 @@ int O_octetEnDecimal(O_Octet o){
 
 O_Octet O_decimalEnOctet(int i){
   O_Octet res = O_octetZero();
-  res.octet=i;
+  res.octet=(unsigned char)i;
   if (i<2){
     res.nb=1;
   }
