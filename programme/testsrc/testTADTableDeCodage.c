@@ -21,18 +21,34 @@ int clean_suite_success() {
 }
 
 void test_TDC_ajouter(){
-  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o1=O_octetZero();
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA0);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
   CB_CodeBinaire cb2=CB_codeBinaire();
   CB_ajouter(&cb2,bitA0);
   CB_ajouter(&cb2,bitA0);
   CB_ajouter(&cb2,bitA1);
 TDC_TableDeCodage tdc= TDC_tableDeCodage();
-TDC_ajouter(&tdc,o,cb2);
+TDC_ajouter(&tdc,o1,cb2);
   CU_ASSERT_TRUE(TDC_estPresentCodeBinaire(tdc,cb2));
 }
 
 void test_TDC_obtenirCB(){
-  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o1=O_octetZero();
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA0);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
   CB_CodeBinaire cb2=CB_codeBinaire();
   CB_ajouter(&cb2,bitA0);
   CB_ajouter(&cb2,bitA0);
@@ -40,8 +56,8 @@ void test_TDC_obtenirCB(){
   CB_ajouter(&cb2,bitA0);
   CB_ajouter(&cb2,bitA0);
   TDC_TableDeCodage tdc= TDC_tableDeCodage();
-  TDC_ajouter(&tdc,o,cb2);
-  CU_ASSERT_TRUE(CB_compareCodeBinaire(TDC_obtenirCodeBinaire(tdc,o),cb2));
+  TDC_ajouter(&tdc,o1,cb2);
+  CU_ASSERT_TRUE(CB_compareCodeBinaire(TDC_obtenirCodeBinaire(tdc,o1),cb2));
 }
 
 

@@ -19,7 +19,7 @@ LDFLAGS=-L$(LIBDIR) -lhuffman
 # $? liste des dépendances plus récentes que la cible
 # $* nom du fichier sans suffixe
 
-all: exec
+all:  exec
 
 exec: $(BINDIR)/$(EXEC)
 
@@ -39,12 +39,12 @@ $(DOCDIR)/rapport/rapport.pdf:
 
 
 
-tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinare $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage
+tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage
 
 $(TESTDIR)/% : $(SRCTESTDIR)/%.o $(LIBDIR)/libhuffman.a
 	$(CC) -o $@ $< $(LDFLAGS) -lcunit
 
-$(LIBDIR)/libhuffman.a: $(SRCDIR)/arbreDeHuffman.o $(SRCDIR)/codeBinaire.o $(SRCDIR)/fichierBinaire.o $(SRCDIR)/fileDePriorite.o $(SRCDIR)/octet.o $(SRCDIR)/statistiques.o $(SRCDIR)/tableDeCodage.o
+$(LIBDIR)/libhuffman.a: $(SRCDIR)/arbreDeHuffman.o $(SRCDIR)/codeBinaire.o $(SRCDIR)/fichierBinaire.o $(SRCDIR)/fileDePriorite.o $(SRCDIR)/octet.o $(SRCDIR)/statistiques.o $(SRCDIR)/tableDeCodage.o $(SRCDIR)/puissance.o
 	ar -r $@ $^
 
 $(BINDIR)/$(EXEC): $(LIBDIR)/libhuffman.a $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/puissance.o $(SRCDIR)/recupererDonnees.o

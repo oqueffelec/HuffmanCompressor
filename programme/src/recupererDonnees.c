@@ -50,7 +50,7 @@ void recupererCodeBinaire(FB_FichierBinaire fichierSource, CB_CodeBinaire* cb){
   while(FB_finFichier(fichierSource)==0 &&  FB_lireOctet(fichierSource,&octetSource)){
     FB_lireOctet(fichierSource,&octetSource);
     for(int i=0; i<8; i++){
-      CB_ajouter(cb,O_obtenirbit(octetSource,i));
+      CB_ajouter(cb,O_obtenirBit(octetSource,i));
     }
   }
 }

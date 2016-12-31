@@ -101,3 +101,25 @@ int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2){
         }
       }
     }
+
+
+    void CB_fixerListeSuivante(CB_CodeBinaire* pl , CB_CodeBinaire l){
+
+      CB_CodeBinaire pNoeud=(CB_CodeBinaire)malloc(sizeof(CB_Noeud));
+
+        if (pNoeud!=NULL) {
+        errno=0;
+        pNoeud->bit=CB_obtenirBit(*pl,1);
+        pNoeud->listeSuivante=l;
+        *pl=pNoeud;
+        }
+
+      (*pl)->listeSuivante=l;
+    }
+
+CB_CodeBinaire CB_concatener(CB_CodeBinaire c1, CB_CodeBinaire c2){
+  for(int i=0;i<CB_longueur(c2);i++){
+    CB_ajouter(&c1,CB_obtenirBit(c2,i+1));
+  }
+  return c1;
+}

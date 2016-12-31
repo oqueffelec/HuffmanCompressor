@@ -37,7 +37,7 @@ O_Octet O_octetZero(){
   return o;
   }
 
-Bit O_obtenirbit(O_Octet o, int pos){
+Bit O_obtenirBit(O_Octet o, int pos){
   assert(O_nombreBit(o)>=pos);
   unsigned char temp;
   temp = O_getOctet(o);
@@ -81,10 +81,64 @@ int O_octetEnDecimal(O_Octet o){
 O_Octet O_decimalEnOctet(int i){
   O_Octet res = O_octetZero();
   res.octet=i;
-  res.nb=8;
+  if (i<2){
+    res.nb=1;
+  }
+  if (2<=i && i<4){
+    res.nb=2;
+  }
+  if (4<=i && i<8){
+    res.nb=3;
+  }
+  if (8<=i && i<16){
+    res.nb=4;
+  }
+  if (16<=i && i<32){
+    res.nb=5;
+  }
+  if (32<=i && i<64){
+    res.nb=6;
+  }
+  if (64<=i && i<128){
+    res.nb=7;
+  }
+  if (128<=i && i<256){
+    res.nb=8;
+  }
   return res;
 }
 
 int O_comparerOctet(O_Octet o1,O_Octet o2){
   return O_nombreBit(o1)==O_nombreBit(o2) && O_getOctet(o1)==O_getOctet(o2) ;
 }
+
+CB_CodeBinaire O_octetEnCodeBinaire(O_Octet o){
+  CB_CodeBinaire cb = CB_codeBinaire();
+  int val = O_octetEnDecimal(o);
+  if(val==0){
+    CB_ajouter(&cb,bitA0);
+  }
+  else{
+    int division;
+    int reste;
+    while(val/2 != 0){
+      division=val/2;
+      reste = val-2*division;
+      CB_ajouter(&cb,O_obtenirBit(O_decimalEnOctet(reste),0));
+      val=division;
+    }
+    division=val/2;
+    reste = val-2*division;
+    CB_ajouter(&cb,O_obtenirBit(O_decimalEnOctet(reste),0));
+  }
+  return cb;
+}
+
+O_Octet O_codeBinaireEnOctet(CB_CodeBinaire cb){
+  assert(CB_longueur(cb)==8);
+  O_Octet res = O_octetZero();
+  for(int i=0;i<8;i++){
+    O_ajouter(&res,CB_obtenirBit(cb,i+1));
+  }
+    return res;
+  }

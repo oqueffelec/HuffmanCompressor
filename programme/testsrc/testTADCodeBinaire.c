@@ -21,7 +21,7 @@ int clean_suite_success() {
 void test_CODEBINAIRE_ajouter(){
   CB_CodeBinaire cb=CB_codeBinaire();
   CB_ajouter(&cb,bitA0);
-  CU_ASSERT_TRUE(CB_obtenirbit(cb,1)==bitA0);
+  CU_ASSERT_TRUE(CB_obtenirBit(cb,1)==bitA0);
 }
 
 void test_CODEBINAIRE_longeur(){
@@ -53,7 +53,7 @@ void test_CODEBINAIRE_obtenirBit(){
   CB_ajouter(&cb,bitA1);
   CB_ajouter(&cb,bitA1);
   CB_ajouter(&cb,bitA1);
-  CU_ASSERT_TRUE(CB_obtenirbit(cb,4)==bitA0);
+  CU_ASSERT_TRUE(CB_obtenirBit(cb,4)==bitA0);
 }
 
 void test_CODEBINAIRE_supprimerTete(){
@@ -63,7 +63,7 @@ void test_CODEBINAIRE_supprimerTete(){
   CB_ajouter(&cb,bitA0);
   CB_ajouter(&cb,bitA1);
   CB_supprimerTete(&cb);
-  CU_ASSERT_TRUE(CB_obtenirbit(cb,1)==bitA0);
+  CU_ASSERT_TRUE(CB_obtenirBit(cb,1)==bitA0);
 }
 
 void test_CODEBINAIRE_supprimerCB(){

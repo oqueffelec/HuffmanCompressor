@@ -20,27 +20,38 @@ int clean_suite_success() {
   return 0;
 }
 
+
 void test_ADH_estUneFeuille(){
-  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o=O_octetZero();
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
   ArbreDeHuffman a= ADH_arbreDeHuffman(5,o);
   CU_ASSERT_TRUE(ADH_estUneFeuille(a));
 }
 
 void test_ADH_obtenirCaractere(){
-  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o=O_octetZero();
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
   ArbreDeHuffman a= ADH_arbreDeHuffman(5,o);
   CU_ASSERT_TRUE(O_comparerOctet(ADH_obtenirCaractere(a),o));
 }
 
 void test_ADH_obtenirPonderation(){
-  O_Octet o=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
+  O_Octet o=O_octetZero();
+  O_ajouter(&o,bitA1);
+  O_ajouter(&o,bitA1);
   ArbreDeHuffman a= ADH_arbreDeHuffman(5,o);
   CU_ASSERT_TRUE(ADH_obtenirPonderation(a)==5);
 }
 
 void test_ADH_obtenirFilsGauche(){
-  O_Octet o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
-  O_Octet o2=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA1);
+  O_Octet o1=O_octetZero();
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_Octet o2=O_octetZero();
+  O_ajouter(&o1,bitA0);
+  O_ajouter(&o1,bitA1);
   ArbreDeHuffman a= ADH_arbreDeHuffman(5,o1);
   ArbreDeHuffman a2= ADH_arbreDeHuffman(7,o2);
   ArbreDeHuffman a3=ADH_ajouterRacine(a,a2);
@@ -48,8 +59,12 @@ void test_ADH_obtenirFilsGauche(){
 }
 
 void test_ADH_obtenirFilsDroit(){
-  O_Octet o1=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA0);
-  O_Octet o2=O_octetParBit(bitA0,bitA0,bitA1,bitA0,bitA0,bitA1,bitA0,bitA1);
+  O_Octet o1=O_octetZero();
+  O_ajouter(&o1,bitA1);
+  O_ajouter(&o1,bitA1);
+  O_Octet o2=O_octetZero();
+  O_ajouter(&o1,bitA0);
+  O_ajouter(&o1,bitA1);
   ArbreDeHuffman a= ADH_arbreDeHuffman(5,o1);
   ArbreDeHuffman a2= ADH_arbreDeHuffman(7,o2);
   ArbreDeHuffman a3=ADH_ajouterRacine(a,a2);

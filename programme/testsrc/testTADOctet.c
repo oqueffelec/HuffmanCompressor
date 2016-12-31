@@ -32,7 +32,7 @@ void test_OCTET_ajouter(){
   O_ajouter(&o,bitA0);
   O_ajouter(&o,bitA0);
 
-  CU_ASSERT_TRUE(O_obtenirbit(o,0)==bitA0 && O_obtenirbit(o,1)==bitA1 && O_obtenirbit(o,2)==bitA0 && O_obtenirbit(o,3)==bitA0);
+  CU_ASSERT_TRUE(O_obtenirBit(o,0)==bitA0 && O_obtenirBit(o,1)==bitA1 && O_obtenirBit(o,2)==bitA0 && O_obtenirBit(o,3)==bitA0);
 }
 
 void test_OCTET_estRempli(){
@@ -47,15 +47,15 @@ void test_OCTET_estRempli(){
 
 void test_OCTET_octetEnDecimal(){
   O_Octet o = O_octetZero();
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
   O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  CU_ASSERT_TRUE(O_octetEnDecimal(o)==255);
+  CU_ASSERT_TRUE(O_octetEnDecimal(o)==128);
 }
 
 void test_OCTET_comparerOctet(){
@@ -91,6 +91,19 @@ void test_OCTET_comparerOctet(){
   CU_ASSERT_TRUE(O_comparerOctet(o,o2) && !O_comparerOctet(o,o3) && !O_comparerOctet(o3,o2));
 }
 
+void test_OCTET_octetEnCodeBinaire(){
+  O_Octet o = O_octetZero();
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA0);
+  O_ajouter(&o,bitA1);
+
+
+  CB_CodeBinaire cb =O_octetEnCodeBinaire(o);
+
+  CU_ASSERT_TRUE(CB_longueur(cb)==4 && CB_obtenirBit(cb,4) == O_obtenirBit(o,0));
+}
+
 
 
 int main(int argc, char** argv){
@@ -113,6 +126,7 @@ int main(int argc, char** argv){
       || (NULL == CU_add_test(pSuite, "OCTET_estRempli", test_OCTET_estRempli))
       || (NULL == CU_add_test(pSuite, "OCTET_octetEnDecimal", test_OCTET_octetEnDecimal))
       || (NULL == CU_add_test(pSuite, "OCTET_comparerOctet", test_OCTET_comparerOctet))
+      || (NULL == CU_add_test(pSuite, "OCTET_octetEnCodeBinaire", test_OCTET_octetEnCodeBinaire))
       )
     {
       CU_cleanup_registry();

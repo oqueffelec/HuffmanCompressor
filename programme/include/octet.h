@@ -42,7 +42,7 @@ O_Octet O_octetParBit(Bit bit0, Bit bit1, Bit bit2, Bit bit3,Bit bit4, Bit bit5,
 * \return int
 */
 
-Bit O_obtenirbit(O_Octet o, int pos);
+Bit O_obtenirBit(O_Octet o, int pos);
 
 /**
 * \fn void O_ajouter(O_octet, int)
@@ -83,6 +83,10 @@ unsigned char O_getOctet(O_Octet o);
 int O_estRempli(O_Octet o);
 
 O_Octet O_decimalEnOctet(int i);
+
+CB_CodeBinaire O_octetEnCodeBinaire(O_Octet o);
+
+O_Octet O_codeBinaireEnOctet(CB_CodeBinaire cb);
 
 
 #endif

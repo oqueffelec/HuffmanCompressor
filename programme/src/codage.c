@@ -72,30 +72,27 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
     }
 
     // On concatene les cb en un cb, en partant de la fin du tab de cb et en remontant
-
-    for(int j=FB_longueurFichier(source); j>0;j--){
-      for(int i=CB_longueur(code[j]); i>0;i--){
-        CB_ajouter(&codeCumule,CB_obtenirBit(code[j],i));
+    for(int j=FB_longueurFichier(source); j>=0;j--){
+        codeCumule = CB_concatener(codeCumule,code[j]);
       }
-    }
 
     // On ecris convertit les cb en octet, puis lorsque l'octet est rempli, on l'ecris dans le fichier
 
-    int compteur;
-    for( compteur=0; compteur< CB_longueur(codeCumule);compteur++){
+    for(int compteur=0; compteur< CB_longueur(codeCumule);compteur++){
       if(O_estRempli(octetAecrire)){
         FB_ecrireOctet(dest,octetAecrire);
         octetAecrire= O_octetZero();
+        O_ajouter(&octetAecrire,CB_obtenirBit(codeCumule,compteur+1));
       }
       else{
         O_ajouter(&octetAecrire,CB_obtenirBit(codeCumule,compteur+1));
       }
     }
 
-    // On refais pareil pour les derniers bits du cb ne formant pas forcement un octet complet
+    // On bourre de zeros les derniers bits du cb ne formant pas forcement un octet complet
 
-    if(O_nombreBit(octetAecrire)!=0){
-      FB_ecrireOctet(dest,octetAecrire);
-      octetAecrire= O_octetZero();
+    while(O_nombreBit(octetAecrire)!=0 && O_nombreBit(octetAecrire)<8){
+      O_ajouter(&octetAecrire,bitA0);
       }
+    FB_ecrireOctet(dest,octetAecrire);
     }

@@ -33,6 +33,128 @@
 
 
 int main(int argc, char *argv[]){
+
+
+
+FB_FichierBinaire fb= FB_ouvrir("nouvelan1",ecriture);
+
+O_Octet o1 = O_decimalEnOctet(156);
+O_Octet o2 = O_decimalEnOctet(16);
+O_Octet o3 = O_decimalEnOctet(16);
+
+O_Octet tab[3];
+tab[0]=o1;
+tab[1]=o2;
+tab[2]=o3;
+
+
+FB_ecrireOctets(&fb,tab,3);
+
+FB_fermer(fb);
+
+
+ fb= FB_ouvrir("nouvelan1",lecture);
+FB_FichierBinaire fb2= FB_ouvrir("destt1",ecriture);
+STAT_Statistiques stat= creerStatistiques(fb);
+TDC_TableDeCodage tdc= creerTableDeCodage(stat);
+
+codage(fb, &fb2, tdc);
+
+FB_fermer(fb);
+FB_fermer(fb2);
+
+
+ fb= FB_ouvrir("destt1",lecture);
+
+O_Octet o4 = O_octetZero();
+O_Octet o5 = O_octetZero();
+O_Octet o6 = O_octetZero();
+
+O_Octet tab2[3];
+tab2[0]=o4;
+tab2[1]=o5;
+tab2[2]=o6;
+
+
+FB_lireOctets(fb,tab2,3);
+printf(" octet : %d\n", tab[0].octet);
+printf(" octet : %d\n", tab[1].octet);
+printf(" octet : %d\n", tab[2].octet);
+
+printf(" octet : %d\n", tab2[0].octet);
+printf(" octet : %d\n", tab2[1].octet);
+printf(" octet : %d\n", tab2[2].octet);
+FB_fermer(fb);
+
+
+
+
+
+
+
+
+
+
+
+/*
+CB_CodeBinaire tab[4];
+
+CB_CodeBinaire cb = CB_codeBinaire();
+CB_CodeBinaire c2 = CB_codeBinaire();
+CB_CodeBinaire c3 = CB_codeBinaire();
+
+
+CB_ajouter(&cb,bitA1);
+CB_ajouter(&cb,bitA1);
+CB_ajouter(&cb,bitA1);
+
+CB_ajouter(&c2,bitA0);
+CB_ajouter(&c2,bitA0);
+CB_ajouter(&c2,bitA0);
+
+CB_ajouter(&c3,bitA0);
+CB_ajouter(&c3,bitA1);
+CB_ajouter(&c3,bitA0);
+
+
+
+tab[0]=cb;
+tab[1]=c2;
+tab[2]=c3;
+
+
+CB_CodeBinaire res = CB_codeBinaire();
+for(int i=2; i>=0;i--){
+  res = CB_concatener(res,tab[i]);
+}
+
+printf(" cb : %d\n", CB_obtenirBit(res,1));
+printf(" cb : %d\n", CB_obtenirBit(res,2));
+printf(" cb : %d\n", CB_obtenirBit(res,3));
+printf(" cb : %d\n", CB_obtenirBit(res,4));
+printf(" cb : %d\n", CB_obtenirBit(res,5));
+printf(" cb : %d\n", CB_obtenirBit(res,6));
+printf(" cb : %d\n", CB_obtenirBit(res,7));
+printf(" cb : %d\n", CB_obtenirBit(res,8));
+printf(" cb : %d\n", CB_obtenirBit(res,9));
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
 	FB_FichierBinaire fichierHuff;
 	FB_FichierBinaire fichierBin;
   char nomFichier[100];
@@ -68,4 +190,5 @@ int main(int argc, char *argv[]){
 		  }
 	   }
   return EXIT_SUCCESS;
+  */
 }
