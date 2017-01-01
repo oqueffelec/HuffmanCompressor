@@ -17,11 +17,9 @@
 
 STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier){
 	STAT_Statistiques stat = STAT_statistiques();
-	O_Octet octet[FB_longueurFichier(fichier)];
-	for(int i=0; i<FB_longueurFichier(fichier);i++)
-		octet[i]=O_octetZero();
-	FB_lireOctets(fichier,octet,FB_longueurFichier(fichier));
-	for(int i=0; i<FB_longueurFichier(fichier);i++)
-		STAT_ajouter(&stat,octet[i]);
+	O_Octet octet = O_octetZero();
+	while(FB_lireOctet(fichier,&octet)==1 && FB_finFichier(fichier)==0){
+			STAT_ajouter(&stat,octet);
+	}
 	return stat;
 }
