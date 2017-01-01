@@ -117,9 +117,22 @@ int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2){
       (*pl)->listeSuivante=l;
     }
 
-CB_CodeBinaire CB_concatener(CB_CodeBinaire c1, CB_CodeBinaire c2){
-  for(int i=0;i<CB_longueur(c2);i++){
-    CB_ajouter(&c1,CB_obtenirBit(c2,i+1));
+void CB_concatener(CB_CodeBinaire* c1, CB_CodeBinaire c2){
+  CB_CodeBinaire temp =(CB_CodeBinaire)malloc(sizeof(CB_Noeud));
+  if(*c1==NULL){
+    *c1=c2;
   }
-  return c1;
+  else{
+    if(c2!=NULL){
+      temp=*c1;
+      while(temp->listeSuivante!=NULL){
+        temp=temp->listeSuivante;
+      }
+      temp->listeSuivante=c2;
+    }
+  }
+  //for(int i=0;i<CB_longueur(c2);i++){
+  //  CB_ajouter(&c1,CB_obtenirBit(c2,i+1));
+  //}
+  //return c1;
 }

@@ -37,15 +37,19 @@ int main(int argc, char *argv[]){
 
 
 
-FB_FichierBinaire fb= FB_ouvrir("rattrapageASI4-S2_2014-2015.pdf",lecture);
-FB_FichierBinaire fb2= FB_ouvrir("destt",ecriture);
+
+
+
+
+
+FB_FichierBinaire fb= FB_ouvrir("nouvelan1",lecture);
+FB_FichierBinaire fb2= FB_ouvrir("destt.txt",ecriture);
 STAT_Statistiques stat= creerStatistiques(fb);
 TDC_TableDeCodage tdc= creerTableDeCodage(stat);
 codage(fb, &fb2, tdc);
 
 FB_fermer(fb);
 FB_fermer(fb2);
-
 
 
 

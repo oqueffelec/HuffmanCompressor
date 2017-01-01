@@ -64,6 +64,14 @@ void O_ajouter(O_Octet* o,Bit bit){
   o->nb++;
 }
 
+void O_ajouterEnTete(O_Octet* o,Bit bit){
+  assert(!O_estRempli(*o));
+  if(bit==bitA1){
+    o->octet= O_getOctet(*o) + puissance(2,7-O_nombreBit(*o));
+  }
+  o->nb++;
+}
+
 
 
 int O_octetEnDecimal(O_Octet o){

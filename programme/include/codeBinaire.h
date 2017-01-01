@@ -74,6 +74,5 @@ void CB_supprimerTete(CB_CodeBinaire* cb);
 
 CB_CodeBinaire CB_copie(CB_CodeBinaire cb);
 
-CB_CodeBinaire CB_concatener(CB_CodeBinaire c1, CB_CodeBinaire c2);
-
+void CB_concatener(CB_CodeBinaire* c1, CB_CodeBinaire c2);
 #endif

@@ -88,5 +88,7 @@ CB_CodeBinaire O_octetEnCodeBinaire(O_Octet o);
 
 O_Octet O_codeBinaireEnOctet(CB_CodeBinaire cb);
 
+void O_ajouterEnTete(O_Octet* o,Bit bit);
+
 
 #endif
