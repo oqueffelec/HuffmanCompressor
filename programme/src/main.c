@@ -34,15 +34,40 @@
 
 int main(int argc, char *argv[]){
 
+/*
+  CB_CodeBinaire cb = CB_codeBinaire();
+  CB_CodeBinaire c2 = CB_codeBinaire();
+
+
+  CB_ajouter(&cb,bitA1);
+  CB_ajouter(&cb,bitA1);
+  CB_ajouter(&cb,bitA1);
+
+  CB_ajouter(&c2,bitA0);
+  CB_ajouter(&c2,bitA0);
+  CB_ajouter(&c2,bitA0);
+
+CB_concatener(&cb,c2);
+CB_concatener(&cb,cb);
+
+printf("cb : %d", CB_obtenirBit(cb,1));
+printf("cb : %d", CB_obtenirBit(cb,2));
+printf("cb : %d", CB_obtenirBit(cb,3));
+printf("cb : %d", CB_obtenirBit(cb,4));
+printf("cb : %d", CB_obtenirBit(cb,5));
+printf("cb : %d", CB_obtenirBit(cb,6));
+printf("cb : %d", CB_obtenirBit(cb,7));
+printf("cb : %d", CB_obtenirBit(cb,8));
+printf("cb : %d", CB_obtenirBit(cb,9));
+printf("cb : %d", CB_obtenirBit(cb,10));
+printf("cb : %d", CB_obtenirBit(cb,11));
+printf("cb : %d", CB_obtenirBit(cb,12));
+
+*/
 
 
 
-
-
-
-
-
-FB_FichierBinaire fb= FB_ouvrir("nouvelan1",lecture);
+FB_FichierBinaire fb= FB_ouvrir("makefile",lecture);
 FB_FichierBinaire fb2= FB_ouvrir("destt.txt",ecriture);
 STAT_Statistiques stat= creerStatistiques(fb);
 TDC_TableDeCodage tdc= creerTableDeCodage(stat);

@@ -27,14 +27,19 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
   O_Octet octetAecrire= O_octetZero();
   O_Octet octetAlire= O_octetZero();
 
+// la lecture marche impec
 
   FB_deplacerCurseur(&source,0);
+  int boucle=0;
   while(FB_lireOctet(source,&octetAlire)==1 && FB_finFichier(source)==0){
-    FB_lireOctet(source,&octetAlire);
     CB_CodeBinaire code = CB_codeBinaire();
     code = TDC_obtenirCodeBinaire(tdc,octetAlire);
-    CB_concatener(&codeCumule,code); // SEG FAULT je ne sais pas pq
+    CB_concatener(&codeCumule,code); // concatenation marche pas dans cette boucle
+    boucle++;
   }
+  printf("%d\n",boucle );
+  printf("%d\n",CB_longueur(codeCumule) );
+
     // On ecris convertit les cb en octet, puis lorsque l'octet est rempli, on l'ecris dans le fichier
     FB_deplacerCurseur(&source,0);
 
