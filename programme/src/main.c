@@ -34,24 +34,42 @@
 
 int main(int argc, char *argv[]){
 
+/*
+CB_CodeBinaire cb = CB_codeBinaire();
+CB_CodeBinaire c = CB_codeBinaire();
+CB_ajouter(&cb,bitA1);
+CB_ajouter(&cb,bitA1);
+CB_CodeBinaire c3 = CB_codeBinaire();
+CB_CodeBinaire c4 = CB_codeBinaire();
+CB_ajouter(&c3,bitA0);
+CB_ajouter(&c3,bitA1);
 
-
-
-
-
-
-
-FB_FichierBinaire fb= FB_ouvrir("makefile",lecture);
-FB_FichierBinaire fb2= FB_ouvrir("destt.txt",ecriture);
-STAT_Statistiques stat= creerStatistiques(fb);
-int res=0;
-for(int i=0;i<STAT_SIZE;i++){
-  printf("%d\n", STAT_obtenirPonderation(stat,O_decimalEnOctet(i)));
-  res=STAT_obtenirPonderation(stat,O_decimalEnOctet(i))+res;
+int k=0;
+while(k<4){
+CB_codeBinaireEnCodeBinaire(&c,c4);
+k++;
 }
-printf("%d\n", res);
+
+
+
+for(int i=0;i<CB_longueur(c);i++)
+printf("%d\n", CB_obtenirBit(c,i+1));
+
+*/
+
+
+
+FB_FichierBinaire fb= FB_ouvrir("06-StructureDeDonneesDynamiques-4PagesParPage-2.pdf",lecture);
+FB_FichierBinaire fb2= FB_ouvrir("a",ecriture);
+STAT_Statistiques stat= creerStatistiques(fb);
+
+
+
 
 TDC_TableDeCodage tdc= creerTableDeCodage(stat);
+
+codage(fb,&fb2,tdc);
+
 
 
 FB_fermer(fb);

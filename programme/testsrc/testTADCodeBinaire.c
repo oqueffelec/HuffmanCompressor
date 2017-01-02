@@ -27,10 +27,8 @@ void test_CODEBINAIRE_ajouter(){
 void test_CODEBINAIRE_longeur(){
   CB_CodeBinaire cb=CB_codeBinaire();
   CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CB_ajouter(&cb,bitA0);
-  CU_ASSERT_TRUE(CB_longueur(cb)==4);
+
+  CU_ASSERT_TRUE(CB_longueur(cb)==1);
 }
 
 void test_CODEBINAIRE_compareCB(){

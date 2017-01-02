@@ -106,17 +106,7 @@ int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2){
 
 
 void CB_concatener(CB_CodeBinaire* c1, CB_CodeBinaire c2){
-  CB_CodeBinaire temp =(CB_CodeBinaire)malloc(sizeof(CB_Noeud));
-  if(*c1==NULL){
-    c1=&c2;
-  }
-  else{
-    if(c2!=NULL){
-      temp=(*c1)->listeSuivante;
-      CB_concatener(&temp,c2);
-      if((*c1)->listeSuivante==NULL){
-        (*c1)->listeSuivante=c2;
-      }
-    }
+  for(int i=0;i<CB_longueur(c2);i++){
+    CB_ajouter(c1,CB_obtenirBit(c2,i+1));
   }
 }

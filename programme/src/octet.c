@@ -143,7 +143,7 @@ CB_CodeBinaire O_octetEnCodeBinaire(O_Octet o){
 }
 
 O_Octet O_codeBinaireEnOctet(CB_CodeBinaire cb){
-  assert(CB_longueur(cb)==8);
+  //assert(CB_longueur(cb)==8);
   O_Octet res = O_octetZero();
   for(int i=0;i<8;i++){
     O_ajouter(&res,CB_obtenirBit(cb,i+1));
