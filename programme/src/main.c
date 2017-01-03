@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <string.h>
-#include "TableDeCodage.h"
+#include "tableDeCodage.h"
 #include <errno.h>
 #include "Bit.h"
 #include "Statistiques.h"
