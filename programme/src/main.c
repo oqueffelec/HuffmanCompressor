@@ -5,9 +5,9 @@
 #include <string.h>
 #include "tableDeCodage.h"
 #include <errno.h>
-#include "Bit.h"
-#include "Statistiques.h"
-#include "CodeBinaire.h"
+#include "bit.h"
+#include "statistiques.h"
+#include "codeBinaire.h"
 #include "fichierBinaire.h"
 #include "octet.h"
 #include "enTete.h"
