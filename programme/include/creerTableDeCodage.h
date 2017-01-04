@@ -28,7 +28,7 @@
 * \return ArbreDeHuffman
 */
 
-ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file);
+ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file);
 
 /**
 * \fn void remplirTableDeCodage(TDC_TableDeCodage tdc, ArbreDeHuffman arbre, CB_CodeBinaire code);

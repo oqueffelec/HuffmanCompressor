@@ -24,6 +24,7 @@
 int estFichierHuffman(FB_FichierBinaire fichierSource){
   char* huffman = "huffman";
   char* id = FB_lireChaine(fichierSource,7);
+  id[7]='\0';
   if(strcmp(id,huffman)==0){
     return TRUE;
   }
@@ -37,27 +38,17 @@ void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur){
 }
 
 void recupererStatistiques(FB_FichierBinaire fichierSource, STAT_Statistiques* stat){
-  int iStat;
+  int iStat=0;
   for(int i=0;i<STAT_SIZE;i++){
     FB_lireNaturel(fichierSource, &iStat);
-    STAT_ajouter(stat,O_decimalEnOctet(iStat));
-  }
-}
-
-void recupererCodeBinaire(FB_FichierBinaire fichierSource, CB_CodeBinaire* cb){
-  O_Octet octetSource=O_octetZero();
-  octetSource.nb=8;
-  while(FB_finFichier(fichierSource)==0 &&  FB_lireOctet(fichierSource,&octetSource)){
-    FB_lireOctet(fichierSource,&octetSource);
-    for(int i=0; i<8; i++){
-      CB_ajouter(cb,O_obtenirBit(octetSource,i));
+    for(int j=0;j<iStat;j++){
+    STAT_ajouter(stat,O_decimalEnOctet(i));
     }
   }
 }
 
-void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur, CB_CodeBinaire* cb){
-  int res = estFichierHuffman(fichierSource);
+void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur){
+  assert(estFichierHuffman(fichierSource));
   recupererLongueur(fichierSource, longueur);
   recupererStatistiques(fichierSource,stat);
-  recupererCodeBinaire(fichierSource,cb);
 }

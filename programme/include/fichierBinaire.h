@@ -10,12 +10,11 @@
 #include "codeBinaire.h"
 #include "octet.h"
 #include "mode.h"
-#define BUFFER_SIZE 8
 #define FB_ERREUR_OUVERTURE 1
 
 /**
-* \struct TDC_tableDeCodage tableDeCodage.h
-* \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
+* \struct FB_FichierBinaire
+* \brief la structure est une redefinition du type FILE*
 */
 
 
@@ -26,68 +25,108 @@ FILE* file;
 
 
 /**
-* \fn TDC_tableDeCodage TDC_tableDeCodage()
-* \brief renvoie la position d'un coup
-* \return TDC_tableDeCodage
-*/
-
-FB_FichierBinaire FB_fichierBinaire(char nom[]);
-
-/**
-* \fn void ajouter(TDC_tableDeCodage, octet, codeBinaire)
-* \brief ajoute un couple cle valeur à la TDC
-* \return void
+* \fn FB_FichierBinaire FB_ouvrir(char nom[], Mode mode)
+* \brief ouvre un fichier binaire suivant le mode passé en parametre
+* \return FB_FichierBinaire
 */
 
 FB_FichierBinaire FB_ouvrir(char nom[], Mode mode);
 
 /**
-* \fn int TDC_estPresentCodeBinaire(TDC_tableDeCodage tdc, codeBinaire cb)
-* \brief verifie la presence d'un codebinaire dans la TDC
-* \return int
+* \fn void FB_fermer(FB_FichierBinaire fb)
+* \brief ferme le fichier binaire
+* \return void
 */
 
 void FB_fermer(FB_FichierBinaire fb);
 
 
 /**
-* \fn codeBinaire TDC_obtenirCodeBinaire(TDC_tableDeCodage tdc, octet o)
-* \brief renvoie le codebinaire correspondant
-* \return codebinaire
-*/
-
-int FB_estOuvert(FB_FichierBinaire fb);
-/**
-* \fn void TDC_retirerOctet(TDC_tableDeCodage tdc, octet o)
-* \brief retire le couple octet codebinaire
-* \return void
+* \fn int FB_finFichier(FB_FichierBinaire fb);
+* \brief renvoie 0 si n'est pas à la fin du fichier, un nombre non nul sinon
+* \return int
 */
 
 int FB_finFichier(FB_FichierBinaire fb);
 
-void FB_ecrireOctets(FB_FichierBinaire* fb, O_Octet* o,int tailleTab);
-
-int FB_lireOctets(FB_FichierBinaire fb, O_Octet* o, int tailleTab);
+/**
+* \fn void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o)
+* \brief ecris un octet dans le fichier
+* \return void
+*/
 
 void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o);
 
+/**
+* \fn int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o)
+* \brief lis un octet dans le fichier, renvoie 1 si lecture sans erreur, 0 sinon
+* \return int
+*/
+
+
 int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o);
+
+/**
+* \fn void FB_ecrireNaturel(FB_FichierBinaire* fb, int n)
+* \brief ecris un naturel dans le fichier
+* \return void
+*/
 
 void FB_ecrireNaturel(FB_FichierBinaire* fb, int n);
 
+/**
+* \fn int FB_lireNaturel(FB_FichierBinaire fb, int* i)
+* \brief lis un naturel dans le fichier, renvoie 1 si lecture sans erreur, 0 sinon
+* \return int
+*/
+
 int FB_lireNaturel(FB_FichierBinaire fb, int* i);
+
+/**
+* \fn void FB_ecrireCaractere(FB_FichierBinaire* fb, char c)
+* \brief ecris un char dans le fichier
+* \return void
+*/
 
 void FB_ecrireCaractere(FB_FichierBinaire* fb, char c);
 
+/**
+* \fn int FB_lireCaractere(FB_FichierBinaire fb, char* c)
+* \brief lis un char dans le fichier, renvoie 1 si lecture sans erreur, 0 sinon
+* \return int
+*/
+
 int FB_lireCaractere(FB_FichierBinaire fb, char* c);
+
+/**
+* \fn void FB_ecrireChaine(FB_FichierBinaire* fb, char* chaine)
+* \brief ecris un char* dans le fichier
+* \return void
+*/
 
 void FB_ecrireChaine(FB_FichierBinaire* fb, char* chaine);
 
+/**
+* \fn char* FB_lireChaine(FB_FichierBinaire fb, int n)
+* \brief ecris une chaine de caractere dans le fichier, la taille de la chaine en param, retourne la chaine lu
+* \return char*
+*/
+
 char* FB_lireChaine(FB_FichierBinaire fb, int n);
+
+/**
+* \fn int FB_longueurFichier(FB_FichierBinaire fb)
+* \brief retourne la longueur du fichier passé en parametre
+* \return int
+*/
 
 int FB_longueurFichier(FB_FichierBinaire fb) ;
 
+/**
+* \fn void FB_deplacerCurseur(FB_FichierBinaire* f, long position)
+* \brief déplace le curseur de la position passée en parametre depuis la position actuelle
+* \return void
+*/
+
 void FB_deplacerCurseur(FB_FichierBinaire* f, long position);
-
-
 #endif

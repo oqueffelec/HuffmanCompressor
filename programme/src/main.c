@@ -57,10 +57,10 @@ printf("%d\n", CB_obtenirBit(c,i+1));
 
 */
 
+//COMPRESSION
 
-
-FB_FichierBinaire fb= FB_ouvrir("06-StructureDeDonneesDynamiques-4PagesParPage-2.pdf",lecture);
-FB_FichierBinaire fb2= FB_ouvrir("a",ecriture);
+FB_FichierBinaire fb= FB_ouvrir("04-TAD-4PagesParPage.pdf",lecture);
+FB_FichierBinaire fb2= FB_ouvrir("a.txt",ecriture);
 STAT_Statistiques stat= creerStatistiques(fb);
 
 
@@ -68,7 +68,24 @@ STAT_Statistiques stat= creerStatistiques(fb);
 
 TDC_TableDeCodage tdc= creerTableDeCodage(stat);
 
+enTete(fb,&fb2,stat);
 codage(fb,&fb2,tdc);
+
+
+FB_fermer(fb);
+FB_fermer(fb2);
+
+//DECOMPRESSION
+
+ fb= FB_ouvrir("a.txt",lecture);
+ fb2= FB_ouvrir("faibleBIS.pdf",ecriture);
+
+
+
+decompression(fb,&fb2);
+
+FB_fermer(fb);
+FB_fermer(fb2);
 
 
 

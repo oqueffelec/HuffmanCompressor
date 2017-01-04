@@ -28,9 +28,13 @@
 
 void decompression(FB_FichierBinaire fichierSource, FB_FichierBinaire* fichierDest){
   STAT_Statistiques stat =STAT_statistiques();
-  CB_CodeBinaire cb = CB_codeBinaire();
-  int longueur;
+  ArbreDeHuffman adh ;
+  FDP_FileDePriorite fdp = FDP_fileDePriorite();
+  int longueur=0;
 
-  recupererDonnees(fichierSource,&stat,&longueur,&cb);
-  decodage(cb,fichierDest,stat);
+  recupererDonnees(fichierSource,&stat,&longueur);
+  fdp = creerFileDePriorite(stat);
+  adh=creerArbreDeHuffman(fdp);
+  decodage(fichierDest,fichierSource,longueur,adh);
+  FB_deplacerCurseur(fichierDest, 0);
 }

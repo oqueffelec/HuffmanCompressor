@@ -1,5 +1,5 @@
 /**
- * \CodeBinaire.h
+ * \file CodeBinaire.h
  * \brief Implantation du TAD codeBinaire : codeBinaire est une liste chainé
  * \author Jean-Gabriel Wacyk
  * \version 1.0
@@ -57,24 +57,32 @@ int CB_longueur(CB_CodeBinaire cb);
 /**
 * \fn int CB_obtenirbit(CB_codeBinaire, int)
 * \brief renvoie le bit en position pos
-* \return int
+* \return Bit
 */
 
 Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos);
 
 /**
 * \fn int CB_compareCodeBinaire(CB_codeBinaire, CB_codeBinaire)
-* \brief compare deux codeBinaire
+* \brief compare deux codeBinaire, renvoie 1 si egaux, 0 sinon
 * \return int
 */
 
 int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2);
 
+/**
+* \fn void CB_supprimerTete(CB_CodeBinaire* cb)
+* \brief supprime le bit en Tete de du code binaire
+* \return void
+*/
+
 void CB_supprimerTete(CB_CodeBinaire* cb);
 
+/**
+* \fn CB_CodeBinaire CB_copie(CB_CodeBinaire cb)
+* \brief clone un code binaire
+* \return CB_CodeBinaire
+*/
+
 CB_CodeBinaire CB_copie(CB_CodeBinaire cb);
-
-void CB_concatener(CB_CodeBinaire* c1, CB_CodeBinaire c2);
-
-void CB_codeBinaireEnCodeBinaire(CB_CodeBinaire* cb, CB_CodeBinaire cb2);
 #endif

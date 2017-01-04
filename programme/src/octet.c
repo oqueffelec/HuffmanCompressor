@@ -18,17 +18,13 @@
 #define TRUE 1
 #define FALSE 0
 
-int O_nombreBit(O_Octet o){
-  return o.nb;
-}
+// Partie Privée
 
 unsigned char O_getOctet(O_Octet o){
   return o.octet;
 }
 
-int O_estRempli(O_Octet o){
-  return O_nombreBit(o)==8;
-}
+// Partie publique
 
 O_Octet O_octetZero(){
   O_Octet o;
@@ -36,6 +32,14 @@ O_Octet O_octetZero(){
   o.nb=0;
   return o;
   }
+
+int O_nombreBit(O_Octet o){
+  return o.nb;
+}
+
+int O_estRempli(O_Octet o){
+  return O_nombreBit(o)==8;
+}
 
 Bit O_obtenirBit(O_Octet o, int pos){
   assert(O_nombreBit(o)>=pos);
@@ -56,7 +60,7 @@ Bit O_obtenirBit(O_Octet o, int pos){
 
 
 
-void O_ajouter(O_Octet* o,Bit bit){
+void O_ajouterPoidsFaible(O_Octet* o,Bit bit){
   assert(!O_estRempli(*o));
   if(bit==bitA1){
     o->octet= O_getOctet(*o) + puissance(2,O_nombreBit(*o));
@@ -64,7 +68,7 @@ void O_ajouter(O_Octet* o,Bit bit){
   o->nb++;
 }
 
-void O_ajouterEnTete(O_Octet* o,Bit bit){
+void O_ajouterPoidsFort(O_Octet* o,Bit bit){
   assert(!O_estRempli(*o));
   if(bit==bitA1){
     o->octet= O_getOctet(*o) + puissance(2,7-O_nombreBit(*o));
@@ -77,12 +81,6 @@ void O_ajouterEnTete(O_Octet* o,Bit bit){
 int O_octetEnDecimal(O_Octet o){
   int res=0;
   res = (int)O_getOctet(o);
-  // Autre méthode indépendante de la représentation d'un Octet mais plus lourde
-  //for (int i=0;i<8;i++){
-      //if (O_obtenirbit(o,i)==bitA1){
-	       //res=res+puissance2(i);
-	      //}
-    //}
   return res;
 }
 
@@ -146,7 +144,7 @@ O_Octet O_codeBinaireEnOctet(CB_CodeBinaire cb){
   //assert(CB_longueur(cb)==8);
   O_Octet res = O_octetZero();
   for(int i=0;i<8;i++){
-    O_ajouter(&res,CB_obtenirBit(cb,i+1));
+    O_ajouterPoidsFaible(&res,CB_obtenirBit(cb,i+1));
   }
     return res;
   }

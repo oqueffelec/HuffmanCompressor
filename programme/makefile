@@ -47,8 +47,8 @@ $(TESTDIR)/% : $(SRCTESTDIR)/%.o $(LIBDIR)/libhuffman.a
 $(LIBDIR)/libhuffman.a: $(SRCDIR)/arbreDeHuffman.o $(SRCDIR)/codeBinaire.o $(SRCDIR)/fichierBinaire.o $(SRCDIR)/fileDePriorite.o $(SRCDIR)/octet.o $(SRCDIR)/statistiques.o $(SRCDIR)/tableDeCodage.o $(SRCDIR)/puissance.o
 	ar -r $@ $^
 
-$(BINDIR)/$(EXEC): $(LIBDIR)/libhuffman.a $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/puissance.o $(SRCDIR)/recupererDonnees.o
-	$(CC) -o $@ $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/puissance.o $(SRCDIR)/recupererDonnees.o $(LDFLAGS)
+$(BINDIR)/$(EXEC): $(LIBDIR)/libhuffman.a $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decodageCodeBinaire.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/puissance.o $(SRCDIR)/recupererDonnees.o
+	$(CC) -o $@ $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decodageCodeBinaire.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/puissance.o $(SRCDIR)/recupererDonnees.o $(LDFLAGS)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) -o $@ -c $< $(CFLAGS)

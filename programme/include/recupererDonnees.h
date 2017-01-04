@@ -23,16 +23,16 @@
 
 
 /**
-* \fn ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file)
-* \brief renvoie l'arbre de Huffman créer à partir d'une file de priorite
-* \return ArbreDeHuffman
+* \fn int estFichierHuffman(FB_FichierBinaire fichierSource)
+* \brief retourne si l'identifiant du fichier est un identifiant .huff
+* \return int
 */
 
 int estFichierHuffman(FB_FichierBinaire fichierSource);
 
 /**
-* \fn void remplirTableDeCodage(TDC_TableDeCodage tdc, ArbreDeHuffman arbre, CB_CodeBinaire code);
-* \brief remplie la table de codage à partir d'un arbre de Huffman
+* \fn void recupererStatistiques(FB_FichierBinaire fichierSource, STAT_Statistiques* stat)
+* \brief recupere les statistiques du fichier
 * \return void
 */
 
@@ -40,15 +40,18 @@ int estFichierHuffman(FB_FichierBinaire fichierSource);
 void recupererStatistiques(FB_FichierBinaire fichierSource, STAT_Statistiques* stat);
 
 /**
-* \fn TDC_TableDeCodage creerTableDeCodage(STAT_Statistiques stats);
-* \brief remplie la table de codage à partir des stats
-* \return TDC_TableDeCodage
+* \fn void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur);
+* \brief recupere la longeur en octet du fichier 
+* \return void
 */
-
-void recupererCodeBinaire(FB_FichierBinaire fichierSource, CB_CodeBinaire* cb);
-
-void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur, CB_CodeBinaire* cb);
 
 void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur);
 
+/**
+* \fn void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur)
+* \brief recupere l'entete du fichier, statistiques + longueur + verif de l'id
+* \return void
+*/
+
+void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur);
 #endif

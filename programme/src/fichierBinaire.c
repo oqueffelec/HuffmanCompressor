@@ -23,8 +23,6 @@ FB_FichierBinaire FB_ouvrir(char nom[], Mode mode) {
   case lecture :
     fb.file = fopen(nom, "rb");
     break;
-  case ajout :
-    fb.file = fopen(nom, "ab");
   default :
     errno = FB_ERREUR_OUVERTURE;
     break;
@@ -42,15 +40,6 @@ int FB_finFichier(FB_FichierBinaire fb) {
   return feof(fb.file);
 }
 
-void FB_ecrireOctets(FB_FichierBinaire* fb, O_Octet* o,int tailleTab) {
-  fwrite(&(o->octet), sizeof(unsigned char), tailleTab, (fb->file));
-}
-
-int FB_lireOctets(FB_FichierBinaire fb, O_Octet* o, int tailleTab) {
-  int res=0;
-    res =fread(&(o->octet), sizeof(unsigned char), tailleTab, fb.file);
-return res;
-}
 
 void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o) {
   fwrite(&(o.octet), sizeof(unsigned char), 1, (fb->file));

@@ -18,7 +18,7 @@
 #include "tableDeCodage.h"
 
 
-ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file){
+ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file){
   ArbreDeHuffman temp;
   ArbreDeHuffman arbre1;
   ArbreDeHuffman arbre2;
@@ -54,7 +54,7 @@ TDC_TableDeCodage creerTableDeCodage(STAT_Statistiques stats){
   CB_CodeBinaire code = CB_codeBinaire();
   TDC_TableDeCodage res = TDC_tableDeCodage();
   FDP_FileDePriorite file = creerFileDePriorite(stats);
-  ArbreDeHuffman arbre = creerAbreDeHuffman(file);
+  ArbreDeHuffman arbre = creerArbreDeHuffman(file);
   remplirTableDeCodage(&res,arbre,&code);
   return res;
 }

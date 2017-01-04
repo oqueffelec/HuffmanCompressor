@@ -34,7 +34,7 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
       CB_CodeBinaire code = CB_codeBinaire();
       code = TDC_obtenirCodeBinaire(tdc,octetAlire);
       for(int i=0; i<CB_longueur(code); i++){
-        O_ajouterEnTete(&octetAecrire,CB_obtenirBit(code,i+1));
+        O_ajouterPoidsFort(&octetAecrire,CB_obtenirBit(code,i+1));
         if(O_estRempli(octetAecrire)){
           FB_ecrireOctet(dest,octetAecrire);
           octetAecrire=O_octetZero();
@@ -47,7 +47,7 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
   void bourrage(FB_FichierBinaire* dest, O_Octet octetAecrire){
     if(O_nombreBit(octetAecrire)!=0){
       while(O_nombreBit(octetAecrire)<8){
-        O_ajouterEnTete(&octetAecrire,bitA0);
+        O_ajouterPoidsFort(&octetAecrire,bitA0);
         }
       FB_ecrireOctet(dest,octetAecrire);
     }

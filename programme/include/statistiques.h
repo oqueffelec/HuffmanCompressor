@@ -1,6 +1,6 @@
 /**
  * \file statistiques.h
- * \brief Implantation du TAD Statistiques : Statistiques est un tableau de 256 Octets.
+ * \brief Implantation du TAD Statistiques : Statistiques est un dictionnaire de 256 Octets et 256 ponderations
  * \author Mathieu Vandecasteele
  * \version 1.0
  * \date 20/11/2016
@@ -9,6 +9,7 @@
 #define __STATISTIQUES__
 
 #include "octet.h"
+
 
 #define STAT_ERREUR_MEMOIRE 1
 #define STAT_SIZE 256
@@ -25,17 +26,15 @@ unsigned long int valeur[STAT_SIZE];
 
 /**
 * \fn STAT_Statistiques STAT_statistiques()
-* \brief initialise une variable STAT_Statistiques
+* \brief initialise une variable STAT_Statistiques avec des octets zeros et des ponderations nulles
 * \return STAT_Statistiques
 */
 
 STAT_Statistiques STAT_statistiques();
 
-
-
 /**
 * \fn void STAT_ajouter(STAT_Statistiques* stat, O_Octet* octet, unsigned long int pond)
-* \brief met à jour la pondération associée à un octet.
+* \brief incrémente la pondération associée à l'octet.
 * \return void
 */
 
@@ -48,15 +47,6 @@ void STAT_ajouter(STAT_Statistiques* stat, O_Octet o);
 */
 
 int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet octet);
-/**
-* \fn int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond)
-* \brief verifie la presence d'une pondération dans la stat
-* \return int
-*/
-
-int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond);
-
-
 
 /**
 * \fn unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet* o)
@@ -65,15 +55,5 @@ int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond);
 */
 
 unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet o);
-
-
-
-/**
-* \fn STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat)
-* \brief obtient une liste d'Octets
-* \return STAT_ListeOctets
-*/
-
-/*STAT_ListeOctets STAT_obtenirOctets(STAT_Statistiques stat);*/
 
 #endif

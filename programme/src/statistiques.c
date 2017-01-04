@@ -38,20 +38,6 @@ int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet octet){
   return (estPresent);
 }
 
-int STAT_estPresentPonderation(STAT_Statistiques stat, unsigned long int pond){
-  int i=0;
-  int estPresent=FALSE;
-  while ((!estPresent) && (i<STAT_SIZE)){
-    if (stat.valeur[i] == pond){
-      estPresent=TRUE;
-    }
-    else{
-      i++;
-    }
-  }
-  return estPresent;
-}
-
 unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet o){
   return stat.valeur[O_octetEnDecimal(o)];
 }

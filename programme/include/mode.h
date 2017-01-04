@@ -1,6 +1,18 @@
+/**
+ * \file mode.h
+ * \brief Implantation du TAD mode
+ * \author Octave Queffelec
+ * \version 1.0
+ */
+
 #ifndef __MODE__
 #define __MODE__
 
-typedef enum mode {lecture, ecriture,ajout} Mode;
+/**
+* \struct mode mode.h
+* \brief mode est une enumeration
+*/
+
+typedef enum mode {lecture, ecriture} Mode;
 
 #endif

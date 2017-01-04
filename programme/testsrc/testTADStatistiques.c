@@ -21,14 +21,14 @@ int clean_suite_success() {
 
 void test_STAT_ajouter(){
   O_Octet o=O_octetZero();
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
   STAT_Statistiques s= STAT_statistiques();
   STAT_ajouter(&s,o);
   STAT_ajouter(&s,o);
@@ -37,22 +37,22 @@ void test_STAT_ajouter(){
   CU_ASSERT_TRUE(STAT_obtenirPonderation(s,o)==4);
 }
 
-void test_STAT_estPresentPonderation(){
+void test_STAT_estPresentOctet(){
   O_Octet o=O_octetZero();
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
-  O_ajouter(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
+  O_ajouterPoidsFaible(&o,bitA1);
   STAT_Statistiques s= STAT_statistiques();
   STAT_ajouter(&s,o);
   STAT_ajouter(&s,o);
   STAT_ajouter(&s,o);
   STAT_ajouter(&s,o);
-  CU_ASSERT_TRUE(STAT_estPresentPonderation(s,4));
+  CU_ASSERT_TRUE(STAT_estPresentOctet(s,o));
 }
 
 
@@ -72,7 +72,7 @@ int main(int argc, char** argv){
 
   /* Ajout des tests a la suite de tests boite noire */
   if ((NULL == CU_add_test(pSuite, "STAT_ajouter", test_STAT_ajouter))
-      || (NULL == CU_add_test(pSuite, "STAT_estPresentPonderation", test_STAT_estPresentPonderation))
+      || (NULL == CU_add_test(pSuite, "STAT_estPresentOctet", test_STAT_estPresentOctet))
       )
     {
       CU_cleanup_registry();
