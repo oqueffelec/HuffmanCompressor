@@ -41,10 +41,10 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
         }
       }
     }
-    bourrage(dest,octetAecrire);
+    bourrageZeros(dest,octetAecrire);
   }
 
-  void bourrage(FB_FichierBinaire* dest, O_Octet octetAecrire){
+  void bourrageZeros(FB_FichierBinaire* dest, O_Octet octetAecrire){
     if(O_nombreBit(octetAecrire)!=0){
       while(O_nombreBit(octetAecrire)<8){
         O_ajouterPoidsFort(&octetAecrire,bitA0);

@@ -19,7 +19,7 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
 * \brief rempli de 0 le dernier octet
 * \return void
 */
-void bourrage(FB_FichierBinaire* dest, O_Octet octetAecrire);
+void bourrageZeros(FB_FichierBinaire* dest, O_Octet octetAecrire);
 
 
 #endif
