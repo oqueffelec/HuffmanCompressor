@@ -59,8 +59,8 @@ printf("%d\n", CB_obtenirBit(c,i+1));
 
 //COMPRESSION
 
-FB_FichierBinaire fb= FB_ouvrir("04-TAD-4PagesParPage.pdf",lecture);
-FB_FichierBinaire fb2= FB_ouvrir("a.txt",ecriture);
+FB_FichierBinaire fb= FB_ouvrir("test.txt",lecture);
+FB_FichierBinaire fb2= FB_ouvrir("a",ecriture);
 STAT_Statistiques stat= creerStatistiques(fb);
 
 
@@ -77,17 +77,12 @@ FB_fermer(fb2);
 
 //DECOMPRESSION
 
- fb= FB_ouvrir("a.txt",lecture);
- fb2= FB_ouvrir("faibleBIS.pdf",ecriture);
+ fb= FB_ouvrir("a",lecture);
+ fb2= FB_ouvrir("res.txt",ecriture);
 
 
 
 decompression(fb,&fb2);
-
-FB_fermer(fb);
-FB_fermer(fb2);
-
-
 
 FB_fermer(fb);
 FB_fermer(fb2);

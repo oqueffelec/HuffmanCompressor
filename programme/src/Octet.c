@@ -24,6 +24,17 @@ unsigned char O_getOctet(O_Octet o){
   return o.octet;
 }
 
+int puissance(int x, int p){
+  int res;
+  if (p == 0){
+    res = 1;
+    }
+  else{
+    res = x * puissance(x,p-1);
+ 	  }
+  return res;
+  }
+
 // Partie publique
 
 O_Octet O_octetZero(){

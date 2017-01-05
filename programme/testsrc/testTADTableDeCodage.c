@@ -9,8 +9,8 @@
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
 #include "codeBinaire.h"
-#include "Octet.h"
-#include "TableDeCodage.h"
+#include "octet.h"
+#include "tableDeCodage.h"
 
 int init_suite_success() {
   return 0;

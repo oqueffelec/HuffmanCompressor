@@ -101,12 +101,3 @@ int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2){
         }
       }
     }
-
-
-
-
-void CB_concatener(CB_CodeBinaire* c1, CB_CodeBinaire c2){
-  for(int i=0;i<CB_longueur(c2);i++){
-    CB_ajouter(c1,CB_obtenirBit(c2,i+1));
-  }
-}
