@@ -10,16 +10,15 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "statistiques.h"
-#include "codeBinaire.h"
-#include "tableDeCodage.h"
-#include "fichierBinaire.h"
+#include "Statistiques.h"
+#include "TableDeCodage.h"
+#include "FichierBinaire.h"
 #include <errno.h>
 #include "creerStatistiques.h"
 #include "creerTableDeCodage.h"
 #include "enTete.h"
 #include "codage.h"
-#include "octet.h"
+
 
 
 #define TRUE 1

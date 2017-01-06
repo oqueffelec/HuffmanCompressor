@@ -8,7 +8,7 @@
 #ifndef __CODE__BINAIRE__
 #define __CODE__BINAIRE__
 
-#include "bit.h"
+#include "Bit.h"
 #define TDC_ERREUR_MEMOIRE 1
 
 /**

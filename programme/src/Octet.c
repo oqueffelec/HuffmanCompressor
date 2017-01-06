@@ -12,8 +12,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <math.h>
-#include "octet.h"
-#include "puissance.h"
+#include "Octet.h"
 
 #define TRUE 1
 #define FALSE 0

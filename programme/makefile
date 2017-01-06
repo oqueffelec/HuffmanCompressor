@@ -44,11 +44,11 @@ tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)
 $(TESTDIR)/% : $(SRCTESTDIR)/%.o $(LIBDIR)/libhuffman.a
 	$(CC) -o $@ $< $(LDFLAGS) -lcunit
 
-$(LIBDIR)/libhuffman.a: $(SRCDIR)/arbreDeHuffman.o $(SRCDIR)/codeBinaire.o $(SRCDIR)/fichierBinaire.o $(SRCDIR)/fileDePriorite.o $(SRCDIR)/octet.o $(SRCDIR)/statistiques.o $(SRCDIR)/tableDeCodage.o $(SRCDIR)/puissance.o
+$(LIBDIR)/libhuffman.a: $(SRCDIR)/ArbreDeHuffman.o $(SRCDIR)/CodeBinaire.o $(SRCDIR)/FichierBinaire.o $(SRCDIR)/FileDePriorite.o $(SRCDIR)/Octet.o $(SRCDIR)/Statistiques.o $(SRCDIR)/TableDeCodage.o
 	ar -r $@ $^
 
-$(BINDIR)/$(EXEC): $(LIBDIR)/libhuffman.a $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decodageCodeBinaire.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/puissance.o $(SRCDIR)/recupererDonnees.o
-	$(CC) -o $@ $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decodageCodeBinaire.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/puissance.o $(SRCDIR)/recupererDonnees.o $(LDFLAGS)
+$(BINDIR)/$(EXEC): $(LIBDIR)/libhuffman.a $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decodageCodeBinaire.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/recupererDonnees.o
+	$(CC) -o $@ $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decodageCodeBinaire.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/recupererDonnees.o $(LDFLAGS)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) -o $@ -c $< $(CFLAGS)

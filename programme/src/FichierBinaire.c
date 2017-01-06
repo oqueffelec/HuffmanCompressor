@@ -5,9 +5,9 @@
 #include <errno.h>
 #include <string.h>
 #include <sys/stat.h>
-#include "fichierBinaire.h"
-#include "mode.h"
-#include "octet.h"
+#include "FichierBinaire.h"
+#include "Mode.h"
+#include "Octet.h"
 
 #define TRUE 1
 #define FALSE 0

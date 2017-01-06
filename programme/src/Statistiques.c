@@ -10,9 +10,8 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "statistiques.h"
-#include <errno.h>
-#include "octet.h"
+#include "Statistiques.h"
+#include "Octet.h"
 
 
 #define TRUE 1

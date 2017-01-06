@@ -3,21 +3,23 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <string.h>
-#include "tableDeCodage.h"
 #include <errno.h>
-#include "bit.h"
-#include "statistiques.h"
-#include "codeBinaire.h"
-#include "fichierBinaire.h"
-#include "octet.h"
-#include "enTete.h"
-#include "puissance.h"
-#include "creerStatistiques.h"
-#include "creerTableDeCodage.h"
-#include "codage.h"
-#include "recupererDonnees.h"
 #include "compression.h"
 #include "decompression.h"
+#include "FichierBinaire.h"
+#include "Statistiques.h"
+#include "creerStatistiques.h"
+#include "TableDeCodage.h"
+#include "creerTableDeCodage.h"
+#include "enTete.h"
+#include "codage.h"
+
+
+
+
+
+
+
 
 
 

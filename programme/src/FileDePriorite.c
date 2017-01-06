@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include "FileDePriorite.h"
-#include "arbreDeHuffman.h"
+#include "ArbreDeHuffman.h"
 
 // Partie Privée
 

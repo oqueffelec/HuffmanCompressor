@@ -13,13 +13,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "octet.h"
-#include "statistiques.h"
+#include "Octet.h"
+#include "Statistiques.h"
 #include "creerTableDeCodage.h"
-#include "codeBinaire.h"
+#include "CodeBinaire.h"
 #include "FileDePriorite.h"
 #include "creerFileDePriorite.h"
-#include "tableDeCodage.h"
+#include "TableDeCodage.h"
 
 
 /**
@@ -41,7 +41,7 @@ void recupererStatistiques(FB_FichierBinaire fichierSource, STAT_Statistiques* s
 
 /**
 * \fn void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur);
-* \brief recupere la longeur en octet du fichier 
+* \brief recupere la longeur en octet du fichier
 * \return void
 */
 

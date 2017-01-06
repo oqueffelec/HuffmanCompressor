@@ -8,7 +8,7 @@
 #ifndef __STATISTIQUES__
 #define __STATISTIQUES__
 
-#include "octet.h"
+#include "Octet.h"
 
 
 #define STAT_ERREUR_MEMOIRE 1

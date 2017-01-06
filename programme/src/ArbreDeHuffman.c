@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
-#include "arbreDeHuffman.h"
-#include "octet.h"
+#include "ArbreDeHuffman.h"
+#include "Octet.h"
 
 #define TRUE 1
 #define FALSE 0

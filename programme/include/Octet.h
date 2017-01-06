@@ -8,8 +8,8 @@
 #ifndef __OCTET__
 #define __OCTET__
 
-#include "bit.h"
-#include "codeBinaire.h"
+#include "Bit.h"
+#include "CodeBinaire.h"
 
 /**
 * \struct O_octet Octet.h

@@ -10,8 +10,8 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "bit.h"
-#include "codeBinaire.h"
+#include "Bit.h"
+#include "CodeBinaire.h"
 #include <errno.h>
 
 

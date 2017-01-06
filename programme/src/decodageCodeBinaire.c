@@ -10,13 +10,11 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "statistiques.h"
-#include "codeBinaire.h"
-#include "tableDeCodage.h"
-#include "fichierBinaire.h"
+#include "CodeBinaire.h"
+#include "TableDeCodage.h"
+#include "FichierBinaire.h"
 #include "creerTableDeCodage.h"
-#include <errno.h>
-#include "octet.h"
+#include "Octet.h"
 
 void decodageCodeBinaire(CB_CodeBinaire cbAdecoder, ArbreDeHuffman adh, O_Octet* octet, int* trouve){
   ArbreDeHuffman adhtemp = adh;

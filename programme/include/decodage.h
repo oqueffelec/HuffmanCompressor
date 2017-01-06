@@ -14,13 +14,12 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "statistiques.h"
-#include "codeBinaire.h"
-#include "tableDeCodage.h"
-#include "fichierBinaire.h"
+#include "Statistiques.h"
+#include "CodeBinaire.h"
+#include "TableDeCodage.h"
+#include "FichierBinaire.h"
 #include "creerTableDeCodage.h"
-#include <errno.h>
-#include "octet.h"
+#include "Octet.h"
 
 /**
 * \fn void decodage(CB_CodeBinaire donne,FB_FichierBinaire* dest,STAT_Statistiques stats);

@@ -9,10 +9,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "fichierBinaire.h"
-#include "octet.h"
-#include "mode.h"
-#include "statistiques.h"
+#include "FichierBinaire.h"
+#include "Octet.h"
+#include "Mode.h"
+#include "Statistiques.h"
 #include "creerStatistiques.h"
 
 STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier){

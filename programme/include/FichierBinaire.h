@@ -7,9 +7,9 @@
 #ifndef __FICHIER__BINAIRE__
 #define __FICHIER__BINAIRE__
 
-#include "codeBinaire.h"
-#include "octet.h"
-#include "mode.h"
+#include "CodeBinaire.h"
+#include "Octet.h"
+#include "Mode.h"
 #define FB_ERREUR_OUVERTURE 1
 
 /**

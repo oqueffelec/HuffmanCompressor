@@ -9,7 +9,7 @@
  #define __ARBRE_DE_HUFFMAN__
 
 #define ADH_ERREUR_MEMOIRE 1
-#include "octet.h"
+#include "Octet.h"
 /**
 * \struct TDC_tableDeCodage tableDeCodage.h
 * \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)

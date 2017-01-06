@@ -6,6 +6,8 @@
  */
 #ifndef __COMPRESSION__
 #define __COMPRESSION__
+#include "FichierBinaire.h"
+
 
 /**
  *\fn void compression(FB_FichierBinaire fichierSource, FB_FichierBinaire* fichierDest)

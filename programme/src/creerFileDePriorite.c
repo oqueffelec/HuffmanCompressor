@@ -10,9 +10,9 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <stdio.h>
-#include "statistiques.h"
+#include "Statistiques.h"
 #include "FileDePriorite.h"
-#include "octet.h"
+#include "Octet.h"
 
 FDP_FileDePriorite creerFileDePriorite(STAT_Statistiques stats){
   FDP_FileDePriorite fileDePriorite=FDP_fileDePriorite();

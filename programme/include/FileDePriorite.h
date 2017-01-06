@@ -7,7 +7,7 @@
 #ifndef __FILE__DE__PRIORITE__
 #define __FILE__DE__PRIORITE__
 
-#include "arbreDeHuffman.h"
+#include "ArbreDeHuffman.h"
 
 #define FDP_ERREUR_MEMOIRE 1
 

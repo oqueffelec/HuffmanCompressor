@@ -10,14 +10,13 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "statistiques.h"
-#include "codeBinaire.h"
-#include "tableDeCodage.h"
-#include "fichierBinaire.h"
+#include "Statistiques.h"
+#include "CodeBinaire.h"
+#include "TableDeCodage.h"
+#include "FichierBinaire.h"
 #include "creerTableDeCodage.h"
 #include "decodageCodeBinaire.h"
-#include <errno.h>
-#include "octet.h"
+#include "Octet.h"
 
 void decodage(FB_FichierBinaire* fichierDest,FB_FichierBinaire fichierSource,int longueur,ArbreDeHuffman adh){
   int posCurseur = 0;

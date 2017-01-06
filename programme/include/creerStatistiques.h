@@ -8,8 +8,8 @@
 #ifndef __CREERSTAT__
 #define __CREERSTAT__
 
-#include "statistiques.h"
-#include "fichierBinaire.h"
+#include "Statistiques.h"
+#include "FichierBinaire.h"
 
 
 /**

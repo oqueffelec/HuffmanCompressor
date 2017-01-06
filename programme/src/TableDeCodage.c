@@ -10,10 +10,9 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "tableDeCodage.h"
-#include <errno.h>
-#include "codeBinaire.h"
-#include "octet.h"
+#include "TableDeCodage.h"
+#include "CodeBinaire.h"
+#include "Octet.h"
 
 
 #define TRUE 1
@@ -47,5 +46,3 @@ CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet o){
   //assert(tdc.codeBinaire[O_octetEnDecimal(o)]!=NULL);
   return tdc.codeBinaire[O_octetEnDecimal(o)];
 }
-
-//CB_CodeBinaire TDC_obtenirCodeBinaires(TDC_TableDeCodage tdc)

@@ -13,13 +13,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "octet.h"
-#include "statistiques.h"
+#include "Octet.h"
+#include "Statistiques.h"
 #include "creerTableDeCodage.h"
-#include "codeBinaire.h"
+#include "CodeBinaire.h"
 #include "FileDePriorite.h"
 #include "creerFileDePriorite.h"
-#include "tableDeCodage.h"
+#include "TableDeCodage.h"
 
 
 /**
