@@ -8,9 +8,9 @@
 #include <stdlib.h>
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
-#include "codeBinaire.h"
-#include "octet.h"
-#include "arbreDeHuffman.h"
+#include "CodeBinaire.h"
+#include "Octet.h"
+#include "ArbreDeHuffman.h"
 #include "FileDePriorite.h"
 
 int init_suite_success() {

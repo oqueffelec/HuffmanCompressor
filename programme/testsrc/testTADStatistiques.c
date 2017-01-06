@@ -8,8 +8,8 @@
 #include <stdlib.h>
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
-#include "octet.h"
-#include "statistiques.h"
+#include "Octet.h"
+#include "Statistiques.h"
 
 int init_suite_success() {
   return 0;

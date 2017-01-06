@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
-#include "codeBinaire.h"
+#include "CodeBinaire.h"
 
 int init_suite_success() {
   return 0;

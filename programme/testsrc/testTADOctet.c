@@ -8,8 +8,8 @@
 #include <stdlib.h>
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
-#include "codeBinaire.h"
-#include "octet.h"
+#include "CodeBinaire.h"
+#include "Octet.h"
 
 int init_suite_success() {
   return 0;
