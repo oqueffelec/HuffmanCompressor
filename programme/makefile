@@ -39,12 +39,12 @@ $(DOCDIR)/rapport/rapport.pdf:
 
 
 
-tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage
+tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage $(TESTDIR)/testCreerFileDePriorite $(TESTDIR)/testCreerTableDeCodage
 
 $(TESTDIR)/% : $(SRCTESTDIR)/%.o $(LIBDIR)/libhuffman.a
 	$(CC) -o $@ $< $(LDFLAGS) -lcunit
 
-$(LIBDIR)/libhuffman.a: $(SRCDIR)/ArbreDeHuffman.o $(SRCDIR)/CodeBinaire.o $(SRCDIR)/FichierBinaire.o $(SRCDIR)/FileDePriorite.o $(SRCDIR)/Octet.o $(SRCDIR)/Statistiques.o $(SRCDIR)/TableDeCodage.o
+$(LIBDIR)/libhuffman.a: $(SRCDIR)/ArbreDeHuffman.o $(SRCDIR)/CodeBinaire.o $(SRCDIR)/FichierBinaire.o $(SRCDIR)/FileDePriorite.o $(SRCDIR)/Octet.o $(SRCDIR)/Statistiques.o $(SRCDIR)/TableDeCodage.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerTableDeCodage.o
 	ar -r $@ $^
 
 $(BINDIR)/$(EXEC): $(LIBDIR)/libhuffman.a $(SRCDIR)/main.o $(SRCDIR)/codage.o $(SRCDIR)/compression.o $(SRCDIR)/creerFileDePriorite.o $(SRCDIR)/creerStatistiques.o $(SRCDIR)/creerTableDeCodage.o $(SRCDIR)/decodage.o $(SRCDIR)/decodageCodeBinaire.o $(SRCDIR)/decompression.o $(SRCDIR)/enTete.o $(SRCDIR)/recupererDonnees.o
