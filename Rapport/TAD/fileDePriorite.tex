@@ -1,23 +1,24 @@
 \begin{tad}
-  \tadNom{FileDePriorité}
-  \tadDependances{Booleen, Eléments Comparables}
+  \tadNom{FileDePrioritéD'ArbresDeHuffman}
+  \tadDependances{Booleen}
   \begin{tadOperations}{FileDePriorité}
-    \tadOperation{file}{}{\tadUnParam{FileDePriorité}}
+    \tadOperation{fileDePriorite}{}{\tadUnParam{FileDePriorité}}
     \tadOperation{estVide}{\tadUnParam{FileDePriorité}}{\tadUnParam{Booleen}}
-    \tadOperationAvecPreconditions{défiler}{\tadUnParam{FileDePriorité}}{\tadUnParam{FileDePriorité}}
-    \tadOperationAvecPreconditions{obtenirElement}{\tadUnParam{FileDePriorité}}{\tadUnParam{Elément}}
-    \tadOperation{insérer}{\tadDeuxParams{FileDePriorité}{Elément}}{\tadUnParam{fileDePriorité}}
+    \tadOperationAvecPreconditions{défilerADH}{\tadUnParam{FileDePriorité}}{\tadUnParam{FileDePriorité}}
+    \tadOperationAvecPreconditions{obtenirADH}{\tadUnParam{FileDePriorité}}{\tadUnParam{ArbreDeHuffman}}
+    \tadOperation{enfilerADH}{\tadDeuxParams{FileDePriorité}{ArbreDeHuffman}}{\tadUnParam{FileDePriorité}}
+    \tadOperation{longueur}{\tadUnParam{FileDePriorité}}{\tadUnParam{Naturel}}
   \end{tadOperations}
   \begin{tadAxiomes}
-    \tadAxiome{estVide(file())}
-    \tadAxiome{non estVide(insérer(file(),e))}
-    \tadAxiome{défiler(insérer(file(),e))=file()}
-    \tadAxiome{obtenirElément(insérer(file(),e))=e}
-    \tadAxiome{non(estVide(file())) et obtenirElément(insérer(file(),e)=obtenirElément(file())}
+    \tadAxiome{estVide(fileDePriorite())}
+    \tadAxiome{non estVide(enfilerADH(file(),arbre))}
+    \tadAxiome{défilerADH(enfilerADH(fileDePriorite(),arbre))=fileDePriorite()}
+    \tadAxiome{obtenirADH(enfilerADH(fileDePriorite(),arbre))=arbre}
+    \tadAxiome{non(estVide(fileDePriorite())) et obtenirADH(enfilerADG(fileDePriorite(),arbre)=obtenirADH(fileDePriorite())}
   \end{tadAxiomes}
   \begin{tadPreconditions}{FileDePriorité}
-    \tadPrecondition{défiler(f)}{non(estVide(f))}
-    \tadPrecondition{Elément possède comparerElements}
-    \tadPrecondition{obtenirElément(f)}{non(estVide(f))}
+    \tadPrecondition{défilerADH(fdp)}{non(estVide(fdp))}
+    \tadPrecondition{ADH possède comparerADH}
+    \tadPrecondition{obtenirADH(fdp)}{non(estVide(fdp))}
   \end{tadPreconditions}
 \end{tad}

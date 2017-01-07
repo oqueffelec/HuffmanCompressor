@@ -20,6 +20,16 @@ void FDP_ajouter(FDP_FileDePriorite* fdp, ArbreDeHuffman a){
   }
 }
 
+FDP_FileDePriorite FDP_obtenirFileSuivante(FDP_FileDePriorite fdp){
+  assert(!FDP_estVide(fdp));
+  return fdp->fileSuivante;
+}
+
+void FDP_fixerFileSuivante(FDP_FileDePriorite* fdp1, FDP_FileDePriorite fdp2){
+  assert(!FDP_estVide(*fdp1));
+  (*fdp1)->fileSuivante=fdp2;
+}
+
 // Partie Publique
 
 
@@ -49,16 +59,6 @@ void FDP_enfilerADH(FDP_FileDePriorite* fdp, ArbreDeHuffman a){
 ArbreDeHuffman FDP_obtenirADH(FDP_FileDePriorite fdp){
   assert(!FDP_estVide(fdp));
   return fdp->arbre;
-}
-
-FDP_FileDePriorite FDP_obtenirFileSuivante(FDP_FileDePriorite fdp){
-  assert(!FDP_estVide(fdp));
-  return fdp->fileSuivante;
-}
-
-void FDP_fixerFileSuivante(FDP_FileDePriorite* fdp1, FDP_FileDePriorite fdp2){
-  assert(!FDP_estVide(*fdp1));
-  (*fdp1)->fileSuivante=fdp2;
 }
 
 int FDP_longueur(FDP_FileDePriorite fdp) {

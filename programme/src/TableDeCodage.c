@@ -1,7 +1,7 @@
 /**
   * \file TableDeCodage.c
   * \brief Conception du TAD tableDeCodage
-  * \author Régis Maskembe
+  * \author Régis Maskemde
   * \version 1.0
   * \date 20/11/2016
   */
@@ -33,7 +33,7 @@ tdc->codeBinaire[O_octetEnDecimal(o)]=cb;
 int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb){
   int i=0;
   int estPresent=FALSE;
-  while(!estPresent && i<TDC_SIZE){// a changer avec compareCodeBinaire
+  while(!estPresent && i<TDC_SIZE){
     if(CB_compareCodeBinaire(tdc.codeBinaire[i],cb))
       estPresent=TRUE;
     else
@@ -43,6 +43,5 @@ int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb){
 }
 
 CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet o){
-  //assert(tdc.codeBinaire[O_octetEnDecimal(o)]!=NULL);
   return tdc.codeBinaire[O_octetEnDecimal(o)];
 }

@@ -1,20 +1,16 @@
 \begin{tad}
   \tadNom{TableDeCodage}
-  \tadDependances{Octet, Code Binaire, Liste}
+  \tadDependances{Octet, CodeBinaire}
 
   \begin{tadOperations}{TableDeCodage}
-    \tadOperation{ajouter}{}{\tadUnParam{TableDeCogae}}
-    \tadOperation{obtenirOctet}{\tadUnParam{FTableDeCodage}}{\tadUnParam{codeBinaire}}{\tadUnParam{Octet}}
-    \tadOperation{ObtenirClef}{\tadUnParam{TableDeCodage}}{\tadUnParam{Liste<clef>}}
-    \tadOperationAvecPreconditions{estPrensent}{\tadUnParam{TableDeCodage}}{\tadUnParam{Booléen}}
-    \tadOperation{retirer}{\tadDeuxParams{TableDeCodage}{clef}}{\tadUnParam{TableDeCodage}}
-  \end{tadOperations}
+   \tadOperation{tableDeCodage}{}{\tadUnParam{TableDeCodage}}
+    \tadOperation{ajouter}{\tadDeuxParams{TableDeCodage}{CodeBinaire}}{\tadUnParam{TableDeCodage}}
+    \tadOperation{estPresentCodeBinaire}{{\tadDeuxParams{TableDeCodage}{CodeBinaire}}{\tadUnParam{\Booleen}}
+    \tadOperation{ObtenirCodeBinaire}{{\tadDeuxParams{TableDeCodage}{Octet}}{\tadUnParam{CodeBinaire}}
+}
 
   \begin{tadAxiomes}{TableDeCodage}
-  \tadAxiome{estPresent(ajouter(o))}
+  \tadAxiome{estPresentCodeBinaire(ajouter(tdc,cb))}
   \end{tadAxiomes}
 
-  \begin{tadPreconditions}{TableDeCodage}
-    \tadPrecondition{obtenirOctet(o)}{estPresent(o))}
-  \end{tadPreconditions}
 \end{tad}

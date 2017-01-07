@@ -56,22 +56,6 @@ void FDP_enfilerADH(FDP_FileDePriorite* fdp, ArbreDeHuffman a);
 ArbreDeHuffman FDP_obtenirADH(FDP_FileDePriorite fdp);
 
 /**
-* \fn FDP_FileDePriorite FDP_obtenirFileSuivante(FDP_FileDePriorite fdp)
-* \brief retourne l'arbre à la sortie de la file
-* \return FDP_FileDePriorite
-*/
-
-FDP_FileDePriorite FDP_obtenirFileSuivante(FDP_FileDePriorite fdp);
-
-/**
-* \fn void FDP_fixerFileSuivante(FDP_FileDePriorite* fdp1, FDP_FileDePriorite fdp2)
-* \brief retourne fixe la file fdp2 à la file fdp1
-* \return void
-*/
-
-void FDP_fixerFileSuivante(FDP_FileDePriorite* fdp1, FDP_FileDePriorite fdp2);
-
-/**
 * \fn int FDP_longueur(FDP_FileDePriorite fdp)
 * \brief retourne le nombre d'arbres dans la file
 * \return int
