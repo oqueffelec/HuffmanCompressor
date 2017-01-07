@@ -1,5 +1,5 @@
 /**
- * \file mode.h
+ * \file Mode.h
  * \brief Implantation du TAD mode
  * \author Octave Queffelec
  * \version 1.0
@@ -9,7 +9,7 @@
 #define __MODE__
 
 /**
-* \struct mode mode.h
+* \struct mode Mode.h
 * \brief mode est une énumération
 */
 

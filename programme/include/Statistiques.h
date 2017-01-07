@@ -49,7 +49,7 @@ void STAT_ajouter(STAT_Statistiques* stat, O_Octet o);
 int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet octet);
 
 /**
-* \fn unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet* o)
+* \fn unsigned long int STAT_obtenirPonderation(STAT_Statistiques stat, O_Octet o)
 * \brief renvoie la pondération correspondante
 * \return unsigned long int
 */

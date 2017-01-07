@@ -1,5 +1,5 @@
 /**
- * \Octet.h
+ * \file Octet.h
  * \brief Implantation du TAD octet : codeBinaire est un tableau de 8 bit
  * \author Jean-Gabriel Wacyk
  * \version 1.0

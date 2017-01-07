@@ -23,7 +23,7 @@
 
 
 /**
-* \fn ArbreDeHuffman creerAbreDeHuffman(FDP_FileDePriorite file)
+* \fn ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file)
 * \brief renvoie l'arbre de Huffman créé à partir d'une file de priorité
 * \return ArbreDeHuffman
 */
