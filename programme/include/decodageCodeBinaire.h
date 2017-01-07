@@ -22,7 +22,7 @@
 #include "Octet.h"
 
 /**
-* \fn void decodage(CB_CodeBinaire donne,FB_FichierBinaire* dest,STAT_Statistiques stats)
+* \fn void decodageCodeBinaire(CB_CodeBinaire cbAdecoder, ArbreDeHuffman adh, O_Octet* octet, int* trouve)
 * \brief décode le Code Binaire donné par la procédure decodage et renvoie un booléen si le code binaire correspond à un code binaire du fichier codé
 * \return void
 */
