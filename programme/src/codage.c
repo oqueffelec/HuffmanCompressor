@@ -40,7 +40,7 @@ void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage
         }
       }
     }
-    bourrageZeros(dest,octetAecrire);
+    //bourrageZeros(dest,octetAecrire);
   }
 
   void bourrageZeros(FB_FichierBinaire* dest, O_Octet octetAecrire){

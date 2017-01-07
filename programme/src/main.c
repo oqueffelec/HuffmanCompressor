@@ -13,186 +13,39 @@
 #include "creerTableDeCodage.h"
 #include "enTete.h"
 #include "codage.h"
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include <fcntl.h>
 #include <unistd.h>
 
-#define MSG_ERREUR "*** ERREUR\nUtilisation : './bin/huffman c cheminFichier' pour compresser et './bin/huffman d cheminFichier pour décompresser\n"
-#define EXT_HUFF ".huff"
 
 
 
 int main(int argc, char *argv[]){
-
-/*
-CB_CodeBinaire cb = CB_codeBinaire();
-CB_CodeBinaire c = CB_codeBinaire();
-CB_ajouter(&cb,bitA1);
-CB_ajouter(&cb,bitA1);
-CB_CodeBinaire c3 = CB_codeBinaire();
-CB_CodeBinaire c4 = CB_codeBinaire();
-CB_ajouter(&c3,bitA0);
-CB_ajouter(&c3,bitA1);
-
-int k=0;
-while(k<4){
-CB_codeBinaireEnCodeBinaire(&c,c4);
-k++;
-}
-
-
-
-for(int i=0;i<CB_longueur(c);i++)
-printf("%d\n", CB_obtenirBit(c,i+1));
-
-*/
-
-//COMPRESSION
-
-FB_FichierBinaire fb= FB_ouvrir("test.txt",lecture);
-FB_FichierBinaire fb2= FB_ouvrir("a",ecriture);
-STAT_Statistiques stat= creerStatistiques(fb);
-
-
-
-
-TDC_TableDeCodage tdc= creerTableDeCodage(stat);
-
-enTete(fb,&fb2,stat);
-codage(fb,&fb2,tdc);
-
-
-FB_fermer(fb);
-FB_fermer(fb2);
-
-//DECOMPRESSION
-
- fb= FB_ouvrir("a",lecture);
- fb2= FB_ouvrir("res.txt",ecriture);
-
-
-
-decompression(fb,&fb2);
-
-FB_fermer(fb);
-FB_fermer(fb2);
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-CB_CodeBinaire tab[4];
-
-CB_CodeBinaire cb = CB_codeBinaire();
-CB_CodeBinaire c2 = CB_codeBinaire();
-CB_CodeBinaire c3 = CB_codeBinaire();
-
-
-CB_ajouter(&cb,bitA1);
-CB_ajouter(&cb,bitA1);
-CB_ajouter(&cb,bitA1);
-
-CB_ajouter(&c2,bitA0);
-CB_ajouter(&c2,bitA0);
-CB_ajouter(&c2,bitA0);
-
-CB_ajouter(&c3,bitA0);
-CB_ajouter(&c3,bitA1);
-CB_ajouter(&c3,bitA0);
-
-
-
-tab[0]=cb;
-tab[1]=c2;
-tab[2]=c3;
-
-
-CB_CodeBinaire res = CB_codeBinaire();
-for(int i=2; i>=0;i--){
-  res = CB_concatener(res,tab[i]);
-}
-
-printf(" cb : %d\n", CB_obtenirBit(res,1));
-printf(" cb : %d\n", CB_obtenirBit(res,2));
-printf(" cb : %d\n", CB_obtenirBit(res,3));
-printf(" cb : %d\n", CB_obtenirBit(res,4));
-printf(" cb : %d\n", CB_obtenirBit(res,5));
-printf(" cb : %d\n", CB_obtenirBit(res,6));
-printf(" cb : %d\n", CB_obtenirBit(res,7));
-printf(" cb : %d\n", CB_obtenirBit(res,8));
-printf(" cb : %d\n", CB_obtenirBit(res,9));
-
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-  /*
-	FB_FichierBinaire fichierHuff;
-	FB_FichierBinaire fichierBin;
+	FB_FichierBinaire fichierCompresse;
+	FB_FichierBinaire fichierOriginal;
   char nomFichier[100];
-	if(argc!=3){
-		printf(MSG_ERREUR);
+	if(argc!=3 || (strcmp(argv[1],"c")!=0 && strcmp(argv[1],"d")!=0)){
+		printf("Veuillez respecter la syntaxe suivante : \n Pour compresser : huffman c nomFichier \n Pour décompresser : huffman d nomFichier.huff \n");
 	}
 	else{
 		if(strcmp(argv[1], "c") == 0){
-			printf("Compression ...\n");
-
+			printf("Compression...");
 			strcpy(nomFichier, argv[2]);
-			strcat(nomFichier, EXT_HUFF);
+			strcat(nomFichier, ".huff");
+      fichierOriginal = FB_ouvrir(argv[2],lecture);
+			fichierCompresse = FB_ouvrir(nomFichier, ecriture);
+			compression(fichierOriginal,&fichierCompresse);
+      printf("terminé avec succes\n");
 
-			fichierHuff = FB_ouvrir(nomFichier, ecriture);
-			fichierBin = FB_ouvrir(argv[2],lecture);
-
-			compression(fichierBin,&fichierHuff);
-			printf("*** Terminée\n");
 		}
 		else{
-			if(strcmp(argv[1], "d") == 0){
-				printf("Décompression ...\n");
-
-				strcpy(nomFichier, argv[2]);
-				nomFichier[strlen(nomFichier) - strlen(EXT_HUFF)] = '\0';
-
-				fichierBin = FB_ouvrir(nomFichier, ecriture);
-				fichierHuff = FB_ouvrir(argv[2], lecture);
-
-				decompression(fichierHuff,&fichierBin);
-
-		   }
+			printf("Décompression...");
+			strcpy(nomFichier, argv[2]);
+			nomFichier[strlen(nomFichier) - strlen(".huff")] = '\0';
+      fichierCompresse = FB_ouvrir(argv[2], lecture);
+			fichierOriginal = FB_ouvrir(nomFichier, ecriture);
+			decompression(fichierCompresse,&fichierOriginal);
+      printf("terminé avec succes\n");
 		  }
-	   }
+		}
   return EXIT_SUCCESS;
-  */
 }

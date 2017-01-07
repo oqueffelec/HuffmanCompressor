@@ -39,7 +39,7 @@ $(DOCDIR)/rapport/rapport.pdf:
 
 
 
-tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage $(TESTDIR)/testCreerFileDePriorite $(TESTDIR)/testCreerTableDeCodage
+tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage $(TESTDIR)/testCreerFileDePriorite $(TESTDIR)/testCreerTableDeCodage 
 
 $(TESTDIR)/% : $(SRCTESTDIR)/%.o $(LIBDIR)/libhuffman.a
 	$(CC) -o $@ $< $(LDFLAGS) -lcunit
