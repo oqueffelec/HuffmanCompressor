@@ -1,3 +1,12 @@
+/**
+  * \file FileDePriorite.c
+  * \brief Conception du TAD FileDePriorite
+  * \author Regis Maskemde
+  * \version 1.0
+  * \date 5/12/2016
+  */
+
+
 #include <stdlib.h>
 #include <assert.h>
 #include <stdio.h>

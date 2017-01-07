@@ -1,3 +1,11 @@
+/**
+  * \file FichierBinaire.c
+  * \brief Conception du TAD FichierBinaire
+  * \author Octave Queffelec
+  * \version 1.0
+  * \date 15/12/2016
+  */
+
 #include <stdlib.h>
 #include <assert.h>
 #include <stdbool.h>

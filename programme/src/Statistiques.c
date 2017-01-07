@@ -1,5 +1,5 @@
 /**
-  * \file statistiques.c
+  * \file Statistiques.c
   * \brief Conception du TAD Statistiques
   * \author Mathieu Vandecasteele
   * \version 1.0

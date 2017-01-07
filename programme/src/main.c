@@ -1,3 +1,11 @@
+/**
+  * \file main.c
+  * \brief Ecriture du main
+  * \author Octave Queffelec
+  * \version 1.0
+  * \date 5/1/2017
+  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>

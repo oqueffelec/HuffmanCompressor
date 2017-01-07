@@ -1,3 +1,11 @@
+/**
+  * \file ArbreDeHuffman.c
+  * \brief Conception du TAD ArbreDeHuffman
+  * \author Quentin Robcis
+  * \version 1.0
+  * \date 5/12/2016
+  */
+
 #include <stdlib.h>
 #include <assert.h>
 #include <stdbool.h>

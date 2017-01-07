@@ -1,5 +1,5 @@
 /**
-  * \file codeBinaire.c
+  * \file CodeBinaire.c
   * \brief Conception du TAD codeBinaire
   * \author Wacyk Jean-Gabriel
   * \version 1.0

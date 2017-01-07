@@ -1,5 +1,5 @@
 /**
-  * \file codeBinaireEnFichier.c
+  * \file codage.c
   * \brief Ecriture du codebinaire dans le fichier compressé
   * \author Octave Queffelec
   * \version 1.0

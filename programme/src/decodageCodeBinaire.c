@@ -1,7 +1,7 @@
 /**
-  * \file decodage.c
-  * \brief Décompression et écriture des donnée dans un fichier
-  * \author Jean-Gabriel Wacyk
+  * \file decodageCodeBinaire.c
+  * \brief Décodage à partir d'un CodeBinaire
+  * \author Octave Queffelec
   * \version 1.0
   * \date 30/12/2016
   */
