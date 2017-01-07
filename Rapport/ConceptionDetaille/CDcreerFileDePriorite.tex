@@ -1,6 +1,6 @@
 % auteur : Wacyk Jean-Gabriel
 
-\begin{algorithme}{
+\begin{algorithme}
   \fonction{creerFileDePriorite}{stat : Statistiques}{FileDePriorite}
   {
     file : FileDePriorite \\
@@ -8,7 +8,7 @@
 	}
   {
     \affecter{file}{fileDePriorite()}
-    \pour{i}{0}{STAT_SIZE}{}
+    \pour{i}{0}{STATSIZE}{}
       {
       \sialors{estPresentOctet(stat,decimalEnOctet(i))}
         {
