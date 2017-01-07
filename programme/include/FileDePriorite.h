@@ -1,5 +1,5 @@
 /**
- * \file fileDePriorite.h
+ * \file FileDePriorite.h
  * \brief Implantation du TAD fileDePriorite
  * \author Octave Queffelec
  * \version 1.0
@@ -12,7 +12,7 @@
 #define FDP_ERREUR_MEMOIRE 1
 
 /**
-* \struct FDP_FileDePriorite fileDePriorite.h
+* \struct FDP_FileDePriorite FileDePriorite.h
 * \brief la structure est une liste chainée d'arbres de huffman
 */
 

@@ -1,5 +1,5 @@
 /**
- * \file fichierBinaire.h
+ * \file FichierBinaire.h
  * \brief Implantation du TAD fichierBinaire
  * \author Octave Queffelec
  * \version 1.0
@@ -13,7 +13,7 @@
 #define FB_ERREUR_OUVERTURE 1
 
 /**
-* \struct FB_FichierBinaire
+* \struct FB_FichierBinaire FB_FichierBinaire.h
 * \brief la structure est une redéfinition du type FILE*
 */
 

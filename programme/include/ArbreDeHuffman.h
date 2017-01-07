@@ -1,5 +1,5 @@
 /**
- * \file arbreDeHuffman.h
+ * \file ArbreDeHuffman.h
  * \brief Implantation du TAD arbreDeHuffman : type liste doublement chainée
  * \author Quentin Robcis
  * \version 1.0
@@ -11,7 +11,7 @@
 #define ADH_ERREUR_MEMOIRE 1
 #include "Octet.h"
 /**
-* \struct TDC_tableDeCodage tableDeCodage.h
+* \struct ArbreDeHuffman ArbreDeHuffman.h
 * \brief la structure est une liste chainée ayant 2 éléments (la clé et la valeur)
 */
 
@@ -24,7 +24,7 @@ typedef struct ADH_Noeud{
 typedef ADH_Noeud *ArbreDeHuffman;
 
 /**
-* \fn ArbreDeHuffman arbreDeHuffman(unsigned int ponderation, char caractere)
+* \fn ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, char caractere)
 * \brief crée un arbre de huffman à partir d'une pondération et d'un caractere
 * \return ArbreDeHuffman
 */
@@ -32,7 +32,7 @@ typedef ADH_Noeud *ArbreDeHuffman;
 ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere);
 
 /**
-* \fn int estUneFeuille(ArbreDeHuffman arbre)
+* \fn int ADH_estUneFeuille(ArbreDeHuffman arbre)
 * \brief envoie vrai si filsG et filsD pointent vers NULL et si arbre.caractere != NULL
 * \return {1 0}
 */
@@ -40,7 +40,7 @@ ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere);
 int ADH_estUneFeuille(ArbreDeHuffman arbre);
 
 /**
-* \fn ArbreDeHuffman obtenirFilsGauche(ArbreDeHuffman arbre)
+* \fn ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre)
 * \brief fonction qui permet d'obtenir le fils Gauche d'une racine donnée
 * \return ArbreDeHuffman
 */
@@ -48,7 +48,7 @@ int ADH_estUneFeuille(ArbreDeHuffman arbre);
 ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre);
 
 /**
-* \fn ArbreDeHuffman obtenirFilsDroit(ArbreDeHuffman arbre)
+* \fn ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre)
 * \brief fonction qui permet d'obtenir le fils Droit d'une racine donnée
 * \return ArbreDeHuffman
 */
@@ -56,7 +56,7 @@ ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre);
 ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre);
 
 /**
-* \fn unsigned int obtenirPonderation(ArbreDeHuffman arbre)
+* \fn unsigned int ADH_obtenirPonderation(ArbreDeHuffman arbre)
 * \brief permet d'obtenir la pondération associée au noeud
 * \return unsigned int
 */
@@ -64,7 +64,7 @@ ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre);
 unsigned int ADH_obtenirPonderation(ArbreDeHuffman feuille);
 
 /**
-* \fn char obtenirCaractere(ArbreDeHuffman feuille)
+* \fn char ADH_obtenirCaractere(ArbreDeHuffman feuille)
 * \brief permet d'obtenir le caractere associé au noeud
 * \return char
 */
@@ -72,7 +72,7 @@ unsigned int ADH_obtenirPonderation(ArbreDeHuffman feuille);
 O_Octet ADH_obtenirCaractere(ArbreDeHuffman arbre);
 
 /**
-* \fn ArbreDeHuffman ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2)
+* \fn ArbreDeHuffman ADH_ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2)
 * \brief crée une racine a partir de deux arbres donnés dont la pondération est la somme des pondérations des deux arbres et le caractere vaut NULL
 * \return ArbreDeHuffman
 */
