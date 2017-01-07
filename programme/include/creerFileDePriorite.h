@@ -1,6 +1,6 @@
 /**
  * \file creerFileDePriorite.h
- * \brief creation de la file de priorite
+ * \brief création de la file de priorité
  * \author Quentin Robcis
  * \version 1.0
  */
@@ -10,7 +10,7 @@
 
 /**
  *\fn FDP_FileDePriorite creerFileDePriorite(STAT_Statistiques stats)
- *\brief enfile les arbres issus des statistiques dans la file de priorite
+ *\brief enfile les arbres issus des statistiques dans la file de priorité
  *\return FDP_FileDePriorite
  */
 

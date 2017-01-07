@@ -12,7 +12,7 @@
 #include "Octet.h"
 /**
 * \struct TDC_tableDeCodage tableDeCodage.h
-* \brief la structure est une liste chainee ayant 2 elements (la clé et la valeur)
+* \brief la structure est une liste chainée ayant 2 éléments (la clé et la valeur)
 */
 
 typedef struct ADH_Noeud{

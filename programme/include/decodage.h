@@ -1,6 +1,6 @@
 /**
   * \file decodage.c
-  * \brief Décompression et écriture des donnée dans le fichier dest
+  * \brief Décompression et écriture des données dans le fichier destination
   * \author Jean-Gabriel Wacyk
   * \version 1.0
   * \date 30/12/2016
@@ -23,7 +23,7 @@
 
 /**
 * \fn void decodage(CB_CodeBinaire donne,FB_FichierBinaire* dest,STAT_Statistiques stats);
-* \brief concatene les bits du fichier pour former un codebinaire qui sera decoder par la procedure decodageCodeBinaire
+* \brief concatène les bits du fichier pour former un codebinaire qui sera decodé par la procédure decodageCodeBinaire
 * \return void
 */
 

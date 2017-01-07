@@ -14,7 +14,7 @@
 
 /**
 * \struct FB_FichierBinaire
-* \brief la structure est une redefinition du type FILE*
+* \brief la structure est une redéfinition du type FILE*
 */
 
 
@@ -26,7 +26,7 @@ FILE* file;
 
 /**
 * \fn FB_FichierBinaire FB_ouvrir(char nom[], Mode mode)
-* \brief ouvre un fichier binaire suivant le mode passé en parametre
+* \brief ouvre un fichier binaire suivant le mode passé en paramètre
 * \return FB_FichierBinaire
 */
 
@@ -51,7 +51,7 @@ int FB_finFichier(FB_FichierBinaire fb);
 
 /**
 * \fn void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o)
-* \brief ecris un octet dans le fichier
+* \brief écrit un octet dans le fichier
 * \return void
 */
 
@@ -59,7 +59,7 @@ void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o);
 
 /**
 * \fn int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o)
-* \brief lis un octet dans le fichier, renvoie 1 si lecture sans erreur, 0 sinon
+* \brief lit un octet dans le fichier, renvoie 1 si lecture sans erreur, 0 sinon
 * \return int
 */
 
@@ -68,7 +68,7 @@ int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o);
 
 /**
 * \fn void FB_ecrireNaturel(FB_FichierBinaire* fb, int n)
-* \brief ecris un naturel dans le fichier
+* \brief écrit un naturel dans le fichier
 * \return void
 */
 

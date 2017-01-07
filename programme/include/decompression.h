@@ -1,6 +1,6 @@
 /**
   * \file decompression.c
-  * \brief recupere les données et appelle la procedure decodage
+  * \brief récupère les données et appelle la procédure decodage
   * \author Octave Queffelec
   * \version 1.0
   */
@@ -10,7 +10,7 @@
 
 /**
 * \fn void decompression(FB_FichierBinaire fichierSource, FB_FichierBinaire* fichierDest)
-* \brief recupere les données et appelle la procedure decodage 
+* \brief récupère les données et appelle la procédure decodage 
 * \return void
 */
 

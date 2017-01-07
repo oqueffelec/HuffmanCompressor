@@ -1,6 +1,6 @@
 /**
   * \file decodageCodeBinaire.c
-  * \brief Décompression et écriture des donnée dans un fichier
+  * \brief Décompression et écriture des données dans un fichier
   * \author Jean-Gabriel Wacyk
   * \version 1.0
   * \date 30/12/2016
@@ -23,7 +23,7 @@
 
 /**
 * \fn void decodage(CB_CodeBinaire donne,FB_FichierBinaire* dest,STAT_Statistiques stats);
-* \brief decode le Code Binaire donné par la procedure decodage et renvoie un boolean si le code binaire correspond à un code binaire du fichier codé
+* \brief décode le Code Binaire donné par la procédure decodage et renvoie un booléen si le code binaire correspond à un code binaire du fichier codé
 * \return void
 */
 

@@ -10,7 +10,7 @@
 
 /**
 * \struct mode mode.h
-* \brief mode est une enumeration
+* \brief mode est une énumération
 */
 
 typedef enum mode {lecture, ecriture} Mode;

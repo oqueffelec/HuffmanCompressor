@@ -23,7 +23,7 @@ typedef struct O_Octet {
 
 /**
  *\fn O_Octet O_octet(CB_CodeBinaire)
- *\brief renvoie un octet de 8 bit à partir d'un CodeBinaire
+ *\brief renvoie un octet de 8 bits à partir d'un CodeBinaire
  *\return O_octet
  */
 
@@ -31,7 +31,7 @@ O_Octet O_octet(CB_CodeBinaire cb);
 
 /**
 * \fn int O_obtenirbit(O_octet, int)
-* \brief renvoie le bit en position pos, O etant le bit de poids faible, 7 de poids fort
+* \brief renvoie le bit en position pos, O étant le bit de poids faible, 7 de poids fort
 * \return int
 */
 
@@ -39,7 +39,7 @@ Bit O_obtenirBit(O_Octet o, int pos);
 
 /**
 * \fn void O_ajouter(O_octet, int)
-* \brief ajouter un bit a l'octet : le nombre de bits de l'octet doit etre strictement inférieur à 8, le sens d'ajout est du bit de poids faible au poids fort
+* \brief ajoute un bit a l'octet : le nombre de bits de l'octet doit être strictement inférieur à 8, le sens d'ajout est du bit de poids faible au poids fort
 * \return void
 */
 
@@ -47,7 +47,7 @@ void O_ajouterPoidsFaible(O_Octet* o,Bit bit);
 
 /**
 * \fn int O_octetendecimal(O_octet)
-* \brief convertis l'octet en décimal
+* \brief convertit l'octet en décimal
 * \return int
 */
 
@@ -55,7 +55,7 @@ int O_octetEnDecimal(O_Octet o);
 
 /**
 * \fn int O_comparerOctet(O_octet,O_octet)
-* \brief compare deux octet,renvoie 1 si identique, 0 sinon
+* \brief compare deux octets,renvoie 1 si identique, 0 sinon
 * \return int
 */
 
@@ -79,7 +79,7 @@ int O_nombreBit(O_Octet o);
 
 /**
 * \fn unsigned char O_getOctet(O_Octet o)
-* \brief renvoie un unsigned char qui correspondant à la valeur de l'octet
+* \brief renvoie un unsigned char qui correspond à la valeur de l'octet
 * \return unsigned char
 */
 
@@ -103,7 +103,7 @@ O_Octet O_decimalEnOctet(int i);
 
 /**
 * \fn void O_ajouterEnTete(O_Octet* o,Bit bit)
-* \brief ajouter un bit a l'octet : le nombre de bits de l'octet doit etre strictement inférieur à 8, le sens d'ajout est du bit de poids fort au poids faible
+* \brief ajoute un bit a l'octet : le nombre de bits de l'octet doit être strictement inférieur à 8, le sens d'ajout est du bit de poids fort au poids faible
 * \return void
 */
 

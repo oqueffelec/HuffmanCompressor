@@ -1,6 +1,6 @@
 /**
  * \file codage.h
- * \brief Implantation de codage : procedure qui code le fichier en remplacant chaque octet par son code binaire
+ * \brief Implantation de codage : procédure qui code le fichier en remplacant chaque octet par son code binaire
  * \author Octave Queffelec
  * \version 1.0
  */
@@ -10,7 +10,7 @@
 
 /**
 * \fn void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage tdc)
-* \brief parcours le fichier octet par octet et ecris leur code binaires respectifs dans le fichier compressé
+* \brief parcourt le fichier octet par octet et écrit leur code binaire respectif dans le fichier compressé
 * \return void
 */
 void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage tdc);

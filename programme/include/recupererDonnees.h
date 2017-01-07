@@ -1,6 +1,6 @@
 /**
  * \file recupererDonnees.h
- * \brief Implantation de la fonction recupererDonnees : recupere la stat, la longeur du fichier source, et ressort le codeBinaire du fichier compressé
+ * \brief Implantation de la fonction recupererDonnees : récupère la stat, la longeur du fichier source, et ressort le codeBinaire du fichier compressé
  * \author Octave Queffelec
  * \version 1.0
  * \date 26/12/2016
@@ -32,7 +32,7 @@ int estFichierHuffman(FB_FichierBinaire fichierSource);
 
 /**
 * \fn void recupererStatistiques(FB_FichierBinaire fichierSource, STAT_Statistiques* stat)
-* \brief recupere les statistiques du fichier
+* \brief récupère les statistiques du fichier
 * \return void
 */
 
@@ -41,7 +41,7 @@ void recupererStatistiques(FB_FichierBinaire fichierSource, STAT_Statistiques* s
 
 /**
 * \fn void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur);
-* \brief recupere la longeur en octet du fichier
+* \brief récupère la longeur en octet du fichier
 * \return void
 */
 
@@ -49,7 +49,7 @@ void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur);
 
 /**
 * \fn void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur)
-* \brief recupere l'entete du fichier, statistiques + longueur + verif de l'id
+* \brief récupère l'entete du fichier, statistiques + longueur + vérification de l'id
 * \return void
 */
 
