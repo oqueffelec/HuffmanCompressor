@@ -23,17 +23,21 @@ void decodage(FB_FichierBinaire* fichierDest,FB_FichierBinaire fichierSource,int
   O_Octet octetAlire=O_octetZero();
   O_Octet octetAecrire= O_octetZero();
   CB_CodeBinaire cbAdecoder=CB_codeBinaire();
+  CB_CodeBinaire cbAdecoder1=CB_codeBinaire();
+
 
   while(posCurseur <= longueur-1 && !FB_finFichier(fichierSource) && FB_lireOctet(fichierSource, &octetAlire)){
    int trouve=false;
    int i = 0;
    octetAlire.nb=8;
     while (i < 8 && posCurseur < longueur-1) {
-      CB_ajouter(&cbAdecoder,O_obtenirBit(octetAlire,i));
-      decodageCodeBinaire(cbAdecoder, adh, &octetAecrire, &trouve);
+      CB_ajouter(&cbAdecoder,O_obtenirBit(octetAlire,7-i));
+      cbAdecoder1=CB_copie(cbAdecoder);
+      decodageCodeBinaire(cbAdecoder1, adh, &octetAecrire, &trouve);
       if(trouve){
         FB_ecrireOctet(fichierDest, octetAecrire);
         cbAdecoder=CB_codeBinaire();
+        cbAdecoder1=CB_codeBinaire();
         posCurseur++;
       }
       i++;
