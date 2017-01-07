@@ -1,16 +1,13 @@
 \begin{tad}
   \tadNom{TableDeCodage}
   \tadDependances{Octet, CodeBinaire}
-
   \begin{tadOperations}{TableDeCodage}
    \tadOperation{tableDeCodage}{}{\tadUnParam{TableDeCodage}}
     \tadOperation{ajouter}{\tadDeuxParams{TableDeCodage}{CodeBinaire}}{\tadUnParam{TableDeCodage}}
     \tadOperation{estPresentCodeBinaire}{{\tadDeuxParams{TableDeCodage}{CodeBinaire}}{\tadUnParam{\Booleen}}
     \tadOperation{ObtenirCodeBinaire}{{\tadDeuxParams{TableDeCodage}{Octet}}{\tadUnParam{CodeBinaire}}
-}
-
+  \end{tadOperations}
   \begin{tadAxiomes}{TableDeCodage}
   \tadAxiome{estPresentCodeBinaire(ajouter(tdc,cb))}
   \end{tadAxiomes}
-
 \end{tad}

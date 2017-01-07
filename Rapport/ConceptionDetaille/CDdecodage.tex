@@ -1,0 +1,38 @@
+% auteur : Octave Queffelec
+\begin{algorithme}
+	\procedure{decodage}{
+		\paramEntree  fichierSource : FichierBinaire, longueur: \naturel, adh : ArbreDeHuffman
+		\paramEntreeSortie fichierDest : FichierBinaire
+	}{
+		posCurseur : \naturel
+		i : \naturel
+		octetAlire : Octet\\
+		octetAecrire : Octet\\
+		cbAdecoder : CodeBinaire\\
+		cbAdecoderInverse : CodeBinaire
+		
+	}{
+		\affecter{posCurseur}{0}
+		\affecter{octetAlire}{octetZero()}
+		\affecter{octetAecrire}{octetZero()}
+		\affecter{cbAdecoder}{codeBinaire()}
+		\affecter{cbAdecoderInverse}{codeBinaire()}
+
+		\tantque{posCurseur<= longeur-1 \et{ \non{finFichier(fichierSource)}}  \et{ lireOctet(fichierSource,octetAlire)}}{
+			\affecter{trouve}{\Faux}
+			\affecter{i}{0}
+			\tantque{i<8 \et posCurseur<longueur-1}{
+				\instruction{ajouter(cbAdecoder,\instruction{obtenirBit(octetAlire,7-i)}}
+				\affecter{cbAdecoderInverse}{\instruction{copie(cbAdecoder)}}
+				\instruction{decodageCodeBinaire(cbAdecoder,adh,octetAlire,trouve)}
+				\sialors{trouve}{
+					\instruction{ecrireOctet(fichierDest,octetAecrire)}
+					\affecter{cbAdecoder}{codeBinaire()}
+					\affecter{cbAdecoderInverse}{codeBinaire()}
+					\affecter{posCurseur}{posCurseur+1}
+					}
+				\affecter{i}{i+1}
+				}
+			}
+		}
+\end{algorithme}

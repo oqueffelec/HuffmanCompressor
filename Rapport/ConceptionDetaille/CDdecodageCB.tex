@@ -1,0 +1,24 @@
+% auteur : Octave Queffelec
+\begin{algorithme}
+	\procedure{decodageCodeBinaire}{
+		\paramEntree  cbAcoder : CodeBinaire, adh: ArbreDeHuffman
+		\paramSortie octet : Octet, trouve : \booleen
+	}{
+		i:\naturel
+		adhTemp: ArbreDeHuffman
+		
+	}{
+		\affecter{adhTemp}{adh}
+		\affecter{trouve}{\false}
+		\pour{i}{0}{longueur(cbAdecoder)}{}{
+			\sialorssinon{obtenirBit(cbAdecoder,i+1)=bitA0}{
+				\affecter{adhTemp}{obtenirFilsGauche(adhTemp)}
+				}{
+				\affecter{adhTemp}{obtenirFilsDroit(adhTemp)}
+				}}
+		\sialors{estUneFeuille(adhTemp)}{
+			\affecter{octet}{obtenirCaractere(adhTemp)}
+			\affecter{trouve}{\true}
+			}
+			}
+\end{algorithme}
