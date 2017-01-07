@@ -1,0 +1,67 @@
+% auteur : Wacyk Jean-Gabriel
+
+\begin{algorithme}
+  \fonction{creerArbreDeHuffman}{file : FileDePriorite}{ArbreDeHuffman}
+  {
+  temp : ArbreDeHuffman\\
+  arbre1 : ArbreDeHuffman\\
+  arbre2 : ArbreDeHuffman
+  }
+  {
+  \tantque{non(longueur(file)=1)}
+    {
+    \affecter{arbre1}{obtenirElement(file)}
+    \instruction{défiler(file)}
+    \affecter{arbre2}{obtenirElement(file)}
+    \instruction{défiler(file)}
+    \affecter{temp}{ajouterRacine(arbre1,arbre2)}
+    \instruction{insérer(file,temp)}
+    }
+  \retourner{temp}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{remplirTableDeCodage}{
+    \paramEntreeSortie{tdc : TableDeCodage, arbre : ArbreDeHuffman, code : CodeBinaire}
+  }
+  {
+  temp : CodeBinaire
+  }
+  {
+  \sialorssinon{estUneFeuille(arbre)}
+  {
+    \affecter{temp}{copie(code)}
+    \instruction{ajouter(tdc,obtenirCaractere(arbre),temp)}
+    \instruction{supprimerTete(code)}
+  }
+  {
+    \instruction{ajouter(code,bitA0)}
+    \instruction{ramplirTableDeCodage(tdc,obtenirFilsGauche(arbre),code)}
+    \instruction{ajouter(code,bitA1)}
+    \instruction{ramplirTableDeCodage(tdc,obtenirFilsDroit(arbre),code)}
+    \sialors{non(longueur(code)=0)}
+      {
+      \instruction{supprimerTete(code)}
+      }
+  }
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{creerTableDeCodage}{stats : Statistiques}{TableDeCodage}
+  {
+  code : CodeBinaire\\
+  res : TableDeCodage\\
+  arbre : ArbreDeHuffman\\
+  file : FileDePriorite
+  }
+  {
+  \affecter{code}{codeBinaire()}
+  \affecter{res}{tableDeCodage()}
+  \affecter{file}{creerFileDePriorite(stats)}
+  \affecter{arbre}{creerArbreDeHuffman(file)}
+  \instruction{remplirTableDeCodage(res,arbre,code)}
+  \retourner{res}
+  }
+\end{algorithme}
