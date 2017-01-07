@@ -1,5 +1,5 @@
 /**
-  * \file decodageCodeBinaire.c
+  * \file decodageCodeBinaire.h
   * \brief Décompression et écriture des données dans un fichier
   * \author Jean-Gabriel Wacyk
   * \version 1.0
@@ -22,7 +22,7 @@
 #include "Octet.h"
 
 /**
-* \fn void decodage(CB_CodeBinaire donne,FB_FichierBinaire* dest,STAT_Statistiques stats);
+* \fn void decodage(CB_CodeBinaire donne,FB_FichierBinaire* dest,STAT_Statistiques stats)
 * \brief décode le Code Binaire donné par la procédure decodage et renvoie un booléen si le code binaire correspond à un code binaire du fichier codé
 * \return void
 */

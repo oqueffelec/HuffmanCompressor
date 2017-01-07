@@ -12,7 +12,7 @@
 #include "CodeBinaire.h"
 
 /**
-* \struct O_octet Octet.h
+* \struct O_Octet Octet.h
 * \brief la structure est un unsigned char
 */
 
@@ -22,15 +22,15 @@ typedef struct O_Octet {
 } O_Octet;
 
 /**
- *\fn O_Octet O_octet(CB_CodeBinaire)
+ *\fn O_Octet O_octet(CB_CodeBinaire cb)
  *\brief renvoie un octet de 8 bits à partir d'un CodeBinaire
- *\return O_octet
+ *\return O_Octet
  */
 
 O_Octet O_octet(CB_CodeBinaire cb);
 
 /**
-* \fn int O_obtenirbit(O_octet, int)
+* \fn int O_obtenirBit(O_Octet o, int pos)
 * \brief renvoie le bit en position pos, O étant le bit de poids faible, 7 de poids fort
 * \return int
 */
@@ -38,7 +38,7 @@ O_Octet O_octet(CB_CodeBinaire cb);
 Bit O_obtenirBit(O_Octet o, int pos);
 
 /**
-* \fn void O_ajouter(O_octet, int)
+* \fn void O_ajouterPoidsFaible(O_Octet* o,Bit bit)
 * \brief ajoute un bit a l'octet : le nombre de bits de l'octet doit être strictement inférieur à 8, le sens d'ajout est du bit de poids faible au poids fort
 * \return void
 */
@@ -46,7 +46,7 @@ Bit O_obtenirBit(O_Octet o, int pos);
 void O_ajouterPoidsFaible(O_Octet* o,Bit bit);
 
 /**
-* \fn int O_octetendecimal(O_octet)
+* \fn int O_octetEnDecimal(O_Octet o)
 * \brief convertit l'octet en décimal
 * \return int
 */
@@ -54,7 +54,7 @@ void O_ajouterPoidsFaible(O_Octet* o,Bit bit);
 int O_octetEnDecimal(O_Octet o);
 
 /**
-* \fn int O_comparerOctet(O_octet,O_octet)
+* \fn int O_comparerOctet(O_Octet o1,O_Octet o2)
 * \brief compare deux octets,renvoie 1 si identique, 0 sinon
 * \return int
 */
@@ -72,7 +72,7 @@ O_Octet O_octetZero();
 /**
 * \fn int O_nombreBit(O_Octet o)
 * \brief renvoie le nombre de bits ajoutés à l'octet
-* \return O_Octet
+* \return int
 */
 
 int O_nombreBit(O_Octet o);
@@ -102,7 +102,7 @@ int O_estRempli(O_Octet o);
 O_Octet O_decimalEnOctet(int i);
 
 /**
-* \fn void O_ajouterEnTete(O_Octet* o,Bit bit)
+* \fn void O_ajouterPoidsFort(O_Octet* o,Bit bit)
 * \brief ajoute un bit a l'octet : le nombre de bits de l'octet doit être strictement inférieur à 8, le sens d'ajout est du bit de poids fort au poids faible
 * \return void
 */

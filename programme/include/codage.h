@@ -15,7 +15,7 @@
 */
 void codage(FB_FichierBinaire source, FB_FichierBinaire* dest, TDC_TableDeCodage tdc);
 /**
-* \fn void bourrage(FB_FichierBinaire* dest, O_Octet octetAecrire)
+* \fn void bourrageZeros(FB_FichierBinaire* dest, O_Octet octetAecrire)
 * \brief rempli de 0 le dernier octet
 * \return void
 */

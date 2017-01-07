@@ -8,8 +8,9 @@
  #ifndef __ARBRE_DE_HUFFMAN__
  #define __ARBRE_DE_HUFFMAN__
 
-#define ADH_ERREUR_MEMOIRE 1
 #include "Octet.h"
+#define ADH_ERREUR_MEMOIRE 1
+
 /**
 * \struct ArbreDeHuffman ArbreDeHuffman.h
 * \brief la structure est une liste chainée ayant 2 éléments (la clé et la valeur)
@@ -24,7 +25,7 @@ typedef struct ADH_Noeud{
 typedef ADH_Noeud *ArbreDeHuffman;
 
 /**
-* \fn ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, char caractere)
+* \fn ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere)
 * \brief crée un arbre de huffman à partir d'une pondération et d'un caractere
 * \return ArbreDeHuffman
 */
@@ -34,7 +35,7 @@ ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere);
 /**
 * \fn int ADH_estUneFeuille(ArbreDeHuffman arbre)
 * \brief envoie vrai si filsG et filsD pointent vers NULL et si arbre.caractere != NULL
-* \return {1 0}
+* \return int
 */
 
 int ADH_estUneFeuille(ArbreDeHuffman arbre);
@@ -64,9 +65,9 @@ ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre);
 unsigned int ADH_obtenirPonderation(ArbreDeHuffman feuille);
 
 /**
-* \fn char ADH_obtenirCaractere(ArbreDeHuffman feuille)
+* \fn O_Octet ADH_obtenirCaractere(ArbreDeHuffman arbre)
 * \brief permet d'obtenir le caractere associé au noeud
-* \return char
+* \return O_Octet
 */
 
 O_Octet ADH_obtenirCaractere(ArbreDeHuffman arbre);

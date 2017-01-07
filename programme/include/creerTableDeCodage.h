@@ -31,7 +31,7 @@
 ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file);
 
 /**
-* \fn void remplirTableDeCodage(TDC_TableDeCodage tdc, ArbreDeHuffman arbre, CB_CodeBinaire code);
+* \fn void remplirTableDeCodage(TDC_TableDeCodage* tdc, ArbreDeHuffman arbre, CB_CodeBinaire* code)
 * \brief remplit la table de codage à partir d'un arbre de Huffman
 * \return void
 */
@@ -40,7 +40,7 @@ ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file);
 void remplirTableDeCodage(TDC_TableDeCodage* tdc, ArbreDeHuffman arbre, CB_CodeBinaire* code);
 
 /**
-* \fn TDC_TableDeCodage creerTableDeCodage(STAT_Statistiques stats);
+* \fn TDC_TableDeCodage creerTableDeCodage(STAT_Statistiques stats)
 * \brief remplit la table de codage à partir des stats
 * \return TDC_TableDeCodage
 */

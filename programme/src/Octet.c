@@ -1,6 +1,6 @@
 /**
   * \file Octet.c
-  * \brief Conception du TAD codeBinaire
+  * \brief Conception du TAD Octet
   * \author Wacyk Jean-Gabriel
   * \version 1.0
   * \date 5/12/2016

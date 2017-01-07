@@ -13,7 +13,7 @@
 
 
 /**
-* \fn STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier,char* nomfichier)
+* \fn STAT_Statistiques creerStatistiques(FB_FichierBinaire fichier)
 * \brief renvoie la statistiques du fichier passé en paramètre
 * \return STAT_Statistiques
 */

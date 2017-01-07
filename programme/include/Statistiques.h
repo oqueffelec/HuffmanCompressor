@@ -1,5 +1,5 @@
 /**
- * \file statistiques.h
+ * \file Statistiques.h
  * \brief Implantation du TAD Statistiques : Statistiques est un dictionnaire de 256 Octets et 256 pondérations
  * \author Mathieu Vandecasteele
  * \version 1.0
@@ -33,7 +33,7 @@ unsigned long int valeur[STAT_SIZE];
 STAT_Statistiques STAT_statistiques();
 
 /**
-* \fn void STAT_ajouter(STAT_Statistiques* stat, O_Octet* octet, unsigned long int pond)
+* \fn void STAT_ajouter(STAT_Statistiques* stat, O_Octet o)
 * \brief incrémente la pondération associée à l'octet.
 * \return void
 */
@@ -41,7 +41,7 @@ STAT_Statistiques STAT_statistiques();
 void STAT_ajouter(STAT_Statistiques* stat, O_Octet o);
 
 /**
-* \fn int STAT_estPresentOctet(STAT_Statistiques stat, int octet)
+* \fn int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet octet)
 * \brief verifie la présence d'une octet dans le tableau d'octet i.e la pondération est différente de 0.
 * \return int
 */

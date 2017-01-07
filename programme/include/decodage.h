@@ -1,5 +1,5 @@
 /**
-  * \file decodage.c
+  * \file decodage.h
   * \brief Décompression et écriture des données dans le fichier destination
   * \author Jean-Gabriel Wacyk
   * \version 1.0
@@ -22,8 +22,8 @@
 #include "Octet.h"
 
 /**
-* \fn void decodage(CB_CodeBinaire donne,FB_FichierBinaire* dest,STAT_Statistiques stats);
-* \brief concatène les bits du fichier pour former un codebinaire qui sera decodé par la procédure decodageCodeBinaire
+* \fn void decodage(FB_FichierBinaire* fichierDest,FB_FichierBinaire fichierSource,int longueur,ArbreDeHuffman adh)
+* \brief décode le fichierSource grâce à l'ArbreDeHuffman dans le fichierDest
 * \return void
 */
 

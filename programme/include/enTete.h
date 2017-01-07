@@ -1,5 +1,5 @@
 /**
-  * \file enTete.c
+  * \file enTete.h
   * \brief creer l'en-tête du fichier compressé
   * \author Octave Queffelec
   * \version 1.0
