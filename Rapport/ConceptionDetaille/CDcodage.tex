@@ -1,0 +1,51 @@
+% auteur : Wacyk Jean-Gabriel
+
+\begin{algorithme}
+  \procedure{bourrageZeros}{
+  \paramEntree{octetAecrire : Octet}
+  \paramEntreeSortie{dest : FichierBinaire}
+  }
+  {}
+  {
+  \sialors{non(nombreBit(octetAecrire)=0)}
+      {
+      \tantque{nombreBit(octetAecrire)<8}
+        {
+        \instruction{ajouterPoidsFort(octetAecrire,bitA0)}
+        }
+      \instruction{ecrireOctet(dest)}
+      }
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{codage}{
+  \paramEntree{source : FichierBinaire, tdc :TableDeCodage}
+  \paramEntreeSortie{dest : FichierBinaire}
+  }
+  {
+  octetAecrire : Octet\\
+  octetAlire : Octet\\
+  code : CodeBinaire\\
+  i : \naturel
+  }
+  {
+  \affecter{octetAecrire}{octetZero()}
+  \affecter{octetAlire}{octetZero()}
+  \instruction{deplacerCurseur(source,0)}
+  \tantque{lireOctet(source,octetAlire)=1 et finfichier(source)=0}
+  {
+    \affecter{code}{codeBinaire()}
+    \pour{i}{0}{longueur(code)}{}
+      {
+      \instruction{ajouterPoidsFort(octetAecrire,obtenirBit(code,i+1))}
+      \sialors{estRemplis(octetAecrire)}
+        {
+        \instruction{ecrireOctet(dest,octetAecrire)}
+        \affecter{octetAecrire}{octetZero()}
+        }
+      }
+    }
+    \instruction{bourrageZeros(dest,octetAecrire)}
+  }
+\end{algorithme}

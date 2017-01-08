@@ -1,0 +1,17 @@
+% auteur : Mathieu Vandecasteele
+\begin{algorithme}
+	\procedure{compression}{
+		\paramEntree  fichierSource : FichierBinaire
+		\paramEntreeSortie fichierDestination : FichierBinaire
+	}{
+		stat : Statistiques
+		tdc: TableDeCodage
+		
+	}{
+		\affecter{stat}{creerStatistiques(fichierSource)}
+		\affecter{tdc}{creerTableDeCodage(stat)}
+		\instruction{enTete(FichierSource,FichierDestination,stat)}
+		\instruction{codage(FichierSource,FichierDestination,tdc)}
+
+	}
+\end{algorithme}

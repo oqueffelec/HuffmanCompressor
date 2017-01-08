@@ -1,0 +1,22 @@
+% auteur : Wacyk Jean-Gabriel
+
+\begin{algorithme}
+  \fonction{creerFileDePriorite}{stat : Statistiques}{FileDePriorite}
+  {
+    file : FileDePriorite \\
+    feuille : ArbreDeHuffman\\
+    i : \naturel
+	}
+  {
+    \affecter{file}{fileDePriorite()}
+    \pour{i}{0}{STATSIZE}{}
+      {
+      \sialors{estPresentOctet(stat,decimalEnOctet(i))}
+        {
+        \affecter{feuille}{arbreDeHuffman(obtenirPonderation(stat,decimalEnOctet(i)),decimalEnOctet(i))}
+        \instruction{insérer(file,feuille)}
+        }
+      }
+  \retourner{file}
+  }
+\end{algorithme}
