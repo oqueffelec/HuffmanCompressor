@@ -3,13 +3,13 @@
 \begin{algorithme}
   \fonction{estFichierHuffman}{fichierSource : FB\_FichierBinaire}{\booleen}
   {
-  *huffman : char\\
-  *id : char\\
+  huffman : ChaineDeCaracteres\\
+  id : Tableau[1..8]de Caracteres\\
   }
   {
   \affecter{huffman}{"huffman"}
   \affecter{id}{FB\_lireChaine(fichierSource, 7)}
-  \affecter{id[7]}{'\textbackslash0'}
+  \affecter{id[8]}{'\textbackslash0'}
   \sialorssinon{strcmp(id, huffman)=0}
   {\retourner{VRAI}}
   {\retourner{FAUX}}
@@ -18,7 +18,7 @@
 
 \begin{algorithme}
   \procedure{recupererLongueur}{
-    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *longueur : int}
+    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *longueur : Naturel}
     }
     {
     }
@@ -35,7 +35,7 @@
     estFichierHuffman(fichierSource)
     }
     {
-    iStat, i, j : int
+    iStat, i, j : Naturel
     }
     {
     \affecter{iStat}{0}
@@ -52,7 +52,7 @@
 
 \begin{algorithme}
   \procedure{recupererDonnees}{
-    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *stat : STAT\_Statistiques, *longueur : int}
+    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *stat : STAT\_Statistiques, *longueur : Naturel}
     }
     {
 

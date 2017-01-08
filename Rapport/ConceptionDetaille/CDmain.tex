@@ -1,0 +1,39 @@
+%auteur : Quentin Robcis
+
+\begin{algorithme}
+  \fonction{main}{argc : Naturel, *argv : ChaineDeCaractere}{Naturel}
+  {
+  fichierCompresse : FB\_FichierBinaire\\
+  fichierOrignial : FB\_FichierBinaire\\
+  nomFichier : ChaineDeCaractere
+  }
+  {
+  \sialorssinon{(argc!=0) ou ((strcmp(argv[1],"c")!=0) et (strcmp(argv[1],"d")!=0))}
+  {\instruction{printf("Veuillez respecter la syntaxe suivante : \\
+  Pour compresser : huffman c nomFichier\\
+  pour decompresser : huffman d nomFichier.huff")}
+  }
+  {
+    \sialorssinon{strcmp(argv[1],"c")=0}
+    {
+    \instruction{printf("Compression...")}
+    \instruction{strcpy(nomFichier, argv[2])}
+    \instruction{strcat(nomFichier,".huff")}
+    \affecter{fichierOriginal}{FB\_ouvrir(argv[2],lecture)}
+    \affecter{fichierCompresse}{FB\_ouvrir(nomFichier, ecriture)}
+    \instruction{compression(fichierOriginal, \&fichierOriginal)}
+    \instruction{printf("terminé avec succes")}
+    }
+    {
+    \instruction{printf("Decompression...")}
+    \instruction{strcpy(nomFichier, argv[2])}
+    \affecter{nomFichier[strlen(nomFichier) - strlen(".huff")]}{'\textbackslash0'}
+    \affecter{fichierCompresse}{FB\_ouvrir(argv[2],lecture)}
+    \affecter{fichierOriginal}{FB\_ouvrir(nomFichier,ecriture)}
+    \instruction{decompression(fichierCompresse, \&fichierOriginal)}
+    \instruction{printf(terminé avec succes)}
+    }
+  }
+  \retourner{EXIT\_SUCCESS}
+  }\\
+\end{algorithme}
