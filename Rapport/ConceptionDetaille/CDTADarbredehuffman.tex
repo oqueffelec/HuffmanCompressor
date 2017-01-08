@@ -1,6 +1,15 @@
 %auteur : Quentin Robcis
 
 \begin{algorithme}
+
+  \type{ArbreDeHuffman}{\^{}ADH\_Noeud}
+  \begin{enregistrement}{ADH\_Noeud}
+    \item ponderation : unsigned int
+    \item caractere : O\_Octet
+    \item filsG : \^{}ADH\_Noeud
+    \item filsD : \^{}ADH\_Noeud
+  \end{enregistrement}\\
+
   \fonction{ADH\_arbreDeHuffman}{ponderation : unsigned int, caractere : O\_Octet}{ArbreDeHuffman}
   {
   arbre : ArbreDeHuffman
