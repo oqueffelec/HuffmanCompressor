@@ -95,7 +95,7 @@ char* FB_lireChaine(FB_FichierBinaire fb, int n) {
   while(i <= (n-1) && !FB_finFichier(fb) && FB_lireCaractere(fb, &res[i])){
     i++;
   }
-  res[i+1] =  \0 ;
+  res[i+1] =  '\0' ;
   return res;
 }
 
