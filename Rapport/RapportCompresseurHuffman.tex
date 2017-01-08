@@ -5,6 +5,7 @@
 \usepackage{algorithmeUTF8}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{graphicx}
 
 \title{Compresseur de Huffman}
 \author{Octave Queffelec \and Quentin Robcis \and Mathieu Vandecasteele \and Jean-Gabriel Wacyk \and Regis Maskembe}
@@ -30,6 +31,9 @@
 
 \newpage
 \section{Conception}
+\subsection{Analyse descendante}
+\includegraphics[width=500pt,angle=90, origin=c]{Compression_Analysedescendante.jpeg}
+\includegraphics[width=500pt,angle=90, origin=c]{decompression_analyse.jpeg}
 \input{Signatures/conceptionPreliminaire.tex}
 \input{ConceptionDetaille/ConceptionDetaille.tex}
 
@@ -37,10 +41,13 @@
 \section{Code Source}
 \input{CodeSource.tex}
 
-
 \newpage
 \section{Conclusion}
 \input{Conclusion.tex}
+
+\newpage
+\section{Cahier de suivi}
+\input{CahierDeSuivi.tex}
 
 
 \end{document}
