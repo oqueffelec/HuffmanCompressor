@@ -24,7 +24,7 @@
 
 /**
 * \fn ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file)
-* \brief renvoie l'arbre de Huffman cree à partir d'une file de priorite
+* \brief renvoie l arbre de Huffman cree à partir d une file de priorite
 * \return ArbreDeHuffman
 */
 
@@ -32,7 +32,7 @@ ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file);
 
 /**
 * \fn void remplirTableDeCodage(TDC_TableDeCodage* tdc, ArbreDeHuffman arbre, CB_CodeBinaire* code)
-* \brief remplit la table de codage à partir d'un arbre de Huffman
+* \brief remplit la table de codage à partir d un arbre de Huffman
 * \return void
 */
 

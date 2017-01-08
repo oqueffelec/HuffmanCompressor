@@ -34,7 +34,7 @@ STAT_Statistiques STAT_statistiques();
 
 /**
 * \fn void STAT_ajouter(STAT_Statistiques* stat, O_Octet o)
-* \brief incremente la ponderation associee à l'octet.
+* \brief incremente la ponderation associee à l octet.
 * \return void
 */
 
@@ -42,7 +42,7 @@ void STAT_ajouter(STAT_Statistiques* stat, O_Octet o);
 
 /**
 * \fn int STAT_estPresentOctet(STAT_Statistiques stat, O_Octet octet)
-* \brief verifie la presence d'une octet dans le tableau d'octet i.e la ponderation est differente de 0.
+* \brief verifie la presence d une octet dans le tableau d octet i.e la ponderation est differente de 0.
 * \return int
 */
 

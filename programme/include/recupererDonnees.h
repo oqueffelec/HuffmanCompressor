@@ -24,7 +24,7 @@
 
 /**
 * \fn int estFichierHuffman(FB_FichierBinaire fichierSource)
-* \brief retourne si l'identifiant du fichier est un identifiant .huff
+* \brief retourne si l identifiant du fichier est un identifiant .huff
 * \return int
 */
 
@@ -49,7 +49,7 @@ void recupererLongueur(FB_FichierBinaire fichierSource, int* longueur);
 
 /**
 * \fn void recupererDonnees(FB_FichierBinaire fichierSource, STAT_Statistiques* stat, int* longueur)
-* \brief recupere l'entete du fichier, statistiques + longueur + verification de l'id
+* \brief recupere l entete du fichier, statistiques + longueur + verification de l id
 * \return void
 */
 

@@ -26,7 +26,7 @@ typedef ADH_Noeud *ArbreDeHuffman;
 
 /**
 * \fn ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere)
-* \brief cree un arbre de huffman à partir d'une ponderation et d'un caractere
+* \brief cree un arbre de huffman à partir d une ponderation et d un caractere
 * \return ArbreDeHuffman
 */
 
@@ -42,7 +42,7 @@ int ADH_estUneFeuille(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre)
-* \brief fonction qui permet d'obtenir le fils Gauche d'une racine donnee
+* \brief fonction qui permet d obtenir le fils Gauche d une racine donnee
 * \return ArbreDeHuffman
 */
 
@@ -50,7 +50,7 @@ ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre)
-* \brief fonction qui permet d'obtenir le fils Droit d'une racine donnee
+* \brief fonction qui permet d obtenir le fils Droit d une racine donnee
 * \return ArbreDeHuffman
 */
 
@@ -58,7 +58,7 @@ ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre);
 
 /**
 * \fn unsigned int ADH_obtenirPonderation(ArbreDeHuffman arbre)
-* \brief permet d'obtenir la ponderation associee au noeud
+* \brief permet d obtenir la ponderation associee au noeud
 * \return unsigned int
 */
 
@@ -66,7 +66,7 @@ unsigned int ADH_obtenirPonderation(ArbreDeHuffman feuille);
 
 /**
 * \fn O_Octet ADH_obtenirCaractere(ArbreDeHuffman arbre)
-* \brief permet d'obtenir le caractere associe au noeud
+* \brief permet d obtenir le caractere associe au noeud
 * \return O_Octet
 */
 

@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
 		else{
 			printf("Decompression...");
 			strcpy(nomFichier, argv[2]);
-			nomFichier[strlen(nomFichier) - strlen(".huff")] = '\0';
+			nomFichier[strlen(nomFichier) - strlen(".huff")] =  \0 ;
       fichierCompresse = FB_ouvrir(argv[2], lecture);
 			fichierOriginal = FB_ouvrir(nomFichier, ecriture);
 			decompression(fichierCompresse,&fichierOriginal);

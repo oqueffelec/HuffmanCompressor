@@ -1,6 +1,6 @@
 /**
  * \file creerStatistiques.h
- * \brief Implantation de la fonction creerStatistiques : cree un tableau de 256 cases correspondants à des octets remplies avec leur nombre d'occurences.
+ * \brief Implantation de la fonction creerStatistiques : cree un tableau de 256 cases correspondants à des octets remplies avec leur nombre d occurences.
  * \author Mathieu Vandecasteele
  * \version 1.0
  * \date 16/12/2016

@@ -14,7 +14,7 @@
 
 /**
 * \struct TDC_tableDeCodage TableDeCodage.h
-* \brief la structure est un tableau dont les indices correspondent à la cle (l'octet) et la valeur du tableau aux valeurs du dictionnaire, c'est-à-dire au code binaire
+* \brief la structure est un tableau dont les indices correspondent à la cle (l octet) et la valeur du tableau aux valeurs du dictionnaire, c est-à-dire au code binaire
 */
 
 
@@ -32,7 +32,7 @@ TDC_TableDeCodage TDC_tableDeCodage();
 
 /**
 * \fnv void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet o, CB_CodeBinaire cb)
-* \brief ajoute le code binaire à l'octet correspondant
+* \brief ajoute le code binaire à l octet correspondant
 * \return void
 */
 
@@ -40,7 +40,7 @@ void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet o, CB_CodeBinaire cb);
 
 /**
 * \fn int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb)
-* \brief verifie la presence d'un codebinaire dans la TDC
+* \brief verifie la presence d un codebinaire dans la TDC
 * \return int
 */
 
@@ -49,7 +49,7 @@ int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb);
 
 /**
 * \fn CB_CodeBinaire TDC_obtenirCodeBinaire(TDC_TableDeCodage tdc, O_Octet o)
-* \brief renvoie le codebinaire correspondant à l'octet
+* \brief renvoie le codebinaire correspondant à l octet
 * \return CB_CodeBinaire
 */
 

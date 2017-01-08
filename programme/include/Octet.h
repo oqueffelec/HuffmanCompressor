@@ -23,7 +23,7 @@ typedef struct O_Octet {
 
 /**
  *\fn O_Octet O_octet(CB_CodeBinaire cb)
- *\brief renvoie un octet de 8 bits à partir d'un CodeBinaire
+ *\brief renvoie un octet de 8 bits à partir d un CodeBinaire
  *\return O_Octet
  */
 
@@ -39,7 +39,7 @@ Bit O_obtenirBit(O_Octet o, int pos);
 
 /**
 * \fn void O_ajouterPoidsFaible(O_Octet* o,Bit bit)
-* \brief ajoute un bit a l'octet : le nombre de bits de l'octet doit etre strictement inferieur à 8, le sens d'ajout est du bit de poids faible au poids fort
+* \brief ajoute un bit a l octet : le nombre de bits de l octet doit etre strictement inferieur à 8, le sens d ajout est du bit de poids faible au poids fort
 * \return void
 */
 
@@ -47,7 +47,7 @@ void O_ajouterPoidsFaible(O_Octet* o,Bit bit);
 
 /**
 * \fn int O_octetEnDecimal(O_Octet o)
-* \brief convertit l'octet en decimal
+* \brief convertit l octet en decimal
 * \return int
 */
 
@@ -71,7 +71,7 @@ O_Octet O_octetZero();
 
 /**
 * \fn int O_nombreBit(O_Octet o)
-* \brief renvoie le nombre de bits ajoutes à l'octet
+* \brief renvoie le nombre de bits ajoutes à l octet
 * \return int
 */
 
@@ -79,7 +79,7 @@ int O_nombreBit(O_Octet o);
 
 /**
 * \fn unsigned char O_getOctet(O_Octet o)
-* \brief renvoie un unsigned char qui correspond à la valeur de l'octet
+* \brief renvoie un unsigned char qui correspond à la valeur de l octet
 * \return unsigned char
 */
 
@@ -103,7 +103,7 @@ O_Octet O_decimalEnOctet(int i);
 
 /**
 * \fn void O_ajouterPoidsFort(O_Octet* o,Bit bit)
-* \brief ajoute un bit a l'octet : le nombre de bits de l'octet doit etre strictement inferieur à 8, le sens d'ajout est du bit de poids fort au poids faible
+* \brief ajoute un bit a l octet : le nombre de bits de l octet doit etre strictement inferieur à 8, le sens d ajout est du bit de poids fort au poids faible
 * \return void
 */
 

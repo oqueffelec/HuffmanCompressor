@@ -23,7 +23,7 @@
 
 /**
 * \fn void decodage(FB_FichierBinaire* fichierDest,FB_FichierBinaire fichierSource,int longueur,ArbreDeHuffman adh)
-* \brief decode le fichierSource grâce à l'ArbreDeHuffman dans le fichierDest
+* \brief decode le fichierSource grâce à l ArbreDeHuffman dans le fichierDest
 * \return void
 */
 

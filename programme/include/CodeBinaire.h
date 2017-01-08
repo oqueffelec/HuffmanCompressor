@@ -80,7 +80,7 @@ void CB_supprimerTete(CB_CodeBinaire* cb);
 
 /**
  *\fn CB_CodeBinaire CB_copie(CB_CodeBinaire cb)
- *\brief copie un code binaire en l'inversant
+ *\brief copie un code binaire en l inversant
  *\return CB_CodeBinaire
 */
 

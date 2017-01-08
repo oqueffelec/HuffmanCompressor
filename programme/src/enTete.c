@@ -1,6 +1,6 @@
 /**
   * \file enTete.c
-  * \brief Ecriture de l'enTete dans le fichier
+  * \brief Ecriture de l enTete dans le fichier
   * \author Octave Queffelec
   * \version 1.0
   * \date 20/12/2016

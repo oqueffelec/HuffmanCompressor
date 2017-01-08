@@ -43,7 +43,7 @@ void FB_fermer(FB_FichierBinaire fb);
 
 /**
 * \fn int FB_finFichier(FB_FichierBinaire fb);
-* \brief renvoie 0 si n'est pas à la fin du fichier, un nombre non nul sinon
+* \brief renvoie 0 si n est pas à la fin du fichier, un nombre non nul sinon
 * \return int
 */
 

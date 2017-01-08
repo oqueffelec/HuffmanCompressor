@@ -1,6 +1,6 @@
 /**
   * \file recupererDonnees.c
-  * \brief Recuperation des stats, longueur du fichier source, verif de l'identifiant, recup des donnees compress
+  * \brief Recuperation des stats, longueur du fichier source, verif de l identifiant, recup des donnees compress
   * \author Octave Queffelec
   * \version 1.0
   * \date 20/12/2016
@@ -23,7 +23,7 @@
 int estFichierHuffman(FB_FichierBinaire fichierSource){
   char* huffman = "huffman";
   char* id = FB_lireChaine(fichierSource,7);
-  id[7]='\0';
+  id[7]= \0 ;
   if(strcmp(id,huffman)==0){
     return TRUE;
   }
