@@ -1,1 +1,20 @@
-yo
+% auteur : Mathieu Vandecasteele	
+\begin{algolist}
+\type{Statistiques}
+\\
+
+\signaturefonction{STAT\_statistiques}{Statistiques}
+\\
+
+\signatureprocedure{STAT\_ajouter}{
+\ParamEntree octet : Octet,
+\ParamEntreeSortie stats : Statistiques
+}
+\\
+
+\signaturefonction{STAT\_estPresentOctet}{stats : Statistiques, octet : Octet}{\booleen}
+\\
+
+\signaturefonctionAvecPreconditions{STAT\_obtenirPonderation}{stats : Statistiques, octet : Octet}{\naturel}
+
+\end{algolist}
