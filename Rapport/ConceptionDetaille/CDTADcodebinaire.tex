@@ -3,7 +3,7 @@
 \begin{algorithme}
   \fonction{codeBinaire}{}{CodeBinaire}
   {
-  \retourner{NULL}
+  \retourner{NIL}
   }
 \end{algorithme}
 
@@ -51,7 +51,7 @@
   \procedure{supprimer}
   \paramEntreeSortie{cb : CodeBinaire}
   {
-  \sialors{non(^cb=NULL)}
+  \sialors{non(^cb=NIL)}
     {
     \instruction{supprimerTete(cb)}
     \instruction{supprimer(cb)}
@@ -62,7 +62,7 @@
 \begin{algorithme}
   \fonction{longueur}{cb : CodeBinaire}{\naturel}
   {
-  \sialorssinon{cb=NULL}
+  \sialorssinon{cb=NIL}
     {
     \retourner{0}
     }
@@ -97,12 +97,12 @@
 \begin{algorithme}
   \fonction{compareCodeBinaire}{cb1,cb2 : CodeBinaire}{Boolean}
   {
-  \sialorssinon{cb1=NULL ET cb2=NULL}
+  \sialorssinon{cb1=NIL ET cb2=NIL}
     {
     \retourner{TRUE}
     }
     {
-    \sialorssinon{((cb1=NULL ET cb2!=NULL) OU (cb1!=NULL ET cb2=NULL))}
+    \sialorssinon{((cb1=NIL ET cb2!=NIL) OU (cb1!=NIL ET cb2=NIL))}
       {
       \retourner{FALSE}
       }
