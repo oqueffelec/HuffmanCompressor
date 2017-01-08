@@ -1,1 +1,39 @@
-yo
+% auteur : Mathieu Vandecasteele	
+\begin{algolist}{0cm}
+
+\type{CodeBinaire}{CB\_Noeud}
+\\
+
+\signaturefonction{CB\_codeBinaire}{CodeBinaire}
+\\
+
+\signatureprocedure{CB\_ajouter}{
+\ParamEntree bit : Bit,
+\ParamEntreeSortie cb : CodeBinaire
+}
+\\
+
+\signaturefonction{CB\_obtenirBit}{code : CodeBinaire, position : \naturel}{Bit}
+\\
+
+
+\signatureprocedure{CB\_supprimerTete}{
+\ParamEntreeSortie code : CodeBinaire
+}
+\\
+
+
+\signatureprocedure{CB\_supprimer}{
+\ParamEntreeSortie code : CodeBinaire
+}
+\\
+
+\signaturefonction{CB\_longueur}{code : CodeBinaire}{\naturel}
+\\
+
+\signaturefonction{CB\_copie}{code : CodeBinaire}{CodeBinaire}
+\\
+
+\signaturefonction{CB\_compareCodeBinaire}{code1 : CodeBinaire, code2 :CodeBinaire}{\booleen}
+
+\end{algolist}
