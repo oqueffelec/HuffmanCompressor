@@ -1,1 +1,44 @@
-yo
+% auteur : Mathieu Vandecasteele	
+\begin{algolist}{0cm}
+
+\type{FileDePriorite}{FDP\_Noeud}
+\\
+
+\signatureprocedure{FDP\_ajouter}{
+\ParamEntree stats : Statistiques,
+\ParamEntreeSortie fdp : FileDePriorite
+}
+\\
+
+\signaturefonction{STAT\_obtenirFileSuivante}{file : FileDePriorite}{FileDePriorite}
+\\
+
+\signatureprocedure{FDP\_fixerListeSuivante}{
+\ParamEntree file : FileDePriorite,
+\ParamEntreeSortie fileReceveuse : FileDePriorite
+}
+\\
+
+\signaturefonction{FDP\_fileDePriorite}{FileDePriorite}
+\\
+
+\signaturefonction{FDP\_estVide}{file : FileDePriorite}{\booleen}
+\\
+
+\signatureprocedure{FDP\_enfilerADH}{
+\ParamEntree arbre : ArbreDeHuffman,
+\ParamEntreeSortie file : FileDePriorite
+}
+\\
+
+\signaturefonction{FDP\_obtenirADH}{file : FileDePriorite}{ArbreDeHuffman}
+\\
+
+\signaturefonction{FDP\_longueur}{file : FileDePriorite}{\naturelNonNul}
+\\
+
+\signatureprocedure{FDP\_defilerADH}{
+\ParamEntreeSortie file : FileDepriorite
+}
+
+\end{algolist}
