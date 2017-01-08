@@ -1,6 +1,12 @@
 %auteur : Quentin Robcis
 \begin{algolist}{0cm}
-  \type{ArbreDeHuffman}{ADH\_Noeud}
+  \type{ArbreDeHuffman}{\^{}ADH\_Noeud}
+  \begin{enregistrement}{ADH\_Noeud}
+    \item ponderation : unsigned int
+    \item caractere : O\_Octet
+    \item filsG : \^{}ADH\_Noeud
+    \item filsD : \^{}ADH\_Noeud
+  \end{enregistrement}\\
 %%\signatureFonctionAvecPreconditions{nom_fonction}{paramètres}{sortie}{précondition}
 %%\signatureFonction{nom_fonction}{paramètres}{sortie}
   \signatureFonction{ADH\_creerArbreDeHuffman}{\naturel ponderation, char caractere}{ArbreDeHuffman}
