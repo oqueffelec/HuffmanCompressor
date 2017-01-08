@@ -1,1 +1,56 @@
-yo
+%auteur : Mathieu Vandecasteele
+
+\begin{signaturescompression}
+
+% procedure compression(E fichierSource : FichierBinaire, E/S fichierDestination : FichierBinaire)
+\signatureprocedure{compression}{
+		\paramEntree  fichierSource : FichierBinaire,
+		\paramEntreeSortie fichierDestination : FichierBinaire
+}
+\\
+
+% fonction creerStatistiques(fichier : FichierBinaire) : Statistiques
+\signatureFonction{creerStatistiques}{fichier : FichierBinaire}{Statistiques}
+\\
+
+% fonction creerTableDeCodage(stats : Statistiques) : TableDeCodage
+\signatureFonction{creerTableDeCodage}{stats : Statistiques}{TableDeCodage}
+\\
+
+% procedure codage(E fichierSource : FichierBinaire, tdc : TableDeCodage, E/S fichierDestination : FichierBinaire)
+\signatureprocedure{codage}{
+  \paramEntree fichierSource : FichierBinaire, tdc : TableDeCodage,
+  \paramEntreeSortie fichierDestination : FichierBinaire
+  }
+\\
+
+% procedure enTete(E fichierSource : FichierBinaire, stats : Statistiques, E/S fichierDestination : FichierBinaire)
+\signatureprocedure{enTete}{
+  \paramEntree fichierSource : FichierBinaire, stats : Statistiques,
+  \paramEntreeSortie fichierDestination : FichierBinaire
+  }
+\\
+
+% fonction creerFileDePriorite(stats : Statistiques) : FileDePriorite
+\signatureFonction{creerFileDePriorite}{stats : Statistiques}{FileDePriorite}
+\\
+
+% procedure remplirTableDeCodage(E/S tdc : TableDeCodage, code : CodeBinaire, arbre : ArbreDeHuffman)
+\signatureprocedure{remplirTableDeCodage}{
+    \paramEntreeSortie tdc : TableDeCodage, code : CodeBinaire, arbre : ArbreDeHuffman
+  }
+\\
+
+% procedure bourrageZeros(E/S fichier : FichierBinaire, E octetAEcrire : Octet)
+\signatureProcedure{bourrageZeros}{
+	\paramEntreeSortie fichier : FichierBinaire,
+	\paramEntree octetAEcrire : Octet
+}
+
+\\
+
+% fonction creerArbreDeHuffman(file : FileDePriorite) : ArbreDeHuffman
+\signatureFonction{creerArbreDeHuffman}{file : FileDePriorite}{ArbreDeHuffman}
+
+\end{signaturescompression}
+

@@ -1,1 +1,58 @@
-yo
+% auteur : Mathieu Vandecasteele
+
+\begin{signaturesdecompression}
+
+% procedure decompression(E fichierSource : FichierBinaire, E/S fichierDestination : FichierBinaire)
+\signatureprocedure{decompression}{
+		\paramEntree  fichierSource : FichierBinaire,
+		\paramEntreeSortie fichierDestination : FichierBinaire
+}
+\\
+
+% procedure recupererDonnees(E/S fichierSource : FichierBinaire, S stats : Statistiques, longueur : NaturelNonNul)
+\signatureProcedure{recupererDonnees}{
+	\paramEntreeSortie fichierSource : FichierBinaire,
+	\paramSortie stats : Statistiques, longueur : \naturelNonNul
+}
+\\
+
+% fonction creerFileDePriorite(stats : Statistiques) : FileDePriorite
+\signatureFonction{creerFileDePriorite}{stats : Statistiques}{FileDePriorite}
+\\
+
+% fonction creerArbreDeHuffman(file : FileDePriorite) : ArbreDeHuffman
+\signatureFonction{creerArbreDeHuffman}{file : FileDePriorite}{ArbreDeHuffman}
+\\
+
+% procedure decodage(E fichierSource : FichierBinaire, longueur : NaturelNonNul, adh : ArbreDeHuffman, E/S fichierDest : FichierBinaire)
+\signatureProcedure{decodage}{
+		\paramEntree  fichierSource : FichierBinaire, longueur : \naturelNonNul, adh : ArbreDeHuffman,
+		\paramEntreeSortie fichierDest : FichierBinaire
+}
+\\
+
+% fonction estFichierHuffman(fichier : FichierBinaire) : Booléen
+\signatureFonction{estFichierHuffman}{fichier : FichierBinaire}{\booleen}
+\\
+
+% procedure recupererLongueur(E fichierSource : FichierBinaire, E/S longueur : NaturelNonNul)
+\signatureProcedure{recupererLongueur}{
+	\paramEntree fichierSource : FichierBinaire,
+	\paramEntreeSortie longueur : \naturelNonNul
+}
+\\
+
+% procedure recupererStatistiques(E fichierSource : FichierBinaire, E/S stats : Statistiques)
+\signatureProcedure{recupererStatistiques}{
+	\paramEntree fichierSource : FichierBinaire,
+	\paramEntreeSortie stats : Statistiques
+}
+\\
+
+% procedure decodageCodeBinaire(E cbACoder : CodeBinaire, adh : ArbreDeHuffman, S octet : Octet, trouve : Booleen)
+\signatureprocedure{decodageCodeBinaire}{
+		\paramEntree  cbACoder : CodeBinaire, adh: ArbreDeHuffman,
+		\paramSortie octet : Octet, trouve : \booleen
+}
+
+\end{signaturesdecompression}
