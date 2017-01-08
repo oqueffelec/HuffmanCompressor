@@ -6,10 +6,10 @@
 	}{
 		i:\naturel
 		adhTemp: ArbreDeHuffman
-		
+
 	}{
 		\affecter{adhTemp}{adh}
-		\affecter{trouve}{\false}
+		\affecter{trouve}{FAUX}
 		\pour{i}{0}{longueur(cbAdecoder)}{}{
 			\sialorssinon{obtenirBit(cbAdecoder,i+1)=bitA0}{
 				\affecter{adhTemp}{obtenirFilsGauche(adhTemp)}
@@ -18,7 +18,7 @@
 				}}
 		\sialors{estUneFeuille(adhTemp)}{
 			\affecter{octet}{obtenirCaractere(adhTemp)}
-			\affecter{trouve}{\true}
+			\affecter{trouve}{VRAI}
 			}
 			}
 \end{algorithme}

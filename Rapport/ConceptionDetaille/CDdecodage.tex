@@ -10,7 +10,7 @@
 		octetAecrire : Octet\\
 		cbAdecoder : CodeBinaire\\
 		cbAdecoderInverse : CodeBinaire
-		
+
 	}{
 		\affecter{posCurseur}{0}
 		\affecter{octetAlire}{octetZero()}
@@ -18,10 +18,10 @@
 		\affecter{cbAdecoder}{codeBinaire()}
 		\affecter{cbAdecoderInverse}{codeBinaire()}
 
-		\tantque{posCurseur<= longeur-1 \et{ \non{finFichier(fichierSource)}}  \et{ lireOctet(fichierSource,octetAlire)}}{
-			\affecter{trouve}{\Faux}
+		\tantque{(posCurseur <= longeur-1) et (non(finFichier(fichierSource)))  et (lireOctet(fichierSource,octetAlire))}{
+			\affecter{trouve}{FAUX}
 			\affecter{i}{0}
-			\tantque{i<8 \et posCurseur<longueur-1}{
+			\tantque{(i<8) et (posCurseur<longueur-1)}{
 				\instruction{ajouter(cbAdecoder,\instruction{obtenirBit(octetAlire,7-i)}}
 				\affecter{cbAdecoderInverse}{\instruction{copie(cbAdecoder)}}
 				\instruction{decodageCodeBinaire(cbAdecoder,adh,octetAlire,trouve)}
