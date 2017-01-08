@@ -1,0 +1,194 @@
+% auteur : Wacyk Jean-Gabriel
+
+\begin{algorithme}
+  \fonction{getOctet}{o : Octet}{\naturel}
+  {
+  \retourner{o.octet}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{nombreBit}{o : Octet}{\naturel}
+  {
+  \retourner{o.nb}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{octetZero}{}{Octet}
+  {
+  o : Octet
+  }
+  {
+  \affecter{o.octet}{0}
+  \affecter{o.nb}{0}
+  \retourner{o}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{estRempli}{o : Octet}{Boolean}
+  {
+  \retourner{nombreBit(o)=8}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{obtenirBit}{o : Octet, pos :\naturel}{Bit}
+  {
+  temp : \naturel \\
+  i : \naturel
+  }
+  {
+  \affecter{temp}{getOctet(o)}
+  \pour{i}{0}{8-pos-1}{}
+    {
+    \sialors{temp>=puissance(2,7-i)}
+      {
+      \affecter{temp}{temp-puissance(2,7-1)}
+      }
+    }
+  \sialorssinon{temp>=puissance(2,pos)}
+    {
+    \retourner{bitA1}
+    }
+    {
+    \retourner{bitA0}
+    }
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{ajouterPoidsFaible}
+  \paramEntreeSortie{o : Octet}
+  \paramEntree{bit : Bit}
+  {
+  \sialors{bit=bitA1}
+    {
+    \affecter{o.octet}{o.octet + puissance(2,nombreBit(o))}
+    }
+  \affecter{o.nb}{o.nb+1}
+  }
+
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{ajouterPoidsFort}
+  \paramEntreeSortie{o : Octet}
+  \paramEntree{bit : Bit}
+  {
+  \sialors{bit=bitA1}
+    {
+    \affecter{o.octet}{o.octet + puissance(2,7-nombreBit(o))}
+    }
+  \affecter{o.nb}{o.nb+1}
+  }
+
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{octetEnDecimal}{o : Octet}{\naturel}
+  {
+  res : \naturel
+  }
+  {
+  \affecter{res}{getOctet(o)}
+  \retourner{res}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{decimalEnOctet}{i : \naturel}{O_Octet}
+  {
+  res : Octet
+  }
+  {
+  \affecter{res}{octetZero}
+  \affecter{res.octet}{i}
+  \sialors{i<2}
+    {
+    \affecter{res.nb}{1}
+    }
+  \sialors{2<=i ET i<4}
+    {
+    \affecter{res.nb}{2}
+    }
+  \sialors{4<=i ET i<8}
+    {
+    \affecter{res.nb}{3}
+    }
+  \sialors{8<=i ET i<16}
+    {
+    \affecter{res.nb}{4}
+    }
+  \sialors{16<=i ET i<32}
+    {
+    \affecter{res.nb}{5}
+    }
+  \sialors{32<=i ET i<64}
+    {
+    \affecter{res.nb}{6}
+    }
+  \sialors{64<=i ET i<128}
+    {
+    \affecter{res.nb}{7}
+    }
+  \sialors{128<=i ET i<256}
+    {
+    \affecter{res.nb}{8}
+    }
+  \retourner{res}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{comparerOctet}{o1,o2 : Octet}{Boolean}
+  {
+  \retourner{nombreBit(o1)=nombreBit(o2) ET getOctet(o1)=getOctet(o2)}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{octetEnCodeBinaire}{o : Octet}{CodeBinaire}
+  {
+  cb : CodeBinaire \\
+  val,division,reste : \naturel
+  }
+  {
+  \affecter{cb}{CodeBinaire()}
+  \affecter{val}{octetEnDecimal(o)}
+  \sialorssinon{val=0}
+    {
+    \instruction{ajouter(cb,bitA0)}
+    }
+    {
+    \tantque{non(val/2 = 0)}
+      {
+      \affecter{division}{val/2}
+      \affecter{reste}{val-2*division}
+      \instruction{ajouter(cb,obtenirBit(decimalEnOctet(reste),0))}
+      \affecter{val}{division}
+      }
+    \affecter{division}{val/2}
+    \affecter{reste}{val-2*division}
+    \instruction{ajouter(cb,obtenirBit(decimalEnOctet(reste),0))}
+    }
+  \retourner{cb}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{codeBinaireEnOctet}{cb : CodeBinaire}{Octet}
+  {
+  res : Octet\\
+  i : \naturel
+  }
+  {
+  \affecter{res}{octetZero()}
+  \pour{i}{0}{7}{}
+    {
+    \instruction{ajouterPoidsFaible(res,obtenirBit(cb,i+1))}
+    }
+  \retourner{res}
+  }
+\end{algorithme}
