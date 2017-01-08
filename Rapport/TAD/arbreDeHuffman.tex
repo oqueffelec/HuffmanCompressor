@@ -1,32 +1,27 @@
 \begin{tad}
 	  \tadNom{ArbreDeHuffman}
-	  \tadParametres{Élément}
+	  \tadParametres{Element1, Element2}
 	  \tadDependances{\booleen}
-	  
+
 	  \begin{tadOperations}{ArbreDeHuffman}
-	    \tadOperation{arbreDeHuffman}{}{\tadUnParam{ArbreDeHuffman}}
-	    \tadOperation{ajouterElement}{\tadDeuxParams{ArbreDeHuffman}{Élément}}{\tadUnParam{ArbreDeHuffman}}
+	    \tadOperation{arbreDeHuffman}{\tadDeuxParams{Element1}{Element2}}{\tadUnParam{ArbreDeHuffman}}
 	    \tadOperation{estUneFeuille}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{\booleen}}
-	    \tadOperationAvecPreconditions{obtenirFilsGauche}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{ArbreDeHuffman}}
-	    \tadOperationAvecPreconditions{obtenirFilsDroit}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{ArbreDeHuffman}}
-	    \tadOperation{obtenirElement}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{Élément}}
-	    \tadOperation{comparerElements}{\tadDeuxParams{ArbreDeHuffman}{ArbreDeHuffman}}{\tadUnParam{ArbreDeHuffman}}
-            \tadOperationAvecPreconditions{fusionnerArbres}{\tadTroisParams{ArbreDeHuffman}{ArbreDeHuffman}{ArbreDeHuffman}}{\tadUnParam{ArbreDeHuffman}}
+	    \tadOperation{obtenirFilsGauche}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{ArbreDeHuffman}}
+	    \tadOperation{obtenirFilsDroit}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{ArbreDeHuffman}}
+	    \tadOperation{obtenirElement1}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{Element1}}
+	    \tadOperationAvecPreconditions{obtenirElement2}{\tadUnParam{ArbreDeHuffman}}{\tadUnParam{Element2}}
+			\tadOperation{ajouterRacine}{\tadDeuxParams{ArbreDeHuffman}{ArbreDeHuffman}}{\tadUnParam{ArbreDeHuffman}}
 	  \end{tadOperations}
-	  
+
 	  \begin{tadPreconditions}{ArbreDeHuffman}
-	  \tadPrecondition{ajouterRacine(racine,filsG,filsD)}{estUneFeuille(racine)}	
-	  \tadPrecondition{obtenirFilsGauche(racine)}{non(estUneFeuille(racine))}
-	  \tadPrecondition{obtenirFilsDroit(racine)}{non(estUneFeuille(racine))}
-	  \end{tadPreconditions}
+			\tadPrecondition{obtenirElement2(arbre)}{estUneFeuille(arbre)}
+		\end{tadPreconditions}
 
 	  \begin{tadAxiomes}
-	    \tadAxiome{estUneFeuille(arbreDeHuffman)}
-	    \tadAxiome{non estUneFeuille(arbre(racine,filsG,filsD)}
-	    \tadAxiome{obtenirElement(ajouterElement(racine,élément)) = Élément}
-	    \tadAxiome{obtenirFilsGauche(arbre(racine,filsG,filsD)) = filsG}
-	    \tadAxiome{obtenirFilsDroit(arbre(racine,filsG,filsD)) = filsD}
-	    \tadAxiome{obtenirElement(arbre(racine,filsG,filsD)) = obtenirElement(filsG) + obtenirElement(filsD)}
+	    \tadAxiome{estUneFeuille(arbreDeHuffman(element1, element2))}
+	    \tadAxiome{non(estUneFeuille(ajouterRacine(arbre1, arbre2)))}
+	    \tadAxiome{obtenirFilsGauche(ajouterRacine(arbre1, arbre2)) = arbre1}
+	    \tadAxiome{obtenirFilsDroit(ajouterRacine(arbre1, arbre2)) = arbre2}
 	  \end{tadAxiomes}
 
 \end{tad}
