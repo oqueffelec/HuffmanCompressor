@@ -1,1 +1,21 @@
-yo
+% auteur : Mathieu Vandecasteele	
+\begin{algolist}{0cm}
+
+\type{TableDeCodage}
+\\
+
+\signaturefonction{TDC\_tableDeCodage}{TableDeCodage}
+\\
+
+\signatureprocedure{TDC\_ajouter}{
+\ParamEntree o : Octet, cb : CodeBinaire,
+\ParamEntreeSortie tdc : TableDeCodage
+}
+\\
+
+\signaturefonction{TDC\_estPresentCodeBinaire}{tdc : TableDeCodage, o : Octet, cb : CodeBinaire}{\booleen}
+\\
+
+\signaturefonction{TDC\_obtenirCodeBinaire}{tdc : TableDeCodage, o : Octet}{CodeBinaire}
+
+\end{algolist}
