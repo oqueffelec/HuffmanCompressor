@@ -5,24 +5,18 @@
 \tadDependances{\booleen, Liste}
 
 \begin{tadOperations}{Statistiques}
-	\tadOperation{statistiques}{\tadUnParam{Octet}}{\tadUnParam{Statistiques}}
-	\tadOperation{ajouterElement}{\tadTroisParams{Statistiques}{Element}{Naturel}}{\tadUnParam{Statistiques}}
-	\tadOperationAvecPreconditions{retirerElement}{\tadDeuxParams{Statistiques}{Element}}{\tadUnParam{Statistiques}}
+	\tadOperation{statistiques}{}{\tadUnParam{Statistiques}}
+	\tadOperation{ajouterElement}{\tadDeuxParams{Statistiques}{Element}}{\tadUnParam{Statistiques}}
 	\tadOperation{estPresentElement}{\tadDeuxParams{Statistiques}{Element}}{\tadUnParam{\booleen}}
 	\tadOperationAvecPreconditions{obtenirValeur}{\tadDeuxParams{Statistiques}{Element}}{\tadUnParam{Naturel}}
-	\tadOperation{obtenirElements}{\tadUnParam{Statistiques}}{\tadUnParam{Liste<Element>}}
-	\tadOperation{obtenirValeurs}{\tadUnParam{Statistiques}}{\tadUnParam{Liste<Naturel>}}
 \end{tadOperations}
 
-\begin{tadPreconditions}{Statistiques}
-	\tadPrecondition{retirerElement(stat,e)}{estPresentElement(stat,e)}	
+\begin{tadPreconditions}{Statistiques}	
 	\tadPrecondition{obtenirValeur(stat,e)}{estPresentElement(stat,e)}
 \end{tadPreconditions}
 
 \begin{tadAxiomes}{Statistiques}
-	\tadAxiome{obtenirValeur(ajouterElement(stat,e,1))=1}
-	\tadAxiome{non(EstPresent(retirer(stat,e),e))}
-	\tadAxiome{retirerElement(ajouterElement(stat,e,1),e)=stat}
+	\tadAxiome{obtenirValeur(ajouterElement(stat,e))=1}
 \end{tadAxiomes}
 
 \end{tad}
