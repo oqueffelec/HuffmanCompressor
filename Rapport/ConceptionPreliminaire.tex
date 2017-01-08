@@ -1,0 +1,105 @@
+\chapter{Conception préliminaire}
+
+\begin{algorithme}
+
+% Types 
+
+% procedure faireUnePartie(E afficher : Affichage, obtenirCoupJ1, obtenirCoupJ2 : ObtenirCoup, couleurJ1, couleurJ2 : Couleur, S gagnant : Couleur, egalite : Booleen)
+\signatureProcedure{afficher}{
+	\paramEntree obtenirCoupJ1, obtenirCoupJ2 : ObtenirCoup, couleurJ : Couleur, afficher : Affichage,
+	\paramSortie gagnant : Couleur, egalite : \booleen
+}
+\\
+
+% fonction initialiserPlateau() : Plateau
+\signatureFonction{initialiserPlateau}{}{Plateau}
+\\
+
+% procedure gagnant(E plateau : Plateau, S gagnant : Couleur, egalite : Booleen)
+\signatureProcedure{gagnant}{
+	\paramEntree plateau : Plateau,
+	\paramSortie gagnant : Couleur, egalite : \booleen
+}
+\\
+
+% procedure calculerScore(E plateau : Plateau, S nbPionsJ1, nbPionsJ2 : Naturel)
+\signatureProcedure{calculerScore}{
+	\paramEntree plateau : PLateau
+	\paramSortie nbPionsJ1, nbPionsJ2 : \naturel
+}
+\\
+
+% procedure jouer(E/S plateau : Plateau, E coup : Coup)
+\signatureProcedure{jouer}{
+	\paramEntreeSortie plateau : Plateau,
+	\paramEntree coup : Coup	
+}
+\\
+
+% procedure mettreAJourPlateau(E/S plateau : Plateau, E coup : Coup)
+% procedure mettreAJourLigne(E/S plateau : Plateau, E coup : Coup)
+% procedure mettreAJourColonne(E/S plateau : Plateau, E coup : Coup)
+% procedure mettreAJourDiagonale(E/S plateau : Plateau, E coup : Coup)
+\signatureProcedure{mettreAJourPlateau}{
+	\paramEntreeSortie plateau : Plateau,
+	\paramEntree coup : Coup
+}
+
+\signatureProcedure{mettreAJourLigne}{
+	\paramEntreeSortie plateau : Plateau,
+	\paramEntree coup : Coup
+}
+
+\signatureProcedure{mettreAJourColonne}{
+	\paramEntreeSortie plateau : Plateau,
+	\paramEntree coup : Coup
+}
+
+\signatureProcedure{mettreAJourDiagonale}{
+	\paramEntreeSortie plateau : Plateau,
+	\paramEntree coup : Coup
+}
+\\
+
+% fonction partieFinie(aJoueJ1, aJoueJ2 : Booleen) : Booleen
+\signatureFonction{partieFinie}{aJoueJ1, aJoueJ2 : \booleen}{\booleen}
+\\
+
+% fonction obtenirCoupsPossibles(plateau : Plateau, couleur : Couleur) : Coups
+\signatureFonction{obtenirCoupsPossibles}{plateau : Plateau, couleur : Couleur}{Coups}
+\\
+
+% fonction estCoupPossible(plateu : Plateau, coup : Coup) : Booleen
+\signatureFonction{estCoupPossible}{plateau : Plateau, coup : Coup}{\booleen}
+\\
+
+% procedure obtenirCoupIA(E plateau : Plateau, couleur : Couleur, S coup : Coup, coupPossible : Booleen)
+\signatureProcedure{obtenirCoupIA}{
+	\paramEntree plateau : Plateau, couleur : Couleur,
+	\paramSortie coup : Coup, coupPossible : \booleen
+}
+\\
+
+% fonction score(plateauInitial, plateauMisAJour : Plateau) : Naturel
+\signatureFonction{score}{plateauInitial, plateauMisAJour : Plateau}{\naturel}
+\\
+
+% fonction scoreDUnCoup(plateau : Plateau, coup : Coup, profondeur : NaturelNonNul) : Naturel
+\signatureFonction{scoreDUnCoup}{plateau : Plateau, coup : Coup, profondeur : \naturelNonNul}{\naturel}
+\\
+
+% fonction alphaBeta(plateau : Plateau, alpha, beta : Entier, profondeur : Naturel, couleur : Couleur) : ?
+\signatureFonction{alphaBeta}{plateau : Plateau, couleur : Couleur, alpha, beta : \entier, profondeur : \naturelNonNul}{?}
+\\
+
+% procedure obtenirCoupJoueur(E plateau : Plateau, couleur : Couleur, S coup : Coup, coupPossible : Booleen)
+\signatureProcedure{obtenirCoupJoueur}{
+	\paramEntree plateau : Plateau, couleur : Couleur,
+	\paramSortie coup : Coup, coupPossible : \booleen
+}
+\\
+
+% fonction saisirCoup() : Coup
+\signatureFonction{saisirCoup}{}{Coup}
+
+\end{algorithme}
