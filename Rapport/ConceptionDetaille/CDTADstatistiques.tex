@@ -11,7 +11,7 @@
 
 		\pour{i}{0}{STATSIZE}{}
 			{
-				\affecter {stat.^valeur[i]}{0}
+				\affecter {stat.valeur[i]}{0}
 			}
 	\retourner{stat}
   }
@@ -24,7 +24,7 @@
   }
   {}
   {
-  \affecter{stat.^valeur[octetEnDecimal(octet)]}{obtenirPonderation(stat,octet)+1}
+  \affecter{stat.valeur[octetEnDecimal(octet)]}{obtenirPonderation(stat,octet)+1}
   }
 \end{algorithme}
 
@@ -50,6 +50,6 @@
   \fonction{obtenirPonderation}{stats : Statistiques, o : Octet}{\naturel}
   {}
   {
-\retourner{stat.^valeur[octetEnDecimal(o)]}
+\retourner{stat.valeur[octetEnDecimal(o)]}
   }
 \end{algorithme}

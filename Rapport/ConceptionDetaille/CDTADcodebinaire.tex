@@ -19,8 +19,8 @@
   }
   {
   \affecter{pNoeud.bit}{bit}
-  \affecter{pNoeud.listeSuivante}{^cb}
-  \affecter{^cb}{pNoeud}
+  \affecter{pNoeud.listeSuivante}{cb}\\
+  \affecter{cb}{pNoeud}
   }
 \end{algorithme}
 
@@ -33,7 +33,7 @@
     \retourner{cb.bit}
     }
     {
-    \retourner{O_obtenirBit(cb.listeSuivante,pos-1)}
+    \retourner{obtenirBit(cb.listeSuivante,pos-1)}
     }
   }
 \end{algorithme}
@@ -47,7 +47,7 @@
   temp : CodeBinaire
   }
   {
-  \affecter{temp}{^cb}
+  \affecter{temp}{cb}\\
   \affecter{cb}{cb.listeSuivante}
   \instruction{free(temp)}
   }
@@ -60,7 +60,7 @@
   }
   {}
   {
-  \sialors{non(^cb=NIL)}
+  \sialors{non(cb=NIL)}
     {
     \instruction{supprimerTete(cb)}
     \instruction{supprimer(cb)}

@@ -6,7 +6,7 @@
   i : \naturel
   }
   {
-	\pour{i}{0}{TDC_SIZE}{}
+	\pour{i}{0}{TDCSIZE}{}
 	{
 	\affecter{fixerCodeBinaire(tdc,i)}{NIL}
       }
@@ -34,7 +34,7 @@
   {
   \affecter{i}{0}
   \affecter{estPresent}{Faux}
-  \tantque{non(estPresent) et i<TDC_SIZE}{
+  \tantque{non(estPresent) et i<TDCSIZE}{
   	\sialorssinon{estUneFeuille(arbre)}{
 		\affecter{estPresent}{Vrai}
 		}
