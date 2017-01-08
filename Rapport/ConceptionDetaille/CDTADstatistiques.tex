@@ -5,8 +5,9 @@
   {
 	stat : Statistiques\\
 	i : \naturel\\
-	
-	}{
+
+	}
+  {
 
 		\pour{i}{0}{STATSIZE}{}
 			{
@@ -17,9 +18,11 @@
 \end{algorithme}
 
 \begin{algorithme}
-  \procedure{ajouter}
+  \procedure{ajouter}{
   \paramEntreeSortie{stat : Statistiques}
   \paramEntree{octet : Octet}
+  }
+  {}
   {
   \affecter{stat.^valeur[octetEnDecimal(octet)]}{obtenirPonderation(stat,octet)+1}
   }
@@ -30,9 +33,8 @@
   \fonction{estPresentOctet}{stats : Statistiques, o : Octet}{\booleen}
   {
 	estPresent : \booleen
-
-	}{
-
+	}
+  {
 	\affecter{estPresent}{FAUX}
 
   \sialors{obtenirPonderation(stat,o) $\neq$ 0}
@@ -46,6 +48,7 @@
 
 \begin{algorithme}
   \fonction{obtenirPonderation}{stats : Statistiques, o : Octet}{\naturel}
+  {}
   {
 \retourner{stat.^valeur[octetEnDecimal(o)]}
   }

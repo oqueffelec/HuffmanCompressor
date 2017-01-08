@@ -1,8 +1,6 @@
 % auteur : Octave QUEFFELEC
 \begin{algorithme}
-  \fonction{fileDePriorite}{
-  \paramSortie{FileDePriorite}
-  }
+  \fonction{fileDePriorite}{}{FileDePriorite}
   {}
   {
     \retourner{NIL}
@@ -26,7 +24,8 @@
   \paramEntree{a: ArbreDeHuffman}
   \paramEntreeSortie{fdp : FileDePriorite}
   }
-  {temp : FileDePriorite
+  {
+  temp : FileDePriorite
   }
   {
   \affecter{temp}{fileDePriorite}
@@ -42,25 +41,18 @@
 \end{algorithme}
 
 \begin{algorithme}
-  \fonctionAvecPreconditions{obtenirADH}{
-  \paramEntree{fdp: FileDePriorite}
-  \paramSortie{ArbreDeHuffman}
-  }
+  \fonctionAvecPreconditions{obtenirADH}{fdp: FileDePriorite}{ArbreDeHuffman}
   {
-  non(estVide(fdp))
+  nonestvide(fdp)
   }
-  {
-  }
+  {}
   {
  \retourner{fdp.arbre}
   }
 \end{algorithme}
 
 \begin{algorithme}
-  \fonction{longueur}{
-  \paramEntree{fdp: FileDePriorite}
-  \paramSortie{\naturel}
-  }
+  \fonction{longueur}{fdp: FileDePriorite}{\naturel}
   {
   res : \naturel \\
   temp : FileDePriorite
@@ -90,4 +82,5 @@
   \affecter{temp}{fdp}
   \affecter{fdp}{fdp.listeSuivante}
   \instruction{liberer(temp)}
+  }
 \end{algorithme}

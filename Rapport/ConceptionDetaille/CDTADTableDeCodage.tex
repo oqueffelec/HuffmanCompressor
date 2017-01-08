@@ -1,10 +1,9 @@
 % auteur : Octave QUEFFELEC
 \begin{algorithme}
-  \fonction{tableDeCodage}{
-  \paramSortie{tdc : TableDeCodage}
-  }
-  {tdc : TableDeCodage\\
-  i : \naturel 
+  \fonction{tableDeCodage}{}{TableDeCodage}
+  {
+  tdc : TableDeCodage\\
+  i : \naturel
   }
   {
 	\pour{i}{0}{TDC_SIZE}{}
@@ -20,19 +19,16 @@
   \paramEntree{octet : Octet, cb : CodeBinaire}
   \paramEntreeSortie{tdc : TableDeCodage}
   }
-  {
-  }
+  {}
   {
   \affecter{tdc.codeBinaire[octetEnDecimal(o)]}{cb}
   }
 \end{algorithme}
 
 \begin{algorithme}
-  \fonction{estPresentCodeBinaire}{
-  \paramEntree{tdc : TableDeCodage, cb : CodeBinaire}
-  \paramSortie{\booleen}
-  }
-  {i: \naturel \\
+  \fonction{estPresentCodeBinaire}{tdc : TableDeCodage, cb : CodeBinaire}{\booleen}
+  {
+  i: \naturel \\
    estPresent : \booleen
   }
   {
