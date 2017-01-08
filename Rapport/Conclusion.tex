@@ -1,14 +1,9 @@
-\chapter{Conclusion}
-
 Le projet a \'{e}t\'{e} réussi dans l'ensemble et cloturé dans le temps qui nous etait imparti. \\
 
 Neanmoins, nous avons eu quelques petites difficultés nottament au moment de la conception de nos TAD. Dans un premier temps, nous avons mal saisis l'utilité du TAD Octet, et avons fais fausse route en implementant un tableau contenant le type Bit. Nous avons ensuite corrigé en comprenant que la lecture et l'ecriture d'octet dans des fichiers en C se faisait avec un unsigned char.
 
-Un autre probleme qui nous a perturbé au moment de la conception detaillé : dans les procedures de codage et decodage, nous avons voulu concatener les codebinaires pour n'en former qu'un seul qui sera ensuite ecris dans le fichier copresse, ou bien decodé puis ecris dans le fichier decompresse. Or pendant la phase de développement, nous nous sommes apercu qu'à l'execution la procedure de concatenation plantais pour des fichiers de taille superieur a 2^15 octets. Nous avons donc decidé de coder et de decoder les octets un par un. 
+Un autre probleme qui nous a perturbé au moment de la conception detaillé : dans les procedures de codage et decodage, nous avons voulu concatener les codebinaires pour n'en former qu'un seul qui sera ensuite ecris dans le fichier copresse, ou bien decodé puis ecris dans le fichier decompresse. Or pendant la phase de développement, nous nous sommes apercu qu'à l'execution la procedure de concatenation plantais pour des fichiers de taille superieur a 2\^{}15 octets. Nous avons donc decidé de coder et de decoder les octets un par un.
 
-Malgr\'{e} la r\'{e}ussite du projet il y a des points que nous aurions pu am\'{e}liorer. Nottament l'implementation d'un buffer pour le type FichierBinaire. En effet, la lecture et ecriture d'octet se fait un par un dans le fichier. Le temps d'execution est donc long pour des fichiers volumineux. Pour exemple, un fichier de 10Mo est compressé en 10 secondes. 
+Malgr\'{e} la r\'{e}ussite du projet il y a des points que nous aurions pu am\'{e}liorer. Nottament l'implementation d'un buffer pour le type FichierBinaire. En effet, la lecture et ecriture d'octet se fait un par un dans le fichier. Le temps d'execution est donc long pour des fichiers volumineux. Pour exemple, un fichier de 10Mo est compressé en 10 secondes.
 
 Pour finir, nous avons bien respecté la méthodologie du cours et les differentes phase explicité dans l'enonce.
-
-
-
