@@ -1,0 +1,107 @@
+% auteur : Mathieu Vandecasteele	
+\begin{algolist}{0cm}
+
+\type{FichierBinaire}
+\\
+
+\signaturefonction{FB\_ouvrir}{nom : ChaîneDeCaractères, mode :Mode}{FichierBinaire}
+\\
+
+\signatureprocedure{FB\_fermer}{
+\ParamEntreeSortie fichier : FichierBinaire
+}
+\\
+
+\signaturefonction{FB\_finFichier}{fichier : FichierBinaire}{Entier}
+\\
+
+\signatureprocedure{FB\_ecrireOctet}{
+\ParamEntree o : Octet,
+\ParamEntreeSortie fichier : FichierBinaire
+}
+\\
+
+\signaturefonction{FB\_lireOctet}{fb : FichierBinaire, o : Octet}{Entier}
+\\
+
+\signatureprocedure{FB\_ecrireNaturel}{
+\ParamEntree i : Entier,
+\ParamEntreeSortie fichier : FichierBinaire
+}
+\\
+
+\signaturefonction{FB\_lireNaturel}{fb : FichierBinaire, nat : Entier}{Entier}
+\\
+
+\signatureprocedure{FB\_ecrireCaractere}{
+\ParamEntree c : char,
+\ParamEntreeSortie fichier : FichierBinaire
+}
+\\
+
+\signaturefonction{FB\_lireCaractere}{fb : FichierBinaire, caractere : char}{Entier}
+\\
+
+\signaturefonction{FB\_longueurFichier}{fb : FichierBinaire}{\naturel}
+\\
+
+\signatureprocedure{FB\_ecrireChaine}{
+\ParamEntree chaine : ChaîneDeCaractères,
+\ParamEntreeSortie fichier : FichierBinaire
+}
+\\
+
+\signaturefonction{FB\_lireChaine}{fb : FichierBinaire, i : Entier}{ChaîneDeCaractères}
+\\
+
+\signatureprocedure{FB\_deplacercurseur}{
+\ParamEntree position : Entier
+\ParamEntreeSortie fichier : FichierBinaire
+}
+
+\end{algolist}
+
+
+
+
+
+
+
+
+
+\signaturefonction{O\_nombreBit}{Entier}
+\\
+
+\signaturefonction{O\_estRempli}{o : Octet}{\booleen}
+\\
+
+\signaturefonctionAvecPreconditions{O\_obtenirBit}{o : Octet, pos : \naturel}{Bit}
+\\
+
+\signatureprocedure{O\_ajouterPoidsFaible}{
+\ParamEntree bit : Bit,
+\ParamEntreeSortie o : Octet
+}
+\\
+
+\signatureprocedure{O\_ajouterPoidsFort}{
+\ParamEntree bit : Bit,
+\ParamEntreeSortie o : Octet
+}
+\\
+
+\signaturefonction{O\_octetEnDecimal}{o : Octet}{Entier}
+\\
+
+\signaturefonction{O\_decimalEnOctet}{decimal : Entier}{Octet}
+\\
+
+\signaturefonction{O\_comparerOctet}{octet1 : Octet, octet2 : Octet}{\booleen}
+\\
+
+\signaturefonction{O\_octetEnCodeBinaire}{o : Octet}{CodeBinaire}
+\\
+
+\signaturefonction{O\_codeBinaireEnOctet}{code : CodeBinaire}{Octet}
+
+\end{algolist}
