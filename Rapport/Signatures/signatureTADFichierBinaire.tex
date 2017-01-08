@@ -4,104 +4,59 @@
 \type{FichierBinaire}
 \\
 
-\signaturefonction{FB\_ouvrir}{nom : ChaîneDeCaractères, mode :Mode}{FichierBinaire}
+\signatureFonction{FB\_ouvrir}{nom : ChaîneDeCaractères, mode :Mode}{FichierBinaire}
 \\
 
-\signatureprocedure{FB\_fermer}{
-\ParamEntreeSortie fichier : FichierBinaire
+\signatureProcedure{FB\_fermer}{
+\paramEntreeSortie fichier : FichierBinaire
 }
 \\
 
-\signaturefonction{FB\_finFichier}{fichier : FichierBinaire}{Entier}
+\signatureFonction{FB\_finFichier}{fichier : FichierBinaire}{Entier}
 \\
 
-\signatureprocedure{FB\_ecrireOctet}{
-\ParamEntree o : Octet,
-\ParamEntreeSortie fichier : FichierBinaire
+\signatureProcedure{FB\_ecrireOctet}{
+\aramEntree o : Octet,
+\paramEntreeSortie fichier : FichierBinaire
 }
 \\
 
-\signaturefonction{FB\_lireOctet}{fb : FichierBinaire, o : Octet}{Entier}
+\signatureFonction{FB\_lireOctet}{fb : FichierBinaire, o : Octet}{Entier}
 \\
 
-\signatureprocedure{FB\_ecrireNaturel}{
-\ParamEntree i : Entier,
-\ParamEntreeSortie fichier : FichierBinaire
+\signatureProcedure{FB\_ecrireNaturel}{
+\paramEntree i : Entier,
+\paramEntreeSortie fichier : FichierBinaire
 }
 \\
 
-\signaturefonction{FB\_lireNaturel}{fb : FichierBinaire, nat : Entier}{Entier}
+\signatureFonction{FB\_lireNaturel}{fb : FichierBinaire, nat : Entier}{Entier}
 \\
 
-\signatureprocedure{FB\_ecrireCaractere}{
-\ParamEntree c : char,
-\ParamEntreeSortie fichier : FichierBinaire
+\signatureProcedure{FB\_ecrireCaractere}{
+\paramEntree c : char,
+\paramEntreeSortie fichier : FichierBinaire
 }
 \\
 
-\signaturefonction{FB\_lireCaractere}{fb : FichierBinaire, caractere : char}{Entier}
+\signatureFonction{FB\_lireCaractere}{fb : FichierBinaire, caractere : char}{Entier}
 \\
 
-\signaturefonction{FB\_longueurFichier}{fb : FichierBinaire}{\naturel}
+\signatureFonction{FB\_longueurFichier}{fb : FichierBinaire}{\naturel}
 \\
 
-\signatureprocedure{FB\_ecrireChaine}{
-\ParamEntree chaine : ChaîneDeCaractères,
-\ParamEntreeSortie fichier : FichierBinaire
+\signatureProcedure{FB\_ecrireChaine}{
+\paramEntree chaine : ChaîneDeCaractères,
+\paramEntreeSortie fichier : FichierBinaire
 }
 \\
 
-\signaturefonction{FB\_lireChaine}{fb : FichierBinaire, i : Entier}{ChaîneDeCaractères}
+\signatureFonction{FB\_lireChaine}{fb : FichierBinaire, i : Entier}{ChaîneDeCaractères}
 \\
 
-\signatureprocedure{FB\_deplacercurseur}{
-\ParamEntree position : Entier
-\ParamEntreeSortie fichier : FichierBinaire
+\signatureProcedure{FB\_deplacercurseur}{
+\paramEntree position : Entier
+\paramEntreeSortie fichier : FichierBinaire
 }
-
-\end{algolist}
-
-
-
-
-
-
-
-
-
-\signaturefonction{O\_nombreBit}{Entier}
-\\
-
-\signaturefonction{O\_estRempli}{o : Octet}{\booleen}
-\\
-
-\signaturefonctionAvecPreconditions{O\_obtenirBit}{o : Octet, pos : \naturel}{Bit}
-\\
-
-\signatureprocedure{O\_ajouterPoidsFaible}{
-\ParamEntree bit : Bit,
-\ParamEntreeSortie o : Octet
-}
-\\
-
-\signatureprocedure{O\_ajouterPoidsFort}{
-\ParamEntree bit : Bit,
-\ParamEntreeSortie o : Octet
-}
-\\
-
-\signaturefonction{O\_octetEnDecimal}{o : Octet}{Entier}
-\\
-
-\signaturefonction{O\_decimalEnOctet}{decimal : Entier}{Octet}
-\\
-
-\signaturefonction{O\_comparerOctet}{octet1 : Octet, octet2 : Octet}{\booleen}
-\\
-
-\signaturefonction{O\_octetEnCodeBinaire}{o : Octet}{CodeBinaire}
-\\
-
-\signaturefonction{O\_codeBinaireEnOctet}{code : CodeBinaire}{Octet}
 
 \end{algolist}

@@ -4,41 +4,41 @@
 \type{FileDePriorite}{FDP\_Noeud}
 \\
 
-\signatureprocedure{FDP\_ajouter}{
-\ParamEntree stats : Statistiques,
-\ParamEntreeSortie fdp : FileDePriorite
+\signatureProcedure{FDP\_ajouter}{
+\paramEntree stats : Statistiques,
+\paramEntreeSortie fdp : FileDePriorite
 }
 \\
 
-\signaturefonction{STAT\_obtenirFileSuivante}{file : FileDePriorite}{FileDePriorite}
+\signatureFonction{STAT\_obtenirFileSuivante}{file : FileDePriorite}{FileDePriorite}
 \\
 
-\signatureprocedure{FDP\_fixerListeSuivante}{
-\ParamEntree file : FileDePriorite,
-\ParamEntreeSortie fileReceveuse : FileDePriorite
+\signatureProcedure{FDP\_fixerListeSuivante}{
+\paramEntree file : FileDePriorite,
+\paramEntreeSortie fileReceveuse : FileDePriorite
 }
 \\
 
-\signaturefonction{FDP\_fileDePriorite}{FileDePriorite}
+\signatureFonction{FDP\_fileDePriorite}{}{FileDePriorite}
 \\
 
-\signaturefonction{FDP\_estVide}{file : FileDePriorite}{\booleen}
+\signatureFonction{FDP\_estVide}{file : FileDePriorite}{\booleen}
 \\
 
-\signatureprocedure{FDP\_enfilerADH}{
-\ParamEntree arbre : ArbreDeHuffman,
-\ParamEntreeSortie file : FileDePriorite
+\signatureProcedure{FDP\_enfilerADH}{
+\paramEntree arbre : ArbreDeHuffman,
+\paramEntreeSortie file : FileDePriorite
 }
 \\
 
-\signaturefonction{FDP\_obtenirADH}{file : FileDePriorite}{ArbreDeHuffman}
+\signatureFonction{FDP\_obtenirADH}{file : FileDePriorite}{ArbreDeHuffman}
 \\
 
-\signaturefonction{FDP\_longueur}{file : FileDePriorite}{\naturelNonNul}
+\signatureFonction{FDP\_longueur}{file : FileDePriorite}{\naturelNonNul}
 \\
 
-\signatureprocedure{FDP\_defilerADH}{
-\ParamEntreeSortie file : FileDepriorite
+\signatureProcedure{FDP\_defilerADH}{
+\paramEntreeSortie file : FileDepriorite
 }
 
 \end{algolist}

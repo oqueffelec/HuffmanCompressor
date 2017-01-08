@@ -3,11 +3,11 @@
   \type{ArbreDeHuffman}{ADH\_Noeud}
 %%\signatureFonctionAvecPreconditions{nom_fonction}{paramètres}{sortie}{précondition}
 %%\signatureFonction{nom_fonction}{paramètres}{sortie}
-  \signatureFonction{ADH\_creerArbreDeHuffman}{unsigned int ponderation, char caractere}{ArbreDeHuffman}
+  \signatureFonction{ADH\_creerArbreDeHuffman}{\naturel ponderation, char caractere}{ArbreDeHuffman}
   \signatureFonction{ADH\_estUneFeuille}{ArbreDeHuffman arbre}{\booleen}
   \signatureFonction{ADH\_obtenirFilsGauche}{ArbreDeHuffman arbre}{ArbreDeHuffman}
   \signatureFonction{ADH\_obtenirFilsDroit}{ArbreDeHuffman arbre}{ArbreDeHuffman}
-  \signatureFonction{ADH\_obtenirPonderation}{ArbreDeHuffman arbre}{unsigned int}
+  \signatureFonction{ADH\_obtenirPonderation}{ArbreDeHuffman arbre}{\naturel}
   \signatureFonctionAvecPreconditions{ADH\_obtenirCaractere}{ArbreDeHuffman feuille}{O\_Octet}{ADH\_estUneFeuille(feuille)}
   \signatureFonction{ajouterRacine}{ArbreDeHuffman arbre1, ArbreDeHuffman arbre2}{ArbreDeHuffman}
 \end{algolist}

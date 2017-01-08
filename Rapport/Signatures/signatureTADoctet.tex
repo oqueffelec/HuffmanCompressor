@@ -4,47 +4,47 @@
 \type{Octet}
 \\
 
-\signaturefonction{O\_getOctet}{o : Octet}{Caractere}
+\signatureFonction{O\_getOctet}{o : Octet}{Caractere}
 \\
 
-\signaturefonction{puissance}{x : Entier, p : Entier}{Entier}
+\signatureFonction{puissance}{x : Entier, p : Entier}{Entier}
 \\
 
-\signaturefonction{O\_octetZero}{Octet}
+\signatureFonction{O\_octetZero}{}{Octet}
 \\
 
-\signaturefonction{O\_nombreBit}{Entier}
+\signatureFonction{O\_nombreBit}{octet : Octet}{Entier}
 \\
 
-\signaturefonction{O\_estRempli}{o : Octet}{\booleen}
+\signatureFonction{O\_estRempli}{o : Octet}{\booleen}
 \\
 
 \signatureFonctionAvecPreconditions{O\_obtenirBit}{o : Octet, pos : \naturel}{Bit}
 
-\signatureprocedure{O\_ajouterPoidsFaible}{
-\ParamEntree bit : Bit,
-\ParamEntreeSortie o : Octet
+\signatureProcedure{O\_ajouterPoidsFaible}{
+\paramEntree bit : Bit,
+\paramEntreeSortie o : Octet
 }
 \\
 
-\signatureprocedure{O\_ajouterPoidsFort}{
-\ParamEntree bit : Bit,
-\ParamEntreeSortie o : Octet
+\signatureProcedure{O\_ajouterPoidsFort}{
+\paramEntree bit : Bit,
+\paramEntreeSortie o : Octet
 }
 \\
 
-\signaturefonction{O\_octetEnDecimal}{o : Octet}{Entier}
+\signatureFonction{O\_octetEnDecimal}{o : Octet}{Entier}
 \\
 
-\signaturefonction{O\_decimalEnOctet}{decimal : Entier}{Octet}
+\signatureFonction{O\_decimalEnOctet}{decimal : Entier}{Octet}
 \\
 
-\signaturefonction{O\_comparerOctet}{octet1 : Octet, octet2 : Octet}{\booleen}
+\signatureFonction{O\_comparerOctet}{octet1 : Octet, octet2 : Octet}{\booleen}
 \\
 
-\signaturefonction{O\_octetEnCodeBinaire}{o : Octet}{CodeBinaire}
+\signatureFonction{O\_octetEnCodeBinaire}{o : Octet}{CodeBinaire}
 \\
 
-\signaturefonction{O\_codeBinaireEnOctet}{code : CodeBinaire}{Octet}
+\signatureFonction{O\_codeBinaireEnOctet}{code : CodeBinaire}{Octet}
 
 \end{algolist}
