@@ -1,0 +1,93 @@
+% auteur : Octave QUEFFELEC
+\begin{algorithme}
+  \fonction{fileDePriorite}{
+  \paramSortie{FileDePriorite}
+  }
+  {}
+  {
+    \retourner{NIL}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{estVide}{
+  \paramEntree{fdp : FileDePriorite}
+  \paramSortie{\booleen}
+  }
+  {
+  }
+  {
+  \retourner{fdp=NIL}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{enfilerADH}{
+  \paramEntree{a: ArbreDeHuffman}
+  \paramEntreeSortie{fdp : FileDePriorite}
+  }
+  {temp : FileDePriorite
+  }
+  {
+  \affecter{temp}{fileDePriorite}
+  \sialorssinon{estVide(fdp) ou obtenirPonderation(obtenirADH(fdp))>= obtenirPonderation(a)}{
+  \instruction{ajouter(fdp,a)}
+  }
+  {
+  \affecter{temp}{obtenirFileSuivante(fdp)}
+  \instruction{enfilerADH(temp,a)}
+  \instruction{fixerFileSuivante(fdp,temps)}
+  }
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonctionAvecPreconditions{obtenirADH}{
+  \paramEntree{fdp: FileDePriorite}
+  \paramSortie{ArbreDeHuffman}
+  }
+  {
+  non(estVide(fdp))
+  }
+  {
+  }
+  {
+ \retourner{fdp.arbre}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{longueur}{
+  \paramEntree{fdp: FileDePriorite}
+  \paramSortie{\naturel}
+  }
+  {
+  res : \naturel \\
+  temp : FileDePriorite
+  }
+  {
+  \affecter{res}{0}
+   \affecter{temp}{fdp}
+   \tantque{non(estVide(temp))}{
+   	\affecter{temp}{obtenirFileSuivante(temp)}
+	\affecter{res}{res+1}
+   }
+ \retourner{fdp.arbre}
+  }
+\end{algorithme}
+
+\begin{algorithme}
+  \procedureAvecPrecondtions{defierADH}{
+  \paramEntreeSortie{fdp: FileDePriorite}
+  }
+  {
+  non(estVide(fdp))
+  }
+  {
+  temp : FileDePriorite
+  }
+  {
+  \affecter{temp}{fdp}
+  \affecter{fdp}{fdp.listeSuivante}
+  \instruction{liberer(temp)}
+\end{algorithme}
