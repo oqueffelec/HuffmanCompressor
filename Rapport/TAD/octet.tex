@@ -1,11 +1,20 @@
 \begin{tad}
   \tadNom{octet}
-  \tadDependances{Bit, Booleen, Naturel}
+  \tadDependances{Bit, Booleen, Naturel, codeBinaire}
   \begin{tadOperations}{octet}
-    \tadOperation{octet}{}{\tadUnParam{octet}}
-    \tadOperationAvecPreconditions{obetnirIemeBit}{\tadDeuxParams{octet}{Naturel}}{\tadUnParam{Bit}}
-    \tadOperation{completerOctet}{\tadDeuxParams{octet}{Bit}}{\tadUnParam{octet}}
-    \tadOperation{estCompletOctet}{\tadUnParam{octet}}{\tadUnParam{Booleen}}
+    \tadOperation{octetZero}{}{\tadUnParam{octet}}
+    \tadOperation{getoctet}{\tadUnParam{octet}}{\tadUnParam{Naturel}}
+    \tadOperation{getnombreBit}{\tadUnParam{octet}}{\tadUnParam{Naturel}}
+    \tadOperation{estRempli}{\tadUnParam{octet}}{\tadUnParam{Booleen}}
+    \tadOperationAvecPreconditions{obetnirBit}{\tadDeuxParams{octet}{Naturel}}{\tadUnParam{Bit}}
+    \tadOperation{ajouterPoidsFort}{\tadDeuxParams{octet}{Bit}}{\tadUnParam{octet}}
+    \tadOperation{ajouterPoidsFaible}{\tadDeuxParams{octet}{Bit}}{\tadUnParam{octet}}
+    \tadOperation{comparerOctet}{\tadDeuxParams{octet}{octet}}{\tadUnParam{Booleen}}
+    \tadOperation{octetEnDecimal}{\tadUnParam{octet}}{\tadUnParam{Naturel}}
+    \tadOperation{DecimalEnOctet}{\tadUnParam{Naturel}}{\tadUnParam{octet}}
+    \tadOperation{octetEnCodeBinaire}{\tadUnParam{octet}}{\tadUnParam{codeBinaire}}
+    \tadOperation{codeBinaireEnOctet}{\tadUnParam{codeBinaire}}{\tadUnParam{octet}}
+
   \end{tadOperations}
   \begin{tadPreconditions}{codeBinaire}
     \tadPrecondition{obtenirIemeBit(octet)}{i>0 \& i<longueurCodeBinaire(octet)}
