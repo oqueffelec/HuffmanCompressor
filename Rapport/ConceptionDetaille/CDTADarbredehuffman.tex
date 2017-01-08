@@ -1,0 +1,63 @@
+%auteur : Quentin Robcis
+
+\begin{algorithme}
+  \fonction{ADH\_arbreDeHuffman}{ponderation : unsigned int, caractere : O\_Octet}{ArbreDeHuffman}
+  {
+  arbre : ArbreDeHuffman
+  }
+  {
+  \sialorssinon{arbre!=NIL}
+  {
+  \affecter{errno}{0}
+  \affecter{arbre.ponderation}{ponderation}
+  \affecter{arbre.caractere}{caractere}
+  \affecter{arbre.filsG}{NIL}
+  \affecter{arbre.filsD}{NIL}
+  \retourner{arbre}
+  }
+  {
+  \affecter{errno}{ADH\_ERREUR\_MEMOIRE}
+  \retourner{NIL}
+  }
+  }\\
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{ADH\_estUneFeuille}{arbre : ArbreDeHuffman}{\booleen}
+  {
+  }
+  {
+  \sialorssinon{((arbre.filsG)=NIL) et ((arbre.filsD)=NIL)}
+  {\retourner{VRAI}}
+  {\retourner{FAUX}}
+  }\\
+\end{algorithme}
+
+\begin{algorithme}
+  \fonction{ADH\_ajouterRacine}{arbre1 : ArbreDeHuffman, arbre2 : ArbreDeHuffman}{ArbreDeHuffman}
+  {
+  arbre : ArbreDeHuffman
+  }
+  {
+  \sialorssinon{arbre!=NIL}
+  {
+  \affecter{errno}{0}
+  \affecter{arbre.ponderation}{(arbre1.ponderation)+(arbre2.ponderation)}
+  \affecter{arbre.caractere}{O\_OctetZero()}
+    \sialorssinon{(arbre1.ponderation)<(arbre2.ponderation)}
+    {
+    \affecter{arbre.filsG}{arbre2}
+    \affecter{arbre.filsD}{arbre1}
+    }
+    {
+    \affecter{arbre.filsG}{arbre1}
+    \affecter{arbre.filsD}{arbre2}
+    }
+  \retourner{arbre}
+  }
+  {
+  \affecter{errno}{ADH\_ERREUR\_MEMOIRE}
+  \retourner{NIL}
+  }
+  }\\
+\end{algorithme}
