@@ -1,6 +1,6 @@
 /**
  * \file CodeBinaire.h
- * \brief Implantation du TAD codeBinaire : codeBinaire est une liste chainée
+ * \brief Implantation du TAD codeBinaire : codeBinaire est une liste chainee
  * \author Jean-Gabriel Wacyk
  * \version 1.0
  */
@@ -13,7 +13,7 @@
 
 /**
 * \struct CB_codeBinaire CodeBinaire.h
-* \brief la structure est une liste chainée avec un élément de type bit
+* \brief la structure est une liste chainee avec un element de type bit
 */
 
 typedef struct CB_Noeud* CB_CodeBinaire;
@@ -64,7 +64,7 @@ Bit CB_obtenirBit(CB_CodeBinaire cb, unsigned int pos);
 
 /**
  *\fn int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2)
- *\brief compare deux codeBinaire, renvoie 1 si égaux, 0 sinon
+ *\brief compare deux codeBinaire, renvoie 1 si egaux, 0 sinon
  *\return int
 */
 
@@ -72,7 +72,7 @@ int CB_compareCodeBinaire(CB_CodeBinaire cb1, CB_CodeBinaire cb2);
 
 /**
 * \fn void CB_supprimerTete(CB_CodeBinaire* cb)
-* \brief supprime le bit en Tête de du code binaire
+* \brief supprime le bit en Tete de du code binaire
 * \return void
 */
 

@@ -1,6 +1,6 @@
 /**
  * \file creerTableDeCodage.c
- * \brief Implantation de la fonction creerTableDeCodage : crée la table de codage correspondante au statistiques donnés.
+ * \brief Implantation de la fonction creerTableDeCodage : cree la table de codage correspondante au statistiques donnes.
  * \author Jean-Gabriel Wacyk
  * \version 1.0
  * \date 26/12/2016

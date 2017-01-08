@@ -13,7 +13,7 @@
 
 /**
 * \struct FDP_FileDePriorite FileDePriorite.h
-* \brief la structure est une liste chainée d'arbres de huffman
+* \brief la structure est une liste chainee d'arbres de huffman
 */
 
 typedef struct FDP_Noeud* FDP_FileDePriorite;
@@ -24,7 +24,7 @@ typedef struct FDP_Noeud {
 
 /**
 * \fn FDP_FileDePriorite FDP_fileDePriorite()
-* \brief retourne une file de priorité vide
+* \brief retourne une file de priorite vide
 * \return FDP_FileDePriorite
 */
 
@@ -41,7 +41,7 @@ int FDP_estVide(FDP_FileDePriorite fdp);
 
 /**
 * \fn void FDP_enfilerADH(FDP_FileDePriorite* fdp, ArbreDeHuffman a)
-* \brief enfile un arbre dans la file en respectant l'ordre croissant des pondérations des arbres
+* \brief enfile un arbre dans la file en respectant l'ordre croissant des ponderations des arbres
 * \return void
 */
 
@@ -65,7 +65,7 @@ int FDP_longueur(FDP_FileDePriorite fdp);
 
 /**
 * \fn void FDP_defilerADH(FDP_FileDePriorite* fdp);
-* \brief défile un arbre de la file
+* \brief defile un arbre de la file
 * \return void
 */
 

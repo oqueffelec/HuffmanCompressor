@@ -14,7 +14,7 @@
 #include "FileDePriorite.h"
 #include "ArbreDeHuffman.h"
 
-// Partie Privée
+// Partie Privee
 
 void FDP_ajouter(FDP_FileDePriorite* fdp, ArbreDeHuffman a){
   FDP_FileDePriorite f=(FDP_FileDePriorite)malloc(sizeof(FDP_FileDePriorite));

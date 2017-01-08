@@ -1,6 +1,6 @@
 /**
   * \file decodage.h
-  * \brief Décompression et écriture des données dans le fichier destination
+  * \brief Dcompression et ecriture des donnees dans le fichier destination
   * \author Jean-Gabriel Wacyk
   * \version 1.0
   * \date 30/12/2016
@@ -23,7 +23,7 @@
 
 /**
 * \fn void decodage(FB_FichierBinaire* fichierDest,FB_FichierBinaire fichierSource,int longueur,ArbreDeHuffman adh)
-* \brief décode le fichierSource grâce à l'ArbreDeHuffman dans le fichierDest
+* \brief decode le fichierSource grâce à l'ArbreDeHuffman dans le fichierDest
 * \return void
 */
 

@@ -1,6 +1,6 @@
 /**
  * \file creerTableDeCodage.h
- * \brief Implantation de la fonction creerTableDeCodage : crée la table de codage correspondante au statistiques données.
+ * \brief Implantation de la fonction creerTableDeCodage : cree la table de codage correspondante au statistiques donnees.
  * \author Jean-Gabriel Wacyk
  * \version 1.0
  * \date 26/12/2016
@@ -24,7 +24,7 @@
 
 /**
 * \fn ArbreDeHuffman creerArbreDeHuffman(FDP_FileDePriorite file)
-* \brief renvoie l'arbre de Huffman créé à partir d'une file de priorité
+* \brief renvoie l'arbre de Huffman cree à partir d'une file de priorite
 * \return ArbreDeHuffman
 */
 

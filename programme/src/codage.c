@@ -1,6 +1,6 @@
 /**
   * \file codage.c
-  * \brief Ecriture du codebinaire dans le fichier compressé
+  * \brief Ecriture du codebinaire dans le fichier compresse
   * \author Octave Queffelec
   * \version 1.0
   * \date 20/12/2016

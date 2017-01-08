@@ -14,7 +14,7 @@
 
 /**
 * \struct FB_FichierBinaire FB_FichierBinaire.h
-* \brief la structure est une redéfinition du type FILE*
+* \brief la structure est une redefinition du type FILE*
 */
 
 
@@ -26,7 +26,7 @@ FILE* file;
 
 /**
 * \fn FB_FichierBinaire FB_ouvrir(char nom[], Mode mode)
-* \brief ouvre un fichier binaire suivant le mode passé en paramètre
+* \brief ouvre un fichier binaire suivant le mode passe en parametre
 * \return FB_FichierBinaire
 */
 
@@ -51,7 +51,7 @@ int FB_finFichier(FB_FichierBinaire fb);
 
 /**
 * \fn void FB_ecrireOctet(FB_FichierBinaire* fb, O_Octet o)
-* \brief écrit un octet dans le fichier
+* \brief ecrit un octet dans le fichier
 * \return void
 */
 
@@ -68,7 +68,7 @@ int FB_lireOctet(FB_FichierBinaire fb, O_Octet* o);
 
 /**
 * \fn void FB_ecrireNaturel(FB_FichierBinaire* fb, int n)
-* \brief écrit un naturel dans le fichier
+* \brief ecrit un naturel dans le fichier
 * \return void
 */
 
@@ -116,7 +116,7 @@ char* FB_lireChaine(FB_FichierBinaire fb, int n);
 
 /**
 * \fn int FB_longueurFichier(FB_FichierBinaire fb)
-* \brief retourne la longueur du fichier passé en parametre
+* \brief retourne la longueur du fichier passe en parametre
 * \return int
 */
 
@@ -124,7 +124,7 @@ int FB_longueurFichier(FB_FichierBinaire fb) ;
 
 /**
 * \fn void FB_deplacerCurseur(FB_FichierBinaire* f, long position)
-* \brief déplace le curseur de la position passée en parametre depuis la position actuelle
+* \brief deplace le curseur de la position passee en parametre depuis la position actuelle
 * \return void
 */
 

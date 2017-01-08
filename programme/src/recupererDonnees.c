@@ -1,6 +1,6 @@
 /**
   * \file recupererDonnees.c
-  * \brief Recuperation des stats, longueur du fichier source, verif de l'identifiant, recup des données compress
+  * \brief Recuperation des stats, longueur du fichier source, verif de l'identifiant, recup des donnees compress
   * \author Octave Queffelec
   * \version 1.0
   * \date 20/12/2016

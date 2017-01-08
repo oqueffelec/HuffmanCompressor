@@ -1,6 +1,6 @@
 /**
  * \file Bit.h
- * \brief Implantation du TAD bit : type énumeré
+ * \brief Implantation du TAD bit : type enumere
  * \author Octave Queffelec
  * \version 1.0
  */

@@ -1,6 +1,6 @@
 /**
  * \file compression.h
- * \brief procédure de compression du fichier source
+ * \brief procedure de compression du fichier source
  * \author Octave Queffelec
  * \version 1.0
  */

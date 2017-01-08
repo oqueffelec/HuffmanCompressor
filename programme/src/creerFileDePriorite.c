@@ -1,6 +1,6 @@
 /**
   * \file creerFileDePriorite.c
-  * \brief création de la file de priorité à partir des statistiques
+  * \brief creation de la file de priorite à partir des statistiques
   * \author Quentin Robcis
   * \version 1.0
   * \date 29/12/2016

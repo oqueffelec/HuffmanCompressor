@@ -17,7 +17,7 @@
 #define TRUE 1
 #define FALSE 0
 
-// Partie Privée
+// Partie Privee
 
 unsigned char O_getOctet(O_Octet o){
   return o.octet;

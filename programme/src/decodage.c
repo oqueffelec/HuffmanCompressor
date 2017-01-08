@@ -1,6 +1,6 @@
 /**
   * \file decodage.c
-  * \brief Décompression et écriture des donnée dans un fichier
+  * \brief Decompression et ecriture des donnee dans un fichier
   * \author Jean-Gabriel Wacyk
   * \version 1.0
   * \date 30/12/2016

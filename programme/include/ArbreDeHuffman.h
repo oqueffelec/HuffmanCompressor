@@ -1,6 +1,6 @@
 /**
  * \file ArbreDeHuffman.h
- * \brief Implantation du TAD arbreDeHuffman : type liste doublement chainée
+ * \brief Implantation du TAD arbreDeHuffman : type liste doublement chainee
  * \author Quentin Robcis
  * \version 1.0
  */
@@ -13,7 +13,7 @@
 
 /**
 * \struct ArbreDeHuffman ArbreDeHuffman.h
-* \brief la structure est une liste chainée ayant 2 éléments (la clé et la valeur)
+* \brief la structure est une liste chainee ayant 2 elements (la cle et la valeur)
 */
 
 typedef struct ADH_Noeud{
@@ -26,7 +26,7 @@ typedef ADH_Noeud *ArbreDeHuffman;
 
 /**
 * \fn ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere)
-* \brief crée un arbre de huffman à partir d'une pondération et d'un caractere
+* \brief cree un arbre de huffman à partir d'une ponderation et d'un caractere
 * \return ArbreDeHuffman
 */
 
@@ -42,7 +42,7 @@ int ADH_estUneFeuille(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre)
-* \brief fonction qui permet d'obtenir le fils Gauche d'une racine donnée
+* \brief fonction qui permet d'obtenir le fils Gauche d'une racine donnee
 * \return ArbreDeHuffman
 */
 
@@ -50,7 +50,7 @@ ArbreDeHuffman ADH_obtenirFilsGauche(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre)
-* \brief fonction qui permet d'obtenir le fils Droit d'une racine donnée
+* \brief fonction qui permet d'obtenir le fils Droit d'une racine donnee
 * \return ArbreDeHuffman
 */
 
@@ -58,7 +58,7 @@ ArbreDeHuffman ADH_obtenirFilsDroit(ArbreDeHuffman arbre);
 
 /**
 * \fn unsigned int ADH_obtenirPonderation(ArbreDeHuffman arbre)
-* \brief permet d'obtenir la pondération associée au noeud
+* \brief permet d'obtenir la ponderation associee au noeud
 * \return unsigned int
 */
 
@@ -66,7 +66,7 @@ unsigned int ADH_obtenirPonderation(ArbreDeHuffman feuille);
 
 /**
 * \fn O_Octet ADH_obtenirCaractere(ArbreDeHuffman arbre)
-* \brief permet d'obtenir le caractere associé au noeud
+* \brief permet d'obtenir le caractere associe au noeud
 * \return O_Octet
 */
 
@@ -74,7 +74,7 @@ O_Octet ADH_obtenirCaractere(ArbreDeHuffman arbre);
 
 /**
 * \fn ArbreDeHuffman ADH_ajouterRacine(ArbreDeHuffman arbre1, ArbreDeHuffman arbre2)
-* \brief crée une racine a partir de deux arbres donnés dont la pondération est la somme des pondérations des deux arbres et le caractere vaut NULL
+* \brief cree une racine a partir de deux arbres donnes dont la ponderation est la somme des ponderations des deux arbres et le caractere vaut NULL
 * \return ArbreDeHuffman
 */
 

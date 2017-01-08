@@ -1,7 +1,7 @@
 /**
  * \file TableDeCodage.h
- * \brief Implantation du TAD tableDeCodage : tableDeCodage est un dictionnaire qui a pour clé un octet et pour valeur un code binaire
- * \author Régis Maskembe
+ * \brief Implantation du TAD tableDeCodage : tableDeCodage est un dictionnaire qui a pour cle un octet et pour valeur un code binaire
+ * \author Regis Maskembe
  * \version 1.0
  */
 #ifndef __TABLE__DE__CODAGE__
@@ -14,7 +14,7 @@
 
 /**
 * \struct TDC_tableDeCodage TableDeCodage.h
-* \brief la structure est un tableau dont les indices correspondent à la clé (l'octet) et la valeur du tableau aux valeurs du dictionnaire, c'est-à-dire au code binaire
+* \brief la structure est un tableau dont les indices correspondent à la cle (l'octet) et la valeur du tableau aux valeurs du dictionnaire, c'est-à-dire au code binaire
 */
 
 
@@ -24,7 +24,7 @@ CB_CodeBinaire codeBinaire[TDC_SIZE];
 
 /**
 * \fn TDC_TableDeCodage TDC_tableDeCodage()
-* \brief renvoie un tableau dont tous les codes binaires sont initialisés à NULL
+* \brief renvoie un tableau dont tous les codes binaires sont initialises à NULL
 * \return TDC_TableDeCodage
 */
 
@@ -40,7 +40,7 @@ void TDC_ajouter(TDC_TableDeCodage* tdc, O_Octet o, CB_CodeBinaire cb);
 
 /**
 * \fn int TDC_estPresentCodeBinaire(TDC_TableDeCodage tdc, CB_CodeBinaire cb)
-* \brief vérifie la présence d'un codebinaire dans la TDC
+* \brief verifie la presence d'un codebinaire dans la TDC
 * \return int
 */
 

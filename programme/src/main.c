@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
 	FB_FichierBinaire fichierOriginal;
   char nomFichier[100];
 	if(argc!=3 || (strcmp(argv[1],"c")!=0 && strcmp(argv[1],"d")!=0)){
-		printf("Veuillez respecter la syntaxe suivante : \n Pour compresser : huffman c nomFichier \n Pour décompresser : huffman d nomFichier.huff \n");
+		printf("Veuillez respecter la syntaxe suivante : \n Pour compresser : huffman c nomFichier \n Pour decompresser : huffman d nomFichier.huff \n");
 	}
 	else{
 		if(strcmp(argv[1], "c") == 0){
@@ -42,17 +42,17 @@ int main(int argc, char *argv[]){
       fichierOriginal = FB_ouvrir(argv[2],lecture);
 			fichierCompresse = FB_ouvrir(nomFichier, ecriture);
 			compression(fichierOriginal,&fichierCompresse);
-      printf("terminé avec succes\n");
+      printf("termine avec succes\n");
 
 		}
 		else{
-			printf("Décompression...");
+			printf("Decompression...");
 			strcpy(nomFichier, argv[2]);
 			nomFichier[strlen(nomFichier) - strlen(".huff")] = '\0';
       fichierCompresse = FB_ouvrir(argv[2], lecture);
 			fichierOriginal = FB_ouvrir(nomFichier, ecriture);
 			decompression(fichierCompresse,&fichierOriginal);
-      printf("terminé avec succes\n");
+      printf("termine avec succes\n");
 		  }
 		}
   return EXIT_SUCCESS;

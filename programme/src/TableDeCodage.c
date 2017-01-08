@@ -1,7 +1,7 @@
 /**
   * \file TableDeCodage.c
   * \brief Conception du TAD tableDeCodage
-  * \author Régis Maskemde
+  * \author Regis Maskemde
   * \version 1.0
   * \date 20/11/2016
   */
