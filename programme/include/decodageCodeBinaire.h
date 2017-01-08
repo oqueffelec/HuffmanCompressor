@@ -23,7 +23,7 @@
 
 /**
 * \fn void decodageCodeBinaire(CB_CodeBinaire cbAdecoder, ArbreDeHuffman adh, O_Octet* octet, int* trouve)
-* \brief decode le Code Binaire donne par la procedure decodage et renvoie un booleen si le code binaire correspond à un code binaire du fichier code
+* \brief decode le Code Binaire donne par la procedure decodage et renvoie un booleen si le code binaire correspond a un code binaire du fichier code
 * \return void
 */
 

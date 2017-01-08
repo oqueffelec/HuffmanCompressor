@@ -23,7 +23,7 @@
 int estFichierHuffman(FB_FichierBinaire fichierSource){
   char* huffman = "huffman";
   char* id = FB_lireChaine(fichierSource,7);
-  id[7]= \0 ;
+  id[7]= '\0' ;
   if(strcmp(id,huffman)==0){
     return TRUE;
   }

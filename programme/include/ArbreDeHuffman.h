@@ -26,7 +26,7 @@ typedef ADH_Noeud *ArbreDeHuffman;
 
 /**
 * \fn ArbreDeHuffman ADH_arbreDeHuffman(unsigned int ponderation, O_Octet caractere)
-* \brief cree un arbre de huffman à partir d une ponderation et d un caractere
+* \brief cree un arbre de huffman a partir d une ponderation et d un caractere
 * \return ArbreDeHuffman
 */
 

@@ -34,7 +34,7 @@ STAT_Statistiques STAT_statistiques();
 
 /**
 * \fn void STAT_ajouter(STAT_Statistiques* stat, O_Octet o)
-* \brief incremente la ponderation associee à l octet.
+* \brief incremente la ponderation associee a l octet.
 * \return void
 */
 

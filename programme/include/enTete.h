@@ -9,7 +9,7 @@
 
 /**
 * \fn enTete(FB_FichierBinaire fichierSource,FB_FichierBinaire* fichierDest, STAT_Statistiques stat)
-* \brief ecrit l identifiant, la longueur du fichier à coder, et les statistiques dans le fichier compresse
+* \brief ecrit l identifiant, la longueur du fichier a coder, et les statistiques dans le fichier compresse
 * \return void
 */
 

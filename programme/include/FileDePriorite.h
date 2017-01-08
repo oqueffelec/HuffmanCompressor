@@ -49,7 +49,7 @@ void FDP_enfilerADH(FDP_FileDePriorite* fdp, ArbreDeHuffman a);
 
 /**
 * \fn ArbreDeHuffman FDP_obtenirADH(FDP_FileDePriorite fdp)
-* \brief retourne l arbre à la sortie de la file
+* \brief retourne l arbre a la sortie de la file
 * \return ArbreDeHuffman
 */
 

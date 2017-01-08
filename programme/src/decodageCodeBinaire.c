@@ -1,6 +1,6 @@
 /**
   * \file decodageCodeBinaire.c
-  * \brief Decodage à partir d un CodeBinaire
+  * \brief Decodage a partir d un CodeBinaire
   * \author Octave Queffelec
   * \version 1.0
   * \date 30/12/2016
