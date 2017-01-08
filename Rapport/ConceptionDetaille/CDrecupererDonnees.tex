@@ -1,0 +1,64 @@
+%auteur : Quentin Robcis
+
+\begin{algorithme}
+  \fonction{estFichierHuffman}{fichierSource : FB\_FichierBinaire}{\booleen}
+  {
+  *huffman : char\\
+  *id : char\\
+  }
+  {
+  \affecter{huffman}{"huffman"}
+  \affecter{id}{FB\_lireChaine(fichierSource, 7)}
+  \affecter{id[7]}{'\textbackslash0'}
+  \sialorssinon{strcmp(id, huffman)=0}
+  {\retourner{VRAI}}
+  {\retourner{FAUX}}
+  }\\
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{recupererLongueur}{
+    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *longueur : int}
+    }
+    {
+    }
+    {
+    \instruction{FB\_lireNaturel(fichierSource, longueur)}
+    }\\
+\end{algorithme}
+
+\begin{algorithme}
+  \procedureAvecPreconditions{recupererStatistiques}{
+    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *stat : STAT\_Statistiques}
+    }
+    {
+    estFichierHuffman(fichierSource)
+    }
+    {
+    iStat, i, j : int
+    }
+    {
+    \affecter{iStat}{0}
+    \pour{i}{0}{STAT\_SIZE}{}
+      {
+      \instruction{FB\_lireNaturel(fichierSource, \&iStat)}
+      \pour{j}{0}{iStat}{}
+        {
+        \instruction{STAT\_ajouter(stat,O\_decimalEnOctet(i))}
+        }
+      }
+    }\\
+\end{algorithme}
+
+\begin{algorithme}
+  \procedure{recupererDonnees}{
+    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *stat : STAT\_Statistiques, *longueur : int}
+    }
+    {
+
+    }
+    {
+    \instruction{recupererLongueur(fichierSource, longueur)}
+    \instruction{recupererStatistiques(fichierSource, stat)}
+    }
+\end{algorithme}

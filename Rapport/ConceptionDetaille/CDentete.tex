@@ -1,0 +1,21 @@
+%auteur : Quentin Robcis
+
+\begin{algorithme}
+  \procedure{enTete}{
+    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *fichierDest : FB\_FichierBinaire, stat : STAT\_Statistiques}
+    }
+    {
+    *identifiant : char\\
+    longueur, i : int
+    }
+    {
+    \affecter{identifiant}{"huffman"}
+    \affecter{longueur}{FB\_longueurFichier}
+    \instruction{FB\_ecrireChaine(fichierDest, identifiant)}
+    \instruction{FB\_ecrireNaturel(fichierDest, longueur)}
+    \pour{i}{0}{STAT\_SIZE}{}
+    {
+    \instruction{FB\_ecrireNaturel(fichierDest, STAT\_obtenirPonderation(stat,O\_decimalEnOctet(i)))}
+    }
+    }
+\end{algorithme}

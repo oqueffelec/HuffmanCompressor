@@ -1,0 +1,23 @@
+%auteur : Quentin Robcis
+
+\begin{algorithme}
+  \procedure{decompression}{
+    \paramEntreeSortie{fichierSource : FB\_FichierBinaire, *fichierDest : FB\_FichierBinaire}
+    }
+    {
+    stat : STAT\_Statistiques\\
+    adh : ArbreDeHuffman\\
+    fdp : FDP\_FileDePriorite\\
+    longueur : int
+    }
+    {
+    \affecter{stat}{STAT\_statistiques()}
+    \affecter{fdp}{FDP\_fileDePriorite()}
+    \affecter{longueur}{0}
+    \instruction{recupererDonnees(fichierSource, \&stat, \&longueur)}
+    \affecter{fdp}{creerFileDePriorite(stat)}
+    \affecter{adh}{creerArbreDeHuffman(fdp)}
+    \instruction{decodage(fichierDest,fichierSource,longueur,adh)}
+    \instruction{FB\_deplacerCurseur(fichierDest, 0)}
+    }
+\end{algorithme}
