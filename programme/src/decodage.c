@@ -26,11 +26,11 @@ void decodage(FB_FichierBinaire* fichierDest,FB_FichierBinaire fichierSource,int
   CB_CodeBinaire cbAdecoderInverse=CB_codeBinaire();
 
 
-  while(posCurseur <= longueur-1 && !FB_finFichier(fichierSource) && FB_lireOctet(fichierSource, &octetAlire)){
+  while(posCurseur < longueur && !FB_finFichier(fichierSource) && FB_lireOctet(fichierSource, &octetAlire)){
    int trouve=false;
    int i = 0;
    octetAlire.nb=8;
-    while (i < 8 && posCurseur < longueur-1) {
+    while (i < 8 && posCurseur < longueur) {
       CB_ajouter(&cbAdecoder,O_obtenirBit(octetAlire,7-i));
       cbAdecoderInverse=CB_copie(cbAdecoder);
       decodageCodeBinaire(cbAdecoderInverse, adh, &octetAecrire, &trouve);
