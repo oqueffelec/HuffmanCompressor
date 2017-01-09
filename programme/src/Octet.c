@@ -127,7 +127,7 @@ O_Octet O_decimalEnOctet(int i){
 int O_comparerOctet(O_Octet o1,O_Octet o2){
   return O_nombreBit(o1)==O_nombreBit(o2) && O_getOctet(o1)==O_getOctet(o2) ;
 }
-
+/*
 CB_CodeBinaire O_octetEnCodeBinaire(O_Octet o){
   CB_CodeBinaire cb = CB_codeBinaire();
   int val = O_octetEnDecimal(o);
@@ -158,3 +158,4 @@ O_Octet O_codeBinaireEnOctet(CB_CodeBinaire cb){
   }
     return res;
   }
+  */

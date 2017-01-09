@@ -23,7 +23,7 @@ all:  exec
 
 exec: $(BINDIR)/$(EXEC)
 
-doc: $(DOCDIR)/html/index.html $(DOCDIR)/latex/refman.pdf $(DOCDIR)/rapport/rapport.pdf
+doc: $(DOCDIR)/html/index.html $(DOCDIR)/latex/refman.pdf
 
 $(DOCDIR)/html/index.html:
 	doxygen
@@ -34,12 +34,11 @@ $(DOCDIR)/latex/refman.pdf: $(DOCDIR)/latex/refman.tex
 $(DOCDIR)/latex/refman.tex:
 	doxygen
 
-$(DOCDIR)/rapport/rapport.pdf:
-	cd $(DOCDIR)/rapport/; pdflatex -synctex=1 -interaction=nonstopmode rapport.tex; cd ../..
 
 
 
-tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage $(TESTDIR)/testCreerFileDePriorite $(TESTDIR)/testCreerTableDeCodage 
+
+tests: $(TESTDIR)/testTADArbreDeHuffman $(TESTDIR)/testTADCodeBinaire $(TESTDIR)/testTADFileDePriorite $(TESTDIR)/testTADOctet $(TESTDIR)/testTADStatistiques $(TESTDIR)/testTADTableDeCodage $(TESTDIR)/testCreerFileDePriorite $(TESTDIR)/testCreerTableDeCodage
 
 $(TESTDIR)/% : $(SRCTESTDIR)/%.o $(LIBDIR)/libhuffman.a
 	$(CC) -o $@ $< $(LDFLAGS) -lcunit
