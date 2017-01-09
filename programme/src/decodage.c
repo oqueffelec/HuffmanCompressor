@@ -36,6 +36,8 @@ void decodage(FB_FichierBinaire* fichierDest,FB_FichierBinaire fichierSource,int
       decodageCodeBinaire(cbAdecoderInverse, adh, &octetAecrire, &trouve);
       if(trouve){
         FB_ecrireOctet(fichierDest, octetAecrire);
+        CB_supprimer(&cbAdecoder);
+        CB_supprimer(&cbAdecoderInverse);
         cbAdecoder=CB_codeBinaire();
         cbAdecoderInverse=CB_codeBinaire();
         posCurseur++;
